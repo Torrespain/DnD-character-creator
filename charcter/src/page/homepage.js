@@ -161,99 +161,274 @@ class home extends React.Component {
   	// console.log(this.state)
   	// console.log(this.state.name)
     return (
-      <div>
-      		<h1> Name </h1>
+      
+      <div className="container">
+
+      <div className="row">
+        <div className = "col-md-2" id= "subImage">
+
+        </div>
+        <div className="col-md-10">
+
+          <div className="row">
+            <div className="col-md-6">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Name</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+           
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">ImgURL</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+                
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Player</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Sex</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Age</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Height</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Weight</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Race</h3>
+                  </div>
+                  <div className="panel-body">
+                    <div class="section-content">
+                      <div class="fg-line">
+                        <div class="select">
+                          <select class="form-control">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Sub Race</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Alignment</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Exp/Level</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Class</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Archtype</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Level</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+
+            <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <h3 className="panel-title">Background</h3>
+                  </div>
+                  <div className="panel-body">
+        
+                  </div>
+                </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      
+      	{/*<h1> Name </h1>
       	<input onChange={this.handleNameChange}>
       	</input>
-
-      		<h1> Image </h1>
-      	<input onChange={this.handleImageChange}>
-      	</input>
-
-			<h1> Player </h1>
-		<input onChange={this.handlePlayerChange}>
-      	</input>
-
-      		<h1> Sex </h1>
-      	<input onChange={this.handleSexChange}>
-      	</input>
-
-			<h1> Age </h1>
-		<input onChange={this.handleAgeChange}>
-      	</input>
-
-      		<h1> Height </h1>
-	    <input onChange={this.handleHeightChange}>
-      	</input>
-
-			<h1> Weight </h1>
-		<input onChange={this.handleWeightChange}>
-      	</input>
-
-      		<h1> Race </h1>
+      	<h1> Race </h1>
       	<input onChange={this.handleRaceChange}>
       	</input>
-
-			<h1> Alignment </h1>
-		<input onChange={this.handleAlignmentChange}>
+				<h1> Sex </h1>
+				<input onChange={this.handleSexChange}>
       	</input>
-
-			<h1> Exp </h1>
-		<input onChange={this.handleExpChange}>
+      	<h1> imageUrl </h1>
+      	<input onChange={this.handleimageUrlChange}>
       	</input>
-
-			<h1> CLass </h1>
-		<input onChange={this.handleCLassChange}>
+				<h1> Player </h1>
+				<input onChange={this.handlePlayerChange}>
       	</input>
-
-			<h1> Archetipe </h1>
-		<input onChange={this.handleArchetipeChange}>
+      	<h1> Age </h1>
+      	<input onChange={this.handleAgeChange}>
       	</input>
-
-			<h1> Levels </h1>
-		<input onChange={this.handleLevelsChange}>
+				<h1> Height </h1>
+				<input onChange={this.handleHeightChange}>
       	</input>
-
-			<h1> BackGround </h1>
-		<input onChange={this.handleBackGroundChange}>
+      	<h1> Weight </h1>
+      	<input onChange={this.handleWeightChange}>
       	</input>
-
-			<h1> Abilities </h1>
-		<input onChange={this.handleAbilitiesChange}>
+				<h1> Alignment </h1>
+				<input onChange={this.handleAlignmentChange}>
       	</input>
-
-			<h1> Saves </h1>
-		<input onChange={this.handleSavesChange}>
+				<h1> Level </h1>
+				<input onChange={this.handleLevelChange}>
       	</input>
-
-			<h1> Skills </h1>
-		<input onChange={this.handleSkillsChange}>
+				<h1> BackGround </h1>
+				<input onChange={this.handleBackGroundChange}>
       	</input>
-
-			<h1> Armour </h1>
-		<input onChange={this.handleArmourChange}>
+				<h1> Class </h1>
+				<input onChange={this.handleClassChange}>
       	</input>
-
-			<h1> HitPoints </h1>
-		<input onChange={this.handleHitPointsChange}>
+				<h1> Archetipe </h1>
+				<input onChange={this.handleArchetipeChange}>
       	</input>
-
-			<h1> Languages </h1>
-		<input onChange={this.handleLanguagesChange}>
+				<h1> Abilities </h1>
+				<input onChange={this.handleAbilitiesChange}>
       	</input>
-
-			<h1> Tools </h1>
-		<input onChange={this.handleToolsChange}>
+				<h1> Saves </h1>
+				<input onChange={this.handleSavesChange}>
       	</input>
-		  
-			<h1> Weapons </h1>
-		<input onChange={this.handleWeaponsChange}>
+				<h1> HitPoints </h1>
+				<input onChange={this.handleHitPointsChange}>
       	</input>
-
+				<h1> Languages </h1>
+				<input onChange={this.handleLanguagesChange}>
+      	</input>
+				<h1> Skills </h1>
+				<input onChange={this.handleSkillsChange}>
+      	</input>
+				<h1> Languages </h1>
+				<input onChange={this.handleLanguagesChange}>
+      	</input>
+				<h1> ToolsProfency </h1>
+				<input onChange={this.handleToolsProfencencyChange}>
+      	</input>
+				<h1> WeaponsProfency </h1>
+				<input onChange={this.handleWeaponsProfencyChange}>
+      	</input>
+				<h1> ArmourProfency </h1>
+				<input onChange={this.handleArmourProfencyChange}>
+      	</input>
       	<button onClick={this.createCharacter}>
       		Submit
-      	</button>
+      	</button>*/}
       </div>
+
+
     );
   }
 }
