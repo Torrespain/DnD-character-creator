@@ -5,23 +5,7 @@ import Home from './components/home/Home';
 import "./App.css";
 // import AboutPage from './pages/about';
 
-
 class App extends Component {
-	// constructor() {
-	//     super();
-	//     this.state = {
-	//       charView: false
-	//     }
-	//     this.createText = this.createText.bind(this);
-	// }
-
-	// createText() {
- //    	this.setState({ charView: true }) 
- //  	}
-
-
-// <button onClick={this.createText}>Create a character</button>
-// 	        {this.state.charView && <p>works!!!</p>}
   render() {
     return (
       <Router>
@@ -33,7 +17,5 @@ class App extends Component {
     );
   }
 }
-
-
 
 export default App;

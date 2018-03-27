@@ -32,7 +32,7 @@ class home extends React.Component {
 		Tools: "",
 		Weapons: ""
     	}
-    	this.handleNameChange = this.handleNameChange.bind(this)
+    this.handleNameChange = this.handleNameChange.bind(this)
 		this.handleImageUrlChange = this.handleImageUrlChange.bind(this)
 		this.handlePlayerChange = this.handlePlayerChange.bind(this)
 		this.handleSexChange = this.handleSexChange.bind(this)
@@ -41,20 +41,20 @@ class home extends React.Component {
 		this.handleWeightChange = this.handleWeightChange.bind(this)
 		this.handleRaceChange = this.handleRaceChange.bind(this)
 		this.handleAlignmentChange = this.handleAlignmentChange.bind(this)
-    	this.handleExpChange = this.handleExpChange.bind(this)
+    this.handleExpChange = this.handleExpChange.bind(this)
 		this.handleClassChange = this.handleClassChange.bind(this)
 		this.handleArchetypeChange = this.handleArchetypeChange.bind(this)
 		this.handleLevelChange = this.handleLevelChange.bind(this)
 		this.handleBackgroundChange = this.handleBackgroundChange.bind(this)
 		this.handleAbilitiesChange = this.handleAbilitiesChange.bind(this)
-    	this.handleSavesChange = this.handleSavesChange.bind(this)
+    this.handleSavesChange = this.handleSavesChange.bind(this)
 		this.handleSkillsChange = this.handleSkillsChange.bind(this)
 		this.handleArmourChange = this.handleArmourChange.bind(this)
 		this.handleHitPointsChange = this.handleHitPointsChange.bind(this)
 		this.handleLanguagesChange = this.handleLanguagesChange.bind(this)
 		this.handleToolsChange = this.handleToolsChange.bind(this)
 		this.handleWeaponsChange = this.handleWeaponsChange.bind(this)
-    	this.createCharacter = this.createCharacter.bind(this)
+    this.createCharacter = this.createCharacter.bind(this)
 
 	}
 	handleNameChange(e) {
@@ -405,279 +405,71 @@ class home extends React.Component {
                       <h3 className="panel-title">Background</h3>
                   </div>
                   <div className="panel-body">
-        
+      
                   </div>
                 </div>
             </div>
-
           </div>
-
         </div>
       </div>
       <div className ="row">
-
-<div className ="col-md-4">
-<div className="card" style={{width: 230}}>
-<div className="card-header">
-  Abilities
-</div>
-<ul className="list-group list-group-flush">
-  <li className="list-group-item">Strength</li>
-  <li className="list-group-item">Dexterity</li>
-  <li className="list-group-item">Constitution</li>
-  <li className="list-group-item">Intelligence</li>
-  <li className="list-group-item">Wisdom</li>
-  <li className="list-group-item">Charisma</li>
-</ul>
-</div>
-</div>
-
-<div className ="col-md-4">
-<div className = "section-header">
-<label>Saves</label>
-</div>
-<div className="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Strength" aria-label="Text input with checkbox"></input> 
-</div>
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder ="Dexterity" aria-label="Text input with checkbox"></input> 
-</div>
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Consitution" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Intelligence" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Wisdom" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Charisma" aria-label="Text input with checkbox"></input> 
-</div>
-
-
-
-
-<div className = "section-header">
-<label>Skills</label>
-</div>
-<div className="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Acrobatics" aria-label="Text input with checkbox"></input> 
-</div>
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder ="Animal-Handling" aria-label="Text input with checkbox"></input> 
-</div>
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Arcana" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Athletics" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Deception" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="History" aria-label="Text input with checkbox"></input> 
-</div> 
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Insight" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Intimidation" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Investigation" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Medicine" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Nature" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Perception" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Performance" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Persuation" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Religion" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Sleight of Hand" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Stealth" aria-label="Text input with checkbox"></input> 
-</div>
-
-<div className ="input-group mb-3">
-<div className="input-group-prepend">
-<div className="input-group-text">
-  <input type="checkbox" aria-label="Checkbox for following text input"></input>
-
-</div>
-</div>
-<input type="text" className="form-control" placeholder="Survival" aria-label="Text input with checkbox"></input> 
-</div>
-      
+        <div className ="col-md-3">
+          <div className="card" style={{width: 230}}>
+            <div className="card-header">
+              Abilities
+            </div>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">Strength</li>
+              <li className="list-group-item">Dexterity</li>
+              <li className="list-group-item">Constitution</li>
+              <li className="list-group-item">Intelligence</li>
+              <li className="list-group-item">Wisdom</li>
+              <li className="list-group-item">Charisma</li>
+            </ul>
+          </div>
+        </div>
+        <div className ="col-md-3">
+          <div className = "section-header" style={{width: 230}}>
+            <label>Saving Throws</label>
+          </div>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Strength</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Dexterity</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Constitution</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Intelligence</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Wisdom</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Charisma</li>
+            </ul>
+          </div>
+      <div className ="row">
+        <div className ="col-md-3">
+          <div className="card" style={{width: 230}}>
+            <div className="card-header">
+            <label>
+              Skills
+            </label>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Arcobatics</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Animal Handling</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Arcana</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Athletics</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Deception</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> History</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Insight</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Intimidation</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Investigation</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Medicine</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Nature</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Perception</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Religion</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Sleight of Hand</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Stealth</li>
+              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Survival</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
       	{/*<h1> Name </h1>
       	<input onChange={this.handleNameChange}>
       	</input>
@@ -747,7 +539,6 @@ class home extends React.Component {
       	<button onClick={this.createCharacter}>
       		Submit
       	</button>*/}
-      </div>
     </div>
   </div>
 
