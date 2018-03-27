@@ -1,4 +1,5 @@
 import React from 'react';
+import './Character.css'
 
 class home extends React.Component {
   constructor(props) {
@@ -165,9 +166,10 @@ class home extends React.Component {
       <div className="container">
 
       <div className="row">
-        <div className = "col-md-2" id= "subImage">
-
+        <div className = "col-md-2" >
+         <img class="dragonSide" src="https://image.ibb.co/h6Wxun/6477_dragon_cave.jpg"></img>
         </div>
+          
         <div className="col-md-10">
 
           <div className="row">

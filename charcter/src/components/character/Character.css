@@ -1,3 +1,14 @@
-.body {
-	background: pink;
+body {
+	background: url("http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW");
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+	/*background: pink;*/
+}
+
+.dragonSide{
+	background: url("http://pbblogassets.s3.amazonaws.com/uploads/2014/11/Vector-Fire.gif");
+	width: 100%;
+	
 }
