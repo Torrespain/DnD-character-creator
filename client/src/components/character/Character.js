@@ -22,7 +22,7 @@ class Home extends React.Component {
       Archetype: "",
       Level: "",
       Background: "",
-      Abilities: "",
+      Abilities: [],
       Saves: "",
       Skills: "",
       Armour: "",
@@ -300,9 +300,7 @@ class Home extends React.Component {
                   </div>
                 </div>
               </div>
-
             </div>
-
           </div>
         </div>
         <div className ="row">
@@ -310,6 +308,7 @@ class Home extends React.Component {
           <div className="panel panel-default">
             <div className="panel-heading">
               <label>Abilities</label>
+              <button type="button" id="abilitiesDice" className="btn btn-default">Roll the dice!</button>
             </div>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">Strength</li>
@@ -350,7 +349,6 @@ class Home extends React.Component {
               </div>
           </div>
         </div>
-
      
         <div className ="col-md-4">
           <div className="panel panel-default">
@@ -384,6 +382,7 @@ class Home extends React.Component {
                 <div className="panel panel-default">
                   <div className="panel-heading">
                       <label className="panel-title">Hit Points</label>
+                      <button type="button" id="HitDice" className="btn btn-default">Roll the dice!</button>
                   </div>
                   <div className="panel-body">
                   </div>
@@ -399,7 +398,7 @@ class Home extends React.Component {
                       <label>Common</label>
                         <div className="select">
                           <select className="form-control" readOnly onChange={this.handleChange} name="Languages" value={this.state.Languages} placeholder="Languages">
-                            <option value="" disabled selected>Languages</option>
+                            <option value="" disabled defaultValue>Languages</option>
                             <option value="Common">Common</option>
                             <option value="Dwarvish">Dwarvish</option>
                             <option value="Elvish">Elvish</option>
@@ -416,7 +415,7 @@ class Home extends React.Component {
                          <label>Exotic</label>
                         <div className="select">
                           <select className="form-control" readOnly onChange={this.handleChange} name="Exotic" value={this.state.Exotic} placeholder="Exotic">
-                            <option value="" disabled selected>Languages</option>
+                            <option value="" disabled defaultValue>Languages</option>
                             <option value="Aarakocra">Aarakocra</option>
                             <option value="Abyssal">Abyssal</option>
                             <option value="Auran">Auran</option>
@@ -443,7 +442,7 @@ class Home extends React.Component {
                       <label>Artisan's Tools</label>
                         <div className="select">
                           <select className="form-control" readOnly onChange={this.handleChange} name="Tools" value={this.state.Tools} placeholder="Tools">
-                            <option value="" disabled selected>Artisan's tools</option>
+                            <option value="" disabled defaultValue>Artisan's tools</option>
                             <option value="Alchemist-supplies">Alchemist's supplies</option>
                             <option value="Brewer-supplies">Brewer's supplies</option>
                             <option value="Calligrapher-supplies">Calligrapher's supplies</option>
@@ -469,7 +468,7 @@ class Home extends React.Component {
                          <label>Gaming Set</label>
                         <div className="select">
                           <select className="form-control" readOnly onChange={this.handleChange} name="Gaming" value={this.state.Gaming} placeholder="Gaming">
-                            <option value="" disabled selected>Gaming Set</option>
+                            <option value="" disabled defaultValue>Gaming Set</option>
                             <option value="Dice-set">Dice set</option>
                             <option value="Dragonchess-set">Dragonchess set</option>
                             <option value="Playing-card-set">Playing card set</option>
@@ -482,7 +481,7 @@ class Home extends React.Component {
                          <label>Musical Instrument</label>
                         <div className="select">
                           <select className="form-control" readOnly onChange={this.handleChange} name="Instrument" value={this.state.Instrument} placeholder="Instrument">
-                            <option value="" disabled selected>Musical Instrument</option>
+                            <option value="" disabled defaultValue>Musical Instrument</option>
                             <option value="Bagpipes">Bagpipes</option>
                             <option value="Drum">Drum</option>
                             <option value="Dulcimer">Dulcimer</option>
@@ -501,7 +500,7 @@ class Home extends React.Component {
                          <label>Vehicles</label>
                         <div className="select">
                           <select className="form-control" onChange={this.handleChange} name="Vehicles" value={this.state.Vehicles} placeholder="Vehicles">
-                            <option value="" disabled selected>Vehicles</option>
+                            <option value="" disabled defaultValue>Vehicles</option>
                             <option value="Land">Land</option>
                             <option value="Water">Water</option>
                           </select>
@@ -512,7 +511,7 @@ class Home extends React.Component {
                          <label>Other</label>
                         <div className="select">
                           <select className="form-control" onChange={this.handleChange} name="Other" value={this.state.Other} placeholder="Other">
-                            <option value="" disabled selected>Other</option>
+                            <option value="" disabled defaultValue>Other</option>
                             <option value="Disguise-kit">Disguise kit</option>
                             <option value="Forgery-kit">Forgery kit</option>
                             <option value="Herbalism-kit">Herbalism kit</option>
