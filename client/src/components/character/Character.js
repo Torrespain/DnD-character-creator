@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Character.css'
 
-class home extends React.Component {
-  constructor(props) {
-    super(props);
+class Home extends Component{
+  constructor(props) { //remove
+    super(props); //remove 
     	this.state = {
     		// name:"",
     		// race:"",
@@ -32,7 +32,7 @@ class home extends React.Component {
 		Tools: "",
 		Weapons: ""
     	}
-    this.handleNameChange = this.handleNameChange.bind(this)
+    // this.handleNameChange = this.handleNameChange.bind(this)
 		this.handleImageUrlChange = this.handleImageUrlChange.bind(this)
 		this.handlePlayerChange = this.handlePlayerChange.bind(this)
 		this.handleSexChange = this.handleSexChange.bind(this)
@@ -57,7 +57,7 @@ class home extends React.Component {
     this.createCharacter = this.createCharacter.bind(this)
 
 	}
-	handleNameChange(e) {
+	handleNameChange = e => { //actual React
 		// can put name age, etc you can update
 		this.setState({name: e.target.value})
 		console.log("namechanged")
@@ -157,6 +157,14 @@ class home extends React.Component {
   	// 	this.setState({agility: })
   	// }
 
+  getRace = event => {
+    console.log(event.target.value)
+    let race = event.target.value
+    
+
+  }
+
+
   //component, with react/ bootstrap
   render() {
   	// console.log(this.state)
@@ -220,7 +228,7 @@ class home extends React.Component {
                       <div class="fg-line">
                         <div class="select">
                           <select class="form-control">
-                            <option value="" disabled selected>Sex</option>
+                            <option value="" disabled defaultValue>Sex</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                           </select>
@@ -272,11 +280,11 @@ class home extends React.Component {
                       <h3 className="panel-title">Race</h3>
                   </div>
                   <div className="panel-body">
-                    <div class="section-content">
-                      <div class="fg-line">
-                        <div class="select">
-                          <select class="form-control">
-                            <option value="" disabled selected>Race</option>
+                    <div className="section-content">
+                      <div className="fg-line">
+                        <div className="select">
+                          <select className="form-control" readOnly onChange={event=>this.getRace(event)}>
+                            <option value="default" defaultValue >Race</option>
                             <option id="6" value="Dragonborn">Dragonborn</option>
                             <option id="1" value="Dwarf">Dwarf</option>
                             <option id="3" value="Elf">Elf</option>
@@ -315,7 +323,7 @@ class home extends React.Component {
                       <div class="fg-line">
                         <div class="select">
                           <select class="form-control">
-                            <option value="" disabled selected>Alignment</option>
+                            <option value="" disabled defaultValue>Alignment</option>
                             <option value="LawfulGood">Lawful Good</option>
                             <option value="LawfulNeutral">Lawful Neutral</option>
                             <option value="LawfulEvil">Lawful Evil</option>
@@ -356,7 +364,7 @@ class home extends React.Component {
                       <div class="fg-line">
                         <div class="select">
                           <select class="form-control" placeholder="choose one">
-                            <option value="" disabled selected>Class</option>
+                            <option value="" disabled defaultValue>Class</option>
                             <option value="Barbarian">Barbarian</option>
                             <option value="Bard">Bard</option>
                             <option value="Cleric">Cleric</option>
@@ -546,4 +554,4 @@ class home extends React.Component {
   }
 }
 
-export default home
+export default Home
