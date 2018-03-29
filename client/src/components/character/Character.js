@@ -59,9 +59,56 @@ class Home extends React.Component {
   }
 
   grabRace = event =>{
-    console.log("hi!");
-    API.getRaceAPI(event.target.value)
-      .then(data => console.log(data))
+    let race=event.target.value;
+    console.log("hi!", race);
+
+    switch(race)
+    {
+      case "Dwarf":
+        sendData(0);
+        break;
+
+      case "Tiefling":
+        sendData(1);
+        break;
+      
+      case "Elf":
+        sendData(2);
+        break;
+
+      case "Halfling":
+        sendData(3);
+        break;
+
+      case "Humam":
+        sendData(4);
+        break;
+
+      case "Dragonborn":
+        sendData(5);
+        break;
+
+      case "Gnome":
+        sendData(6);
+        break;
+
+      case "Half-Elf":
+        sendData(7);
+        break;
+
+      case "Half-Orc":
+        sendData(8);
+        break;
+        // default:
+        //     ...
+        //     break;
+    }
+
+    function sendData (position) {
+      API.getRaceAPI(event.target.value)
+        .then(data => console.log(data.data[position].ability_bonuses))
+    }
+    
   }
 
  diceRoll = () => {
