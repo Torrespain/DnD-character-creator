@@ -1,6 +1,7 @@
 import React from 'react';
-import './Character.css'
-import Skills from './skills'
+import './Character.css';
+import Skills from './skills';
+import API from '../../api/API';
 
 class Home extends React.Component {
   constructor(props) {
@@ -52,9 +53,15 @@ class Home extends React.Component {
   handleChange = event => {
     
     // console.log("i was a clicked");
-    const { name, value } = event.target
+    const { name, value } = event.target;
     this.setState({ [name]: value });
     // console.log(event.target.value);
+  }
+
+  grabRace = event =>{
+    console.log("hi!");
+    this.getRaceAPI();
+
   }
 
  diceRoll = () => {
@@ -213,7 +220,7 @@ class Home extends React.Component {
                     <div className="section-content">
                       <div className="fg-line">
                         <div className="select">
-                          <select className="form-control" readOnly onChange={this.handleChange} name="Race" value={this.state.Race} placeholder="Race" >
+                          <select className="form-control" readOnly onChange={this.handleChange, this.grabRace} name="Race" value={this.state.Race} placeholder="Race" >
                             <option value="default" defaultValue >Race</option>
                             <option id="6" value="Dragonborn">Dragonborn</option>
                             <option id="1" value="Dwarf">Dwarf</option>
