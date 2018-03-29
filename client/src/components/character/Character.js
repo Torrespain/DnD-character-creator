@@ -22,33 +22,35 @@ class Home extends React.Component {
       Archetype: "",
       Level: "",
       Background: "",
-      Abilities: "",
+      Abilities: [],
       Saves: "",
       Skills: "",
       Armour: "",
       Hitpoints: "",
       Level: "",
       Languages: "",
+      Exotic: "",
       Tools: "",
-      Weapons: ""
+      Weapons: "",
+      Gaming: "",
+      Instrument: "",
+      Vehicles: "",
+      Other: ""
     }
 
     this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange = event => {
-    console.log("i was a clicked");
+    
+    // console.log("i was a clicked");
     const { name, value } = event.target
     this.setState({ [name]: value });
-    console.log(event.target.value);
+    // console.log(event.target.value);
   }
 
-
-
-
-
   render() {
-    // console.log(this.state)
+    console.log(this.state)
     // console.log(this.state.name)
     return (
 
@@ -56,7 +58,7 @@ class Home extends React.Component {
 
         <div className="row">
           <div className="col-md-2" >
-            <img className="dragonSide" src="https://image.ibb.co/h6Wxun/6477_dragon_cave.jpg"></img>
+            <img className="dragonSide" src="https://image.ibb.co/gDLFFS/db4c8feee54b432773d15cd2e2ccd026_d9574e0.jpg"></img>
           </div>
 
           <div className="col-md-10">
@@ -108,7 +110,7 @@ class Home extends React.Component {
                     <div className="section-content">
                       <div className="fg-line">
                         <div className="select">
-                          <select className="form-control">
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Sex" value={this.state.Sex} placeholder="Sex" >
                             <option value="" defaultValue>Sex</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -164,7 +166,7 @@ class Home extends React.Component {
                     <div className="section-content">
                       <div className="fg-line">
                         <div className="select">
-                          <select className="form-control" readOnly onChange={event => this.handleChange(event)}>
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Race" value={this.state.Race} placeholder="Race" >
                             <option value="default" defaultValue >Race</option>
                             <option id="6" value="Dragonborn">Dragonborn</option>
                             <option id="1" value="Dwarf">Dwarf</option>
@@ -203,7 +205,7 @@ class Home extends React.Component {
                     <div className="section-content">
                       <div className="fg-line">
                         <div className="select">
-                          <select className="form-control">
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Alignment" value={this.state.Alignment} placeholder="Alignment">
                             <option value="" defaultValue>Alignment</option>
                             <option value="LawfulGood">Lawful Good</option>
                             <option value="LawfulNeutral">Lawful Neutral</option>
@@ -244,7 +246,7 @@ class Home extends React.Component {
                     <div className="section-content">
                       <div className="fg-line">
                         <div className="select">
-                          <select className="form-control" placeholder="choose one">
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Class" value={this.state.Class} placeholder="Class">
                             <option value="" defaultValue>Class</option>
                             <option value="Barbarian">Barbarian</option>
                             <option value="Bard">Bard</option>
@@ -298,9 +300,7 @@ class Home extends React.Component {
                   </div>
                 </div>
               </div>
-
             </div>
-
           </div>
         </div>
         <div className ="row">
@@ -308,6 +308,7 @@ class Home extends React.Component {
           <div className="panel panel-default">
             <div className="panel-heading">
               <label>Abilities</label>
+              <button type="button" id="abilitiesDice" className="btn btn-default">Roll the dice!</button>
             </div>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">Strength</li>
@@ -348,7 +349,6 @@ class Home extends React.Component {
               </div>
           </div>
         </div>
-
      
         <div className ="col-md-4">
           <div className="panel panel-default">
@@ -382,6 +382,7 @@ class Home extends React.Component {
                 <div className="panel panel-default">
                   <div className="panel-heading">
                       <label className="panel-title">Hit Points</label>
+                      <button type="button" id="HitDice" className="btn btn-default">Roll the dice!</button>
                   </div>
                   <div className="panel-body">
                   </div>
@@ -396,8 +397,8 @@ class Home extends React.Component {
                       <div className="fg-line">
                       <label>Common</label>
                         <div className="select">
-                          <select className="form-control" placeholder="choose one">
-                            <option value="" disabled selected>Languages</option>
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Languages" value={this.state.Languages} placeholder="Languages">
+                            <option value="" disabled defaultValue>Languages</option>
                             <option value="Common">Common</option>
                             <option value="Dwarvish">Dwarvish</option>
                             <option value="Elvish">Elvish</option>
@@ -413,8 +414,8 @@ class Home extends React.Component {
 
                          <label>Exotic</label>
                         <div className="select">
-                          <select className="form-control" placeholder="choose one">
-                            <option value="" disabled selected>Languages</option>
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Exotic" value={this.state.Exotic} placeholder="Exotic">
+                            <option value="" disabled defaultValue>Languages</option>
                             <option value="Aarakocra">Aarakocra</option>
                             <option value="Abyssal">Abyssal</option>
                             <option value="Auran">Auran</option>
@@ -440,8 +441,8 @@ class Home extends React.Component {
                       <div className="fg-line">
                       <label>Artisan's Tools</label>
                         <div className="select">
-                          <select className="form-control" placeholder="choose one">
-                            <option value="" disabled selected>Artisan's tools</option>
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Tools" value={this.state.Tools} placeholder="Tools">
+                            <option value="" disabled defaultValue>Artisan's tools</option>
                             <option value="Alchemist-supplies">Alchemist's supplies</option>
                             <option value="Brewer-supplies">Brewer's supplies</option>
                             <option value="Calligrapher-supplies">Calligrapher's supplies</option>
@@ -466,8 +467,8 @@ class Home extends React.Component {
 
                          <label>Gaming Set</label>
                         <div className="select">
-                          <select className="form-control" placeholder="choose one">
-                            <option value="" disabled selected>Gaming Set</option>
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Gaming" value={this.state.Gaming} placeholder="Gaming">
+                            <option value="" disabled defaultValue>Gaming Set</option>
                             <option value="Dice-set">Dice set</option>
                             <option value="Dragonchess-set">Dragonchess set</option>
                             <option value="Playing-card-set">Playing card set</option>
@@ -479,8 +480,8 @@ class Home extends React.Component {
 
                          <label>Musical Instrument</label>
                         <div className="select">
-                          <select className="form-control" placeholder="choose one">
-                            <option value="" disabled selected>Musical Instrument</option>
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Instrument" value={this.state.Instrument} placeholder="Instrument">
+                            <option value="" disabled defaultValue>Musical Instrument</option>
                             <option value="Bagpipes">Bagpipes</option>
                             <option value="Drum">Drum</option>
                             <option value="Dulcimer">Dulcimer</option>
@@ -498,8 +499,8 @@ class Home extends React.Component {
 
                          <label>Vehicles</label>
                         <div className="select">
-                          <select className="form-control" placeholder="choose one">
-                            <option value="" disabled selected>Vehicles</option>
+                          <select className="form-control" onChange={this.handleChange} name="Vehicles" value={this.state.Vehicles} placeholder="Vehicles">
+                            <option value="" disabled defaultValue>Vehicles</option>
                             <option value="Land">Land</option>
                             <option value="Water">Water</option>
                           </select>
@@ -509,8 +510,8 @@ class Home extends React.Component {
 
                          <label>Other</label>
                         <div className="select">
-                          <select className="form-control" placeholder="choose one">
-                            <option value="" disabled selected>Other</option>
+                          <select className="form-control" onChange={this.handleChange} name="Other" value={this.state.Other} placeholder="Other">
+                            <option value="" disabled defaultValue>Other</option>
                             <option value="Disguise-kit">Disguise kit</option>
                             <option value="Forgery-kit">Forgery kit</option>
                             <option value="Herbalism-kit">Herbalism kit</option>
