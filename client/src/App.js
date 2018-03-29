@@ -6,45 +6,34 @@ import "./App.css";
 // import AboutPage from './pages/about';
 
 class App extends Component {
-  render() {
-    return (
-      function wrap () {
-            imgSrc = null,
-       if(window.location.pathname == "/" || location.pathname == "/home"){
-      imgSrc = "http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW"
-   }
 
-   else if (location.pathname == "/characters"){
+    wrap () {
+      let imgSrc = null;
+    if(window.location.pathname === "/" || window.location.pathname === "/home"){
+      imgSrc = "http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW"
+    }
+   else if (window.location.pathname === "/character"){
       imgSrc = "https://image.ibb.co/eOEfFS/background2.jpg"
    }
+   else {
+
       }
+   }
+
+  render() {
+    return (
+      <div>
+      {this.wrap()}
 
       <Router>
-        <div className="{window.location.pathname === '/character' ? characterPage : homePage}">
-	      	<Route path="/" component={Home}/>	        	               
-          <Route path="/character" component={CharPage}/>
+        <div>
+	      	<Route exact path="/" component={Home}/>	        	               
+          <Route exact path="/character" component={CharPage}/>
         </div>
       </Router>
-
+      </div>
     );
   }
 }
 
 export default App;
-
-// render(){
-//    // const { location } = this.props
-//    // const imgSrc = null
-
-//    if(location.pathname == "/" || location.pathname == "/home"){
-//       imgSrc = "http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW"
-//    }
-
-//    else if (location.pathname == "/characters"){
-//       imgSrc = "https://image.ibb.co/eOEfFS/background2.jpg"
-//    }
-
-//    return (
-//       { imgSrc && <div ..... > </div>}
-//    )
-// }
