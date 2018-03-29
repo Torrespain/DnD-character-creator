@@ -24,6 +24,8 @@ class Home extends React.Component {
       Level: "",
       Background: "",
       Abilities: null,
+      diceAbilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
+      raceAbilities: null,
       Saves: "",
       Skills: [],
       Armour: "",
@@ -81,7 +83,7 @@ class Home extends React.Component {
         abilitiesObj[key]=total;
 
     }
-    this.setState({Abilities:abilitiesObj});
+    this.setState({diceAbilities:abilitiesObj});
 
     console.log(abilitiesObj);
 }     
@@ -350,12 +352,12 @@ class Home extends React.Component {
               <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>Roll the dice!</button>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Strength</li>
-              <li className="list-group-item">Dexterity</li>
-              <li className="list-group-item">Constitution</li>
-              <li className="list-group-item">Intelligence</li>
-              <li className="list-group-item">Wisdom</li>
-              <li className="list-group-item">Charisma</li>
+              <li className="list-group-item">Strength: {this.state.diceAbilities.strength}</li>
+              <li className="list-group-item">Dexterity: {this.state.diceAbilities.dexterity}</li>
+              <li className="list-group-item">Constitution: {this.state.diceAbilities.constitution}</li>
+              <li className="list-group-item">Intelligence: {this.state.diceAbilities.intelligence}</li>
+              <li className="list-group-item">Wisdom: {this.state.diceAbilities.wisdom}</li>
+              <li className="list-group-item">Charisma: {this.state.diceAbilities.charisma}</li>
             </ul>
           </div>
           <div className = "panel panel-default">
