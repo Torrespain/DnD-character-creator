@@ -8,6 +8,17 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
+      function wrap () {
+            imgSrc = null,
+       if(window.location.pathname == "/" || location.pathname == "/home"){
+      imgSrc = "http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW"
+   }
+
+   else if (location.pathname == "/characters"){
+      imgSrc = "https://image.ibb.co/eOEfFS/background2.jpg"
+   }
+      }
+
       <Router>
         <div className="{window.location.pathname === '/character' ? characterPage : homePage}">
 	      	<Route path="/" component={Home}/>	        	               
@@ -21,19 +32,19 @@ class App extends Component {
 
 export default App;
 
-render(){
-   const { location } = this.props
-   const imgSrc = null
+// render(){
+//    // const { location } = this.props
+//    // const imgSrc = null
 
-   if(location.pathname == "/" || location.pathname == "/character"){
-      imgSrc = "http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW"
-   }
+//    if(location.pathname == "/" || location.pathname == "/home"){
+//       imgSrc = "http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW"
+//    }
 
-   else if {
-      imgSrc = "https://image.ibb.co/eOEfFS/background2.jpg"
-   }
+//    else if (location.pathname == "/characters"){
+//       imgSrc = "https://image.ibb.co/eOEfFS/background2.jpg"
+//    }
 
-   return (
-      { imgSrc && <div ..... > </div>}
-   )
-}
+//    return (
+//       { imgSrc && <div ..... > </div>}
+//    )
+// }
