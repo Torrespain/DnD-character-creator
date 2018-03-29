@@ -32,10 +32,10 @@ mongoose.connect("mongodb://localhost/dnd", {
 // app.use("/",routes);
 
 app.get("/server", function(req, res){
-	// console.log("we hit the home route")
+	console.log("we hit the home route")
 	// console.log('db', db);
   // console.log('dnd', db.dnd)
-	db.dnd.find({})
+	db.classes.find({})
 	// res.send("working")
 	.then(function(dnd) {
 		// If any Books are found, send them to the client
@@ -51,7 +51,7 @@ app.get("/server", function(req, res){
 
 app.post("/create", function(req, res){
 	console.log(req.body);
-	db.dnd.create(req.body).then(function(response){
+	db.classes.create(req.body).then(function(response){
 		console.log("created", response);
 	}).catch(function(err){
 		console.log("err", err);

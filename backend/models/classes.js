@@ -9,21 +9,21 @@ var classesSchema = new Schema({
   // `title` is of type String
   // races: String,
   // classes: String
-// id: String,
+_id: Schema.Types.Mixed,
 index: Number,
 name: String,
 hit_die: Number,
-proficiency_choices: "",
-proficiencies:"",
-saving_throws:"",
-starting_equipment:"",
-class_levels:"",
-subclasses:"",
-spellcasting:""
+proficiency_choices: [],
+proficiencies:[],
+saving_throws:[],
+starting_equipment: Schema.Types.Mixed,
+class_levels: Schema.Types.Mixed,
+subclasses: [],
+spellcasting: Schema.Types.Mixed
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var dnd = mongoose.model("dnd", classesSchema);
+var dnd = mongoose.model("classes", classesSchema);
 
 // Export the Character model
 module.exports = dnd;

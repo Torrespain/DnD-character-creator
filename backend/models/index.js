@@ -1,3 +1,3 @@
 module.exports = {
-  dnd: require("./classes"),
+  classes: require("./classes"),
 };

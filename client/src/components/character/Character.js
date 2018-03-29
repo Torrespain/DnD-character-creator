@@ -1,5 +1,6 @@
 import React from 'react';
 import './Character.css'
+import Skills from './skills'
 
 class Home extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Home extends React.Component {
       Background: "",
       Abilities: null,
       Saves: "",
-      Skills: "",
+      Skills: [],
       Armour: "",
       Hitpoints: "",
       Level: "",
@@ -39,6 +40,11 @@ class Home extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.updateSkills = this.updateSkills.bind(this)
+  }
+
+  updateSkills (newSkills) {
+    this.setState ({Skills: newSkills})
   }
 
   handleChange = event => {
@@ -390,24 +396,7 @@ class Home extends React.Component {
               Skills
             </label>
             </div>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Arcobatics</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Animal Handling</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Arcana</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Athletics</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Deception</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> History</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Insight</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Intimidation</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Investigation</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Medicine</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Nature</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Perception</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Religion</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Sleight of Hand</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Stealth</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Survival</li>
-            </ul>
+            <Skills class={this.state.Class} Skills={this.state.Skills} updateSkills={this.updateSkills}/>
         </div>
       </div>
    
