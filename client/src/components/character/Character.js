@@ -22,8 +22,10 @@ class Home extends React.Component {
       Class: "",
       Archetype: "",
       Level: "",
-      Background: "",
-      Abilities: null,
+      background: "",
+      abilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
+      diceAbilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
+      raceAbilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
       Saves: "",
       Skills: [],
       Armour: "",
@@ -56,9 +58,10 @@ class Home extends React.Component {
   }
 
  diceRoll = () => {
-   var abilitiesObj = {strength: "", dexterity: "", constitution: "", intelligence: "", wisdom: "", charisma: ""}
+  let { raceAbilities, diceAbilities } = this.state
+   // var abilitiesObj = {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0}
     
-    for (let key in abilitiesObj) {
+    for (let key in diceAbilities) {
             console.log("key: ", key);
         let totalArray= [];
         let total=0;
@@ -78,15 +81,20 @@ class Home extends React.Component {
             total = total + totalArray[j];
         }
         console.log(total);
-        abilitiesObj[key]=total;
+        diceAbilities[key]=total;
 
     }
-    this.setState({Abilities:abilitiesObj});
+    console.log(raceAbilities);
+    this.setState({diceAbilities:diceAbilities, abilities:{
+      strength: diceAbilities.strength + raceAbilities.strength,
+      dexterity: diceAbilities.dexterity + raceAbilities.dexterity,
+      constitution: diceAbilities.constitution + raceAbilities.constitution,
+      intelligence: diceAbilities.intelligence + raceAbilities.intelligence,
+      wisdom: diceAbilities.wisdom + raceAbilities.wisdom,
+      charisma: diceAbilities.charisma + raceAbilities.charisma
+    }});
 
-    console.log(abilitiesObj);
 }     
-
-
 
   render() {
     console.log(this.state)
@@ -350,12 +358,12 @@ class Home extends React.Component {
               <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>Roll the dice!</button>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Strength</li>
-              <li className="list-group-item">Dexterity</li>
-              <li className="list-group-item">Constitution</li>
-              <li className="list-group-item">Intelligence</li>
-              <li className="list-group-item">Wisdom</li>
-              <li className="list-group-item">Charisma</li>
+              <li className="list-group-item">Strength: {this.state.abilities.strength}</li>
+              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity}</li>
+              <li className="list-group-item">Constitution: {this.state.abilities.constitution}</li>
+              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence}</li>
+              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom}</li>
+              <li className="list-group-item">Charisma: {this.state.abilities.charisma}</li>
             </ul>
           </div>
           <div className = "panel panel-default">
