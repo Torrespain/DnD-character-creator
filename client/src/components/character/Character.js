@@ -60,8 +60,8 @@ class Home extends React.Component {
 
   grabRace = event =>{
     console.log("hi!");
-    this.getRaceAPI();
-
+    API.getRaceAPI(event.target.value)
+      .then(data => console.log(data))
   }
 
  diceRoll = () => {

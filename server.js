@@ -49,7 +49,7 @@ app.get("/classes", function(req, res){
 	});
 })
 
-app.get("/races", function(req, res){
+app.get("/races/:race", function(req, res){
 	console.log("we hit the home route")
 	// console.log('db', db);
   // console.log('dnd', db.dnd)
