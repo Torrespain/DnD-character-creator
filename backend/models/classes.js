@@ -10,20 +10,20 @@ var classesSchema = new Schema({
   // races: String,
   // classes: String
 // id: String,
-index: Number,
-name: String,
-hit_die: Number,
-proficiency_choices: "",
-proficiencies:"",
-saving_throws:"",
-starting_equipment:"",
-class_levels:"",
-subclasses:"",
-spellcasting:""
+  index: Number,
+  name: String,
+  hit_die: Number,
+  proficiency_choices: "",
+  proficiencies:"",
+  saving_throws:"",
+  starting_equipment:"",
+  class_levels:"",
+  subclasses:"",
+  spellcasting:""
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var dnd = mongoose.model("dnd", classesSchema);
+var Classes = mongoose.model("Classes", classesSchema);
 
 // Export the Character model
-module.exports = dnd;
+module.exports = Classes;
