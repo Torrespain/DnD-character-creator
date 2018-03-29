@@ -35,12 +35,16 @@ app.get("/server", function(req, res){
 	console.log("we hit the home route")
 	// console.log('db', db);
   // console.log('dnd', db.dnd)
+<<<<<<< HEAD
 	db.classes.find({})
+=======
+	db.Classes.find({})
+>>>>>>> c1545d8ecd9a61de45e84f3c4e974441c1175948
 	// res.send("working")
-	.then(function(dnd) {
+	.then(function(Classes) {
 		// If any Books are found, send them to the client
-		console.log(dnd)
-		res.json(dnd);
+		console.log(Classes)
+		res.json(Classes);
 	  })
 	  .catch(function(err) {
 		// If an error occurs, send it back to the client
@@ -51,7 +55,11 @@ app.get("/server", function(req, res){
 
 app.post("/create", function(req, res){
 	console.log(req.body);
+<<<<<<< HEAD
 	db.classes.create(req.body).then(function(response){
+=======
+	db.Classes.create(req.body).then(function(response){
+>>>>>>> c1545d8ecd9a61de45e84f3c4e974441c1175948
 		console.log("created", response);
 	}).catch(function(err){
 		console.log("err", err);
