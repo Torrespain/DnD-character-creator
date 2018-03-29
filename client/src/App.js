@@ -36,4 +36,5 @@ render(){
    return (
       { imgSrc && <div ..... > </div>}
    )
+   //
 }
