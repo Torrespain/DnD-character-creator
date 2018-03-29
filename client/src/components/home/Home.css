@@ -3,3 +3,8 @@ body {
 	background-repeat: no-repeat;
     background-size: cover;
 }
+
+.welcome {
+	text-align:center;
+	font-family: Copperplate,Copperplate Gothic Light,fantasy;
+}

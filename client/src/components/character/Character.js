@@ -114,7 +114,7 @@ class Home extends React.Component {
               <div className="col-md-6">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Name</h3>
+                    <label className="panel-title">Name</label>
                   </div>
                   <div className="panel-body">
 
@@ -127,7 +127,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">ImgURL</h3>
+                    <label className="panel-title">ImgURL</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Image" value={this.state.Image} placeholder="imageurl" />
@@ -138,7 +138,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Player</h3>
+                    <label className="panel-title">Player</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Player" value={this.state.Player} placeholder="player" />
@@ -151,7 +151,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Sex</h3>
+                    <label className="panel-title">Sex</label>
                   </div>
                   <div className="panel-body">
                     <div className="section-content">
@@ -172,7 +172,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Age</h3>
+                    <label className="panel-title">Age</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Age" value={this.state.Age} placeholder="Age" />
@@ -183,7 +183,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Height</h3>
+                    <label className="panel-title">Height</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Height" value={this.state.Height} placeholder="Height" />
@@ -194,7 +194,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Weight</h3>
+                    <label className="panel-title">Weight</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Weight" value={this.state.Weight} placeholder="Weight" />
@@ -207,7 +207,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Race</h3>
+                    <label className="panel-title">Race</label>
                   </div>
                   <div className="panel-body">
                     <div className="section-content">
@@ -235,7 +235,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Sub Race</h3>
+                    <label className="panel-title">Sub Race</label>
                   </div>
                   <div className="panel-body">
 
@@ -246,7 +246,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Alignment</h3>
+                    <label className="panel-title">Alignment</label>
                   </div>
                   <div className="panel-body">
                     <div className="section-content">
@@ -274,7 +274,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Exp/Level</h3>
+                    <label className="panel-title">Exp/Level</label>
                   </div>
                   <div className="panel-body">
 
@@ -287,7 +287,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Class</h3>
+                    <label className="panel-title">Class</label>
                   </div>
                   <div className="panel-body">
                     <div className="section-content">
@@ -318,7 +318,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Archtype</h3>
+                    <label className="panel-title">Archtype</label>
                   </div>
                   <div className="panel-body">
 
@@ -329,7 +329,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Level</h3>
+                    <label className="panel-title">Level</label>
                   </div>
                   <div className="panel-body">
 
