@@ -22,7 +22,7 @@ class Home extends React.Component {
       Archetype: "",
       Level: "",
       Background: "",
-      Abilities: [],
+      Abilities: null,
       Saves: "",
       Skills: "",
       Armour: "",
@@ -48,6 +48,39 @@ class Home extends React.Component {
     this.setState({ [name]: value });
     // console.log(event.target.value);
   }
+
+ diceRoll = () => {
+   var abilitiesObj = {strength: "", dexterity: "", constitution: "", intelligence: "", wisdom: "", charisma: ""}
+    
+    for (let key in abilitiesObj) {
+            console.log("key: ", key);
+        let totalArray= [];
+        let total=0;
+        while (totalArray.length < 4) {
+            let roll = Math.floor(Math.random()*6)+1;
+            while (roll===1) {
+                roll = Math.floor(Math.random()*6)+1;
+            }
+            totalArray.push(roll);
+        }
+        console.log(totalArray);
+        totalArray.sort();
+        totalArray.shift();
+        console.log(totalArray)
+
+        for (let j = 0; j < totalArray.length; j++) {
+            total = total + totalArray[j];
+        }
+        console.log(total);
+        abilitiesObj[key]=total;
+
+    }
+    this.setState({Abilities:abilitiesObj});
+
+    console.log(abilitiesObj);
+}     
+
+
 
   render() {
     console.log(this.state)
@@ -308,7 +341,7 @@ class Home extends React.Component {
           <div className="panel panel-default">
             <div className="panel-heading">
               <label>Abilities</label>
-              <button type="button" id="abilitiesDice" className="btn btn-default">Roll the dice!</button>
+              <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>Roll the dice!</button>
             </div>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">Strength</li>
