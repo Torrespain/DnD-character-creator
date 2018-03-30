@@ -65,22 +65,19 @@ class Home extends React.Component {
           let array= (data.data[position].ability_bonuses);
           
           let raceAbilities= {strength: array[0], dexterity: array[1], constitution: array[2], intelligence: array[3], wisdom: array[4], charisma: array[5]};
+          console.log(data.data[position].name);
           console.log(raceAbilities);
-          this.setState({raceAbilities: raceAbilities});
-
+          
           this.setState({raceAbilities:raceAbilities, abilities:{
-      strength: raceAbilities.strength + raceAbilities.strength,
-      dexterity: raceAbilities.dexterity + raceAbilities.dexterity,
-      constitution: raceAbilities.constitution + raceAbilities.constitution,
-      intelligence: raceAbilities.intelligence + raceAbilities.intelligence,
-      wisdom: raceAbilities.wisdom + raceAbilities.wisdom,
-      charisma: raceAbilities.charisma + raceAbilities.charisma
-    }});
+            strength: raceAbilities.strength + raceAbilities.strength,
+            dexterity: raceAbilities.dexterity + raceAbilities.dexterity,
+            constitution: raceAbilities.constitution + raceAbilities.constitution,
+            intelligence: raceAbilities.intelligence + raceAbilities.intelligence,
+            wisdom: raceAbilities.wisdom + raceAbilities.wisdom,
+            charisma: raceAbilities.charisma + raceAbilities.charisma
+          }});
 
         })
-        // .then(function (array){
-        //   console.log(array)
-        // })
     }
 
   grabRace = event =>{
@@ -105,7 +102,7 @@ class Home extends React.Component {
         this.getData(3);
         break;
 
-      case "Humam":
+      case "Human":
         this.getData(4);
         break;
 
@@ -129,18 +126,11 @@ class Home extends React.Component {
         //     break;
     }
 
-     
-
-// raceAbilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
-
   }
-
-
 
  diceRoll = () => {
   let { raceAbilities, diceAbilities } = this.state
-   // var abilitiesObj = {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0}
-    
+     
     for (let key in diceAbilities) {
             console.log("key: ", key);
         let totalArray= [];
@@ -438,12 +428,12 @@ class Home extends React.Component {
               <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>Roll the dice!</button>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Strength: {this.state.abilities.strength}</li>
-              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity}</li>
-              <li className="list-group-item">Constitution: {this.state.abilities.constitution}</li>
-              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence}</li>
-              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom}</li>
-              <li className="list-group-item">Charisma: {this.state.abilities.charisma}</li>
+              <li className="list-group-item">Strength: {this.state.abilities.strength/2}</li>
+              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity/2}</li>
+              <li className="list-group-item">Constitution: {this.state.abilities.constitution/2}</li>
+              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence/2}</li>
+              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom/2}</li>
+              <li className="list-group-item">Charisma: {this.state.abilities.charisma/2}</li>
             </ul>
           </div>
           <div className = "panel panel-default">
