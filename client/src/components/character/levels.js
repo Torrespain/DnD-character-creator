@@ -15,14 +15,14 @@ const levels = props => {
                       <div className="fg-line">
                         <div className="select">
                           <select className="form-control" name="levels" onChange={props.levelChange} >
-                            <option value="1" defaultValue>level1</option>
-                            <option value="2">level2</option>
-                            <option value="3">level3</option>
-                            <option value="4">level4</option>
-                            <option value="5">level5</option>
-                            <option value="6">level6</option>
-                            <option value="7">level7</option>
-                            <option value="8">level8</option>
+                            <option value="1" defaultValue>Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
+                            <option value="4">Level 4</option>
+                            <option value="5">Level 5</option>
+                            <option value="6">Level 6</option>
+                            <option value="7">Level 7</option>
+                            <option value="8">Level 8</option>
                           </select>
                         </div>
                       </div>
