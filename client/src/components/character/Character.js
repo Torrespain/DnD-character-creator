@@ -1,6 +1,9 @@
 import React from 'react';
 import './Character.css'
 import Skills from './skills'
+import Armours from './armours'
+import SavingThrows from './throwing'
+import SubRace from './subrace'
 
 class Home extends React.Component {
   constructor(props) {
@@ -106,7 +109,7 @@ class Home extends React.Component {
               <div className="col-md-6">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Name</h3>
+                    <label className="panel-title">Name</label>
                   </div>
                   <div className="panel-body">
 
@@ -119,7 +122,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">ImgURL</h3>
+                    <label className="panel-title">ImgURL</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Image" value={this.state.Image} placeholder="imageurl" />
@@ -130,7 +133,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Player</h3>
+                    <label className="panel-title">Player</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Player" value={this.state.Player} placeholder="player" />
@@ -143,7 +146,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Sex</h3>
+                    <label className="panel-title">Sex</label>
                   </div>
                   <div className="panel-body">
                     <div className="section-content">
@@ -164,7 +167,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Age</h3>
+                    <label className="panel-title">Age</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Age" value={this.state.Age} placeholder="Age" />
@@ -175,7 +178,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Height</h3>
+                    <label className="panel-title">Height</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Height" value={this.state.Height} placeholder="Height" />
@@ -186,7 +189,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Weight</h3>
+                    <label className="panel-title">Weight</label>
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Weight" value={this.state.Weight} placeholder="Weight" />
@@ -199,7 +202,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Race</h3>
+                    <label className="panel-title">Race</label>
                   </div>
                   <div className="panel-body">
                     <div className="section-content">
@@ -227,10 +230,10 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Sub Race</h3>
+                    <label className="panel-title">Sub Race</label>
                   </div>
                   <div className="panel-body">
-
+                    <SubRace class={this.state.Race} />
                   </div>
                 </div>
               </div>
@@ -238,7 +241,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Alignment</h3>
+                    <label className="panel-title">Alignment</label>
                   </div>
                   <div className="panel-body">
                     <div className="section-content">
@@ -266,7 +269,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Exp/Level</h3>
+                    <label className="panel-title">Exp/Level</label>
                   </div>
                   <div className="panel-body">
 
@@ -279,7 +282,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Class</h3>
+                    <label className="panel-title">Class</label>
                   </div>
                   <div className="panel-body">
                     <div className="section-content">
@@ -310,7 +313,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Archtype</h3>
+                    <label className="panel-title">Archtype</label>
                   </div>
                   <div className="panel-body">
 
@@ -321,7 +324,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Level</h3>
+                    <label className="panel-title">Level</label>
                   </div>
                   <div className="panel-body">
 
@@ -332,7 +335,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Background</h3>
+                    <label className="panel-title">Background</label>
                   </div>
                   <div className="panel-body">
 
@@ -360,23 +363,18 @@ class Home extends React.Component {
           </div>
           <div className = "panel panel-default">
           <div className = "panel-heading">
-            <label>Saving Throws</label>
+            <label className="panel-title">Saving Throws</label>
           </div>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Strength</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Dexterity</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Constitution</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Intelligence</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Wisdom</li>
-              <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Charisma</li>
-            </ul>
+          <div className="panel-body">
+            <SavingThrows class={this.state.Class} />
+            </div>
           </div>
           <div className="panel panel-default">
               <div className="panel-heading">
                 <label className="panel-title">Weapon Proficiencies</label>
               </div>
               <div className="panel-body">
-      
+
               </div>
           </div>
           <div className="panel panel-default">
@@ -384,7 +382,7 @@ class Home extends React.Component {
                 <label className="panel-title">Armour Proficiencies</label>
               </div>
               <div className="panel-body">
-      
+                <Armours class={this.state.Class} />
               </div>
           </div>
         </div>
@@ -396,9 +394,20 @@ class Home extends React.Component {
               Skills
             </label>
             </div>
+            <div className="panel-body">
             <Skills class={this.state.Class} Skills={this.state.Skills} updateSkills={this.updateSkills}/>
+            </div>
         </div>
+        <div className="panel panel-default">
+                 <div className="panel-heading">
+                     <label className="panel-title">Traits</label>
+                 </div>
+                 <div className="panel-body">
+                 </div>
+               </div>
       </div>
+
+      
    
        <div className="col-md-4">
                 <div className="panel panel-default">
@@ -410,6 +419,13 @@ class Home extends React.Component {
                   </div>
                 </div>
 
+                <div className="panel panel-default">
+                 <div className="panel-heading">
+                     <label className="panel-title">Speed</label>
+                 </div>
+                 <div className="panel-body">
+                 </div>
+               </div>
                 
                 <div className="panel panel-default">
                   <div className="panel-heading">
@@ -546,7 +562,6 @@ class Home extends React.Component {
                       </div>         
                   </div>
                 </div>
-
 
           </div>
         </div>
