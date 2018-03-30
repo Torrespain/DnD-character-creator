@@ -85,8 +85,8 @@ class Home extends React.Component {
     this.setState({Level:level});
     let points=null;
 
-    if (level%4===0){
-      points=level/4;
+    if (level>=4){
+      points=Math.floor(level/4);
       this.setState({ImprovePoints:points});
     }
 
