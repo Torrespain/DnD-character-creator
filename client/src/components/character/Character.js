@@ -450,7 +450,7 @@ class Home extends React.Component {
                 <label className="panel-title">Weapon Proficiencies</label>
               </div>
               <div className="panel-body">
-      
+                <Weapons/>
               </div>
           </div>
           <div className="panel panel-default">
