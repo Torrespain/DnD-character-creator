@@ -10,7 +10,6 @@
     "seed": "node scripts/seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "installDeps": "yarn && cd client && yarn"
-
   },
   "author": "",
   "license": "ISC",

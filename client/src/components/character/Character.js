@@ -10,9 +10,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // name:"",
-      // race:"",
-      // agility:0
       Name: "",
       Image: "",
       Player: "",
@@ -25,7 +22,6 @@ class Home extends React.Component {
       Experience: "",
       Class: "",
       Archetype: "",
-      Level: "",
       background: "",
       abilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
       diceAbilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
@@ -72,12 +68,12 @@ class Home extends React.Component {
           console.log(raceAbilities);
           
           this.setState({raceAbilities:raceAbilities, abilities:{
-            strength: raceAbilities.strength + raceAbilities.strength,
-            dexterity: raceAbilities.dexterity + raceAbilities.dexterity,
-            constitution: raceAbilities.constitution + raceAbilities.constitution,
-            intelligence: raceAbilities.intelligence + raceAbilities.intelligence,
-            wisdom: raceAbilities.wisdom + raceAbilities.wisdom,
-            charisma: raceAbilities.charisma + raceAbilities.charisma
+            strength: raceAbilities.strength,
+            dexterity: raceAbilities.dexterity,
+            constitution: raceAbilities.constitution,
+            intelligence: raceAbilities.intelligence,
+            wisdom: raceAbilities.wisdom,
+            charisma: raceAbilities.charisma
           }});
 
         })
@@ -286,7 +282,7 @@ class Home extends React.Component {
                     <div className="section-content">
                       <div className="fg-line">
                         <div className="select">
-                          <select className="form-control" readOnly onChange={this.handleChange, this.grabRace} name="Race" value={this.state.Race} placeholder="Race" >
+                          <select className="form-control" readOnly onChange={/*this.handleChange,*/ this.grabRace} name="Race" value={this.state.Race} placeholder="Race" >
                             <option value="default" defaultValue >Race</option>
                             <option id="6" value="Dragonborn">Dragonborn</option>
                             <option id="1" value="Dwarf">Dwarf</option>
