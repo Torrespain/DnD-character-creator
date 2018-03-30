@@ -58,6 +58,31 @@ class Home extends React.Component {
     // console.log(event.target.value);
   }
 
+   getData = (position) => {
+      API.getRaceAPI(window.event.target.value)
+        .then(data => {
+
+          let array= (data.data[position].ability_bonuses);
+          
+          let raceAbilities= {strength: array[0], dexterity: array[1], constitution: array[2], intelligence: array[3], wisdom: array[4], charisma: array[5]};
+          console.log(raceAbilities);
+          this.setState({raceAbilities: raceAbilities});
+
+          this.setState({raceAbilities:raceAbilities, abilities:{
+      strength: raceAbilities.strength + raceAbilities.strength,
+      dexterity: raceAbilities.dexterity + raceAbilities.dexterity,
+      constitution: raceAbilities.constitution + raceAbilities.constitution,
+      intelligence: raceAbilities.intelligence + raceAbilities.intelligence,
+      wisdom: raceAbilities.wisdom + raceAbilities.wisdom,
+      charisma: raceAbilities.charisma + raceAbilities.charisma
+    }});
+
+        })
+        // .then(function (array){
+        //   console.log(array)
+        // })
+    }
+
   grabRace = event =>{
     let race=event.target.value;
     console.log("hi!", race);
@@ -65,51 +90,52 @@ class Home extends React.Component {
     switch(race)
     {
       case "Dwarf":
-        sendData(0);
+        this.getData(0);
         break;
 
       case "Tiefling":
-        sendData(1);
+        this.getData(1);
         break;
       
       case "Elf":
-        sendData(2);
+        this.getData(2);
         break;
 
       case "Halfling":
-        sendData(3);
+        this.getData(3);
         break;
 
       case "Humam":
-        sendData(4);
+        this.getData(4);
         break;
 
       case "Dragonborn":
-        sendData(5);
+        this.getData(5);
         break;
 
       case "Gnome":
-        sendData(6);
+        this.getData(6);
         break;
 
       case "Half-Elf":
-        sendData(7);
+        this.getData(7);
         break;
 
       case "Half-Orc":
-        sendData(8);
+        this.getData(8);
         break;
         // default:
         //     ...
         //     break;
     }
 
-    function sendData (position) {
-      API.getRaceAPI(event.target.value)
-        .then(data => console.log(data.data[position].ability_bonuses))
-    }
-    
+     
+
+// raceAbilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
+
   }
+
+
 
  diceRoll = () => {
   let { raceAbilities, diceAbilities } = this.state
