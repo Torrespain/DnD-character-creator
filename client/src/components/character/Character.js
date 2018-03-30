@@ -6,9 +6,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // name:"",
-      // race:"",
-      // agility:0
       Name: "",
       Image: "",
       Player: "",
@@ -59,7 +56,6 @@ class Home extends React.Component {
 
  diceRoll = () => {
   let { raceAbilities, diceAbilities } = this.state
-   // var abilitiesObj = {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0}
     
     for (let key in diceAbilities) {
             console.log("key: ", key);
@@ -340,7 +336,7 @@ class Home extends React.Component {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <h3 className="panel-title">Background</h3>
+                    <label className="panel-title">Background</label>
                   </div>
                   <div className="panel-body">
 
@@ -379,6 +375,7 @@ class Home extends React.Component {
               <li className="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"></input> Charisma</li>
             </ul>
           </div>
+
           <div className="panel panel-default">
               <div className="panel-heading">
                 <label className="panel-title">Weapon Proficiencies</label>
@@ -406,6 +403,14 @@ class Home extends React.Component {
             </div>
             <Skills class={this.state.Class} Skills={this.state.Skills} updateSkills={this.updateSkills}/>
         </div>
+
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <label className="panel-title">Traits</label>
+          </div>
+            <div className="panel-body">
+            </div>
+        </div>   
       </div>
    
        <div className="col-md-4">
@@ -413,6 +418,14 @@ class Home extends React.Component {
                   <div className="panel-heading">
                       <label className="panel-title">Hit Points</label>
                       <button type="button" id="HitDice" className="btn btn-default">Roll the dice!</button>
+                  </div>
+                  <div className="panel-body">
+                  </div>
+                </div>
+
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                      <label className="panel-title">Speed</label>
                   </div>
                   <div className="panel-body">
                   </div>
@@ -554,8 +567,6 @@ class Home extends React.Component {
                       </div>         
                   </div>
                 </div>
-
-
           </div>
         </div>
       </div>
