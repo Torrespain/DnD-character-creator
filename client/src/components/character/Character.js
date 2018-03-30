@@ -467,7 +467,7 @@ class Home extends React.Component {
                 <label className="panel-title">Weapon Proficiencies</label>
               </div>
               <div className="panel-body">
-                <Weapons/>
+                <Weapons class={this.state.Class}/>
               </div>
           </div>
           <div className="panel panel-default">
