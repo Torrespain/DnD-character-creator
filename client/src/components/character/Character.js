@@ -428,12 +428,12 @@ class Home extends React.Component {
               <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>Roll the dice!</button>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Strength: {this.state.abilities.strength/2}</li>
-              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity/2}</li>
-              <li className="list-group-item">Constitution: {this.state.abilities.constitution/2}</li>
-              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence/2}</li>
-              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom/2}</li>
-              <li className="list-group-item">Charisma: {this.state.abilities.charisma/2}</li>
+              <li className="list-group-item">Strength: {this.state.abilities.strength-this.state.raceAbilities.strength}</li>
+              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity-this.state.raceAbilities.dexterity}</li>
+              <li className="list-group-item">Constitution: {this.state.abilities.constitution-this.state.raceAbilities.constitution}</li>
+              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence-this.state.raceAbilities.intelligence}</li>
+              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom-this.state.raceAbilities.wisdom}</li>
+              <li className="list-group-item">Charisma: {this.state.abilities.charisma-this.state.raceAbilities.charisma}</li>
             </ul>
           </div>
           <div className = "panel panel-default">
