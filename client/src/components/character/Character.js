@@ -2,9 +2,11 @@ import React from 'react';
 import './Character.css';
 import Skills from './skills';
 import API from '../../api/API';
-import Armours from './armours'
-import SavingThrows from './throwing'
-import SubRace from './subrace'
+import Armours from './armours';
+import SavingThrows from './throwing';
+import SubRace from './subrace';
+import Weapons from './weapons';
+import Levels from './levels';
 
 class Home extends React.Component {
   constructor(props) {
@@ -57,31 +59,55 @@ class Home extends React.Component {
     // console.log(event.target.value);
   }
 
-   getData = (position) => {
-      API.getRaceAPI(window.event.target.value)
-        .then(data => {
+  getData = (position) => {
+     API.getRaceAPI(window.event.target.value)
+       .then(data => {
+        let array= (data.data[position].ability_bonuses);
+        
+        let raceAbilities= {strength: array[0], dexterity: array[1], constitution: array[2], intelligence: array[3], wisdom: array[4], charisma: array[5]};
+        console.log(data.data[position].name);
+        console.log(raceAbilities);
+        
+        this.setState({raceAbilities:raceAbilities, abilities:{
+          strength: raceAbilities.strength,
+          dexterity: raceAbilities.dexterity,
+          constitution: raceAbilities.constitution,
+          intelligence: raceAbilities.intelligence,
+          wisdom: raceAbilities.wisdom,
+          charisma: raceAbilities.charisma
+        }});
+      })
+   }
 
-          let array= (data.data[position].ability_bonuses);
-          
-          let raceAbilities= {strength: array[0], dexterity: array[1], constitution: array[2], intelligence: array[3], wisdom: array[4], charisma: array[5]};
-          console.log(data.data[position].name);
-          console.log(raceAbilities);
-          
-          this.setState({raceAbilities:raceAbilities, abilities:{
-            strength: raceAbilities.strength,
-            dexterity: raceAbilities.dexterity,
-            constitution: raceAbilities.constitution,
-            intelligence: raceAbilities.intelligence,
-            wisdom: raceAbilities.wisdom,
-            charisma: raceAbilities.charisma
-          }});
+    levelChange = event =>{
+    let level=event.target.value;
+    console.log("level is: ",level);
+    this.setState({Level:level});
+    let points=null;
 
-        })
+    if (level%4===0){
+      points=level/4;
+      this.setState({ImprovePoints:points});
     }
+
+    // const diceRollJSX = "(put your normal HTML here)"
+
+    // const diceRollImprovedJSX = "( put your improved HTML with + and - buttons here )"
+
+  }
+
+  increaseAbility = event =>{
+
+    console.log(event.target.value)
+
+  }
 
   grabRace = event =>{
     let race=event.target.value;
     console.log("hi!", race);
+    this.setState({Race: race}, function(){
+      console.log("state updated", this.state.race);
+    });
 
     switch(race)
     {
@@ -397,16 +423,7 @@ class Home extends React.Component {
                 </div>
               </div>
 
-              <div className="col-md-3">
-                <div className="panel panel-default">
-                  <div className="panel-heading">
-                    <label className="panel-title">Level</label>
-                  </div>
-                  <div className="panel-body">
-
-                  </div>
-                </div>
-              </div>
+              <Levels levelChange={(event) => this.levelChange(event)} />
 
               <div className="col-md-3">
                 <div className="panel panel-default">
@@ -429,7 +446,7 @@ class Home extends React.Component {
               <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>ROLL THE DICE!</button>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Strength: {this.state.abilities.strength}</li>
+              <li className="list-group-item">Strength: {this.state.abilities.strength}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="+">+</button><button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="-">-</button></li>
               <li className="list-group-item">Dexterity: {this.state.abilities.dexterity}</li>
               <li className="list-group-item">Constitution: {this.state.abilities.constitution}</li>
               <li className="list-group-item">Intelligence: {this.state.abilities.intelligence}</li>

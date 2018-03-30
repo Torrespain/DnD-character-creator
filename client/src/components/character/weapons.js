@@ -7,7 +7,7 @@ class Weapons extends React.Component {
  render() {
    return (
        <div>
-       <ul classname = "list-group list-group-flush">
+       <ul className = "list-group list-group-flush">
        <li className = "list-group-item"></li>
        <li className = "list-group-item"></li>
        <li className = "list-group-item"></li>
