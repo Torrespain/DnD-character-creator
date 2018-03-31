@@ -96,6 +96,7 @@ class Home extends React.Component {
   increaseAbility = event =>{
 
     if (this.state.ImprovePoints>0) {
+      const ability = event.target.value;
       console.log("improoving ",ability);
 
       const abilities = Object.assign({}, this.state.abilities);
