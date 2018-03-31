@@ -80,30 +80,21 @@ class Home extends React.Component {
       })
    }
 
-    levelChange = event =>{
-      let level=event.target.value;
-      console.log("level is: ",level);
-      this.setState({Level:level});
-      let points=null;
+  levelChange = event =>{
 
-      if (level>=4){
-        points=Math.floor(level/4);
-        this.setState({ImprovePoints:points});
-      }
+    let level=event.target.value;
+    console.log("level is: ",level);
+    this.setState({Level:level});
 
-      // const diceRollJSX = "(put your normal HTML here)"
-
-      // const diceRollImprovedJSX = "( put your improved HTML with + and - buttons here )"
-
+    let points=null;
+    if (level>=4){
+      points=Math.floor(level/4);
+      this.setState({ImprovePoints:points});
+    }
   }
-
-// let jasper = Object.assign({}, this.state.jasper);    //creating copy of object
-// jasper.name = 'someothername';                        //updating value
-// this.setState({jasper});
 
   increaseAbility = event =>{
 
-    const ability=event.target.value;
     if (this.state.ImprovePoints>0) {
       console.log("improoving ",ability);
 
