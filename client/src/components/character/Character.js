@@ -33,6 +33,7 @@ class Home extends React.Component {
       Armour: "",
       Hitpoints: "",
       Level: "",
+      ImprovePoints: 0,
       Languages: "",
       Exotic: "",
       Tools: "",
@@ -80,26 +81,70 @@ class Home extends React.Component {
    }
 
     levelChange = event =>{
-    let level=event.target.value;
-    console.log("level is: ",level);
-    this.setState({Level:level});
-    let points=null;
+      let level=event.target.value;
+      console.log("level is: ",level);
+      this.setState({Level:level});
+      let points=null;
 
-    if (level>=4){
-      points=Math.floor(level/4);
-      this.setState({ImprovePoints:points});
-    }
+      if (level>=4){
+        points=Math.floor(level/4);
+        this.setState({ImprovePoints:points});
+      }
 
-    // const diceRollJSX = "(put your normal HTML here)"
+      // const diceRollJSX = "(put your normal HTML here)"
 
-    // const diceRollImprovedJSX = "( put your improved HTML with + and - buttons here )"
+      // const diceRollImprovedJSX = "( put your improved HTML with + and - buttons here )"
 
   }
 
+// let jasper = Object.assign({}, this.state.jasper);    //creating copy of object
+// jasper.name = 'someothername';                        //updating value
+// this.setState({jasper});
+
   increaseAbility = event =>{
 
-    console.log(event.target.value)
+    const ability=event.target.value;
+    if (this.state.ImprovePoints>0) {
+      console.log("improoving ",ability);
 
+      const abilities = Object.assign({}, this.state.abilities);
+
+      switch(ability)
+      {
+        case "increaseStrength":
+          abilities.strength += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseDexterity":
+          abilities.dexterity += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseConstitution":
+          abilities.constitution += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseIntelligence":
+          abilities.intelligence += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseWisdom":
+          abilities.wisdom += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseCharisma":
+          abilities.charisma += 1
+          this.setState({abilities});
+        break;
+      }
+
+      this.setState({ImprovePoints:this.state.ImprovePoints-1});
+
+    }
   }
 
   grabRace = event =>{
@@ -443,15 +488,16 @@ class Home extends React.Component {
           <div className="panel panel-default">
             <div className="panel-heading">
               <label>Abilities</label>
+              <span> (IP {this.state.ImprovePoints})</span>
               <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>ROLL THE DICE!</button>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Strength: {this.state.abilities.strength}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="+">+</button><button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="-">-</button></li>
-              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity}</li>
-              <li className="list-group-item">Constitution: {this.state.abilities.constitution}</li>
-              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence}</li>
-              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom}</li>
-              <li className="list-group-item">Charisma: {this.state.abilities.charisma}</li>
+              <li className="list-group-item">Strength: {this.state.abilities.strength}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseStrength">+</button></li>
+              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseDexterity">+</button></li>
+              <li className="list-group-item">Constitution: {this.state.abilities.constitution}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseConstitution">+</button></li>
+              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseIntelligence">+</button></li>
+              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseWisdom">+</button></li>
+              <li className="list-group-item">Charisma: {this.state.abilities.charisma}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseCharisma">+</button></li>
             </ul>
           </div>
           <div className = "panel panel-default">
