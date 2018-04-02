@@ -118,6 +118,7 @@ class Home extends React.Component {
     }
   }
 
+
   increaseAbility = event =>{
 
     if (this.state.ImprovePoints>0) {
@@ -160,6 +161,16 @@ class Home extends React.Component {
       }
 
       this.setState({ImprovePoints:this.state.ImprovePoints-1});
+      this.setState({
+        modifiers:{
+          strength: this.getModifiers(abilities.strength),
+          dexterity: this.getModifiers(abilities.dexterity),
+          constitution: this.getModifiers(abilities.constitution),
+          intelligence: this.getModifiers(abilities.intelligence),
+          wisdom: this.getModifiers(abilities.wisdom),
+          charisma: this.getModifiers(abilities.charisma)
+        }
+      }) 
 
     }
   }
@@ -328,6 +339,7 @@ class Home extends React.Component {
   }
 
   getModifiers = event =>{
+    console.log("event", event)
     if (event===1) {
       return (-5);
     }
