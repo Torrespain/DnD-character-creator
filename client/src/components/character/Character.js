@@ -33,8 +33,8 @@ class Home extends React.Component {
       Skills: [],
       Armour: "",
       hitDie: null,
-      Hitpoints: "",
-      ConstitutionHP: "",
+      Hitpoints: null,
+      ConstitutionHP: null,
       Speed: null,
       Level: 1,
       ImprovePoints: 0,
@@ -96,8 +96,8 @@ class Home extends React.Component {
    getClassData = (position) => {
     API.getClassAPI(window.event.target.value)
     .then(data => {
-
-      let hitDie = data.data[position].hit_die
+      console.log(data);
+      let hitDie = data.data[position].hit_die;
 
       this.setState({hitDie:hitDie});
 
@@ -333,19 +333,16 @@ class Home extends React.Component {
 
 healthPoints = event => {
   let level = this.state.Level;
-  console.log(level);
   let health = this.state.hitDie;
-  let newThrow;
+  let newThrow = null;
   
-    if (level!=="1") {
+    if (level!==1) {
       for (var i = 2; i <= level; i++) {
         newThrow = Math.floor(Math.random()*this.state.hitDie)+1;
         health = health + newThrow
       }
     }
-
     this.setState({Hitpoints:health});
-
 }
 
   render() {
