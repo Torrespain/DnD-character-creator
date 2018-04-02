@@ -7,6 +7,7 @@ import SavingThrows from './throwing';
 import SubRace from './subrace';
 import Weapons from './weapons';
 import Levels from './levels';
+// import Health from './health';
 
 class Home extends React.Component {
   constructor(props) {
@@ -31,7 +32,9 @@ class Home extends React.Component {
       Saves: "",
       Skills: [],
       Armour: "",
+      hitDie: null,
       Hitpoints: "",
+      Speed: null,
       Level: "",
       ImprovePoints: 0,
       Languages: "",
@@ -52,6 +55,10 @@ class Home extends React.Component {
     this.setState ({Skills: newSkills})
   }
 
+  updateHP (newHitDie){
+    this.setState ({hitDie: newHitDie})
+  } 
+
   handleChange = event => {
     
     // console.log("i was a clicked");
@@ -63,7 +70,12 @@ class Home extends React.Component {
   getData = (position) => {
      API.getRaceAPI(window.event.target.value)
        .then(data => {
-        let array= (data.data[position].ability_bonuses);
+
+        let speed = (data.data[position].speed);
+        this.setState({Speed: speed})
+
+        let array = (data.data[position].ability_bonuses);
+        
         
         let raceAbilities= {strength: array[0], dexterity: array[1], constitution: array[2], intelligence: array[3], wisdom: array[4], charisma: array[5]};
         console.log(data.data[position].name);
@@ -545,6 +557,7 @@ class Home extends React.Component {
                       <button type="button" id="HitDice" className="btn btn-default">ROLL THE DICE!</button>
                   </div>
                   <div className="panel-body">
+                  
                   </div>
                 </div>
 
@@ -553,6 +566,7 @@ class Home extends React.Component {
                      <label className="panel-title">Speed</label>
                  </div>
                  <div className="panel-body">
+                    <span>{this.state.Speed}</span>
                  </div>
                </div>
                 

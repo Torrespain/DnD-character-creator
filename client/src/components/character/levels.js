@@ -21,7 +21,7 @@ const levels = props => {
                         <option value="6">Level 6</option>
                         <option value="7">Level 7</option>
                         <option value="8">Level 8</option>
-                        <option value="9">Level 2</option>
+                        <option value="9">Level 9</option>
                         <option value="10">Level 10</option>
                         <option value="11">Level 11</option>
                         <option value="12">Level 12</option>
