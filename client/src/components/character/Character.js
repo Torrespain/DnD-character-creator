@@ -29,6 +29,7 @@ class Home extends React.Component {
       abilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
       diceAbilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
       raceAbilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
+      modifiers: "",
       Saves: "",
       Skills: [],
       Armour: "",
@@ -303,17 +304,81 @@ class Home extends React.Component {
         diceAbilities[key]=total;
 
     }
-    console.log(raceAbilities);
-    this.setState({diceAbilities:diceAbilities, abilities:{
-      strength: diceAbilities.strength + raceAbilities.strength,
-      dexterity: diceAbilities.dexterity + raceAbilities.dexterity,
-      constitution: diceAbilities.constitution + raceAbilities.constitution,
-      intelligence: diceAbilities.intelligence + raceAbilities.intelligence,
-      wisdom: diceAbilities.wisdom + raceAbilities.wisdom,
-      charisma: diceAbilities.charisma + raceAbilities.charisma
-    }});
 
-}
+    console.log(raceAbilities);
+    this.setState({
+      diceAbilities:diceAbilities, 
+      abilities:{
+        strength: diceAbilities.strength + raceAbilities.strength,
+        dexterity: diceAbilities.dexterity + raceAbilities.dexterity,
+        constitution: diceAbilities.constitution + raceAbilities.constitution,
+        intelligence: diceAbilities.intelligence + raceAbilities.intelligence,
+        wisdom: diceAbilities.wisdom + raceAbilities.wisdom,
+        charisma: diceAbilities.charisma + raceAbilities.charisma
+      },
+      modifiers:{
+        strength: this.getModifiers(diceAbilities.strength),
+        dexterity: this.getModifiers(diceAbilities.dexterity),
+        constitution: this.getModifiers(diceAbilities.constitution),
+        intelligence: this.getModifiers(diceAbilities.intelligence),
+        wisdom: this.getModifiers(diceAbilities.wisdom),
+        charisma: this.getModifiers(diceAbilities.charisma)
+      }
+    }) 
+  }
+
+  getModifiers = event =>{
+    if (event===1) {
+      return (-5);
+    }
+    else if (event===2 || event===3) {
+      return (-4);
+    }
+    else if (event===4 || event===5) {
+      return (-3);
+    }
+    else if (event===6 || event===7) {
+      return (-2);
+    }
+    else if (event===8 || event===9) {
+      return (-1);
+    }
+    else if (event===10 || event===11) {
+      return (0);
+    }
+    else if (event===12 || event===13) {
+      return (1);
+    }
+    else if (event===14 || event===15) {
+      return (2);
+    }
+    else if (event===16 || event===17) {
+      return (3);
+    }
+    else if (event===18 || event===19) {
+      return (4);
+    }
+    else if (event===20 || event===21) {
+      return (5);
+    }
+    else if (event===22 || event===33) {
+      return (6);
+    }
+    else if (event===24 || event===25) {
+      return (7);
+    }
+    else if (event===26 || event===27) {
+      return (8);
+    }
+    else if (event===28 || event===29) {
+      return (9);
+    }
+    else if (event===30) {
+      return (10);
+    }
+  }
+
+
 
 // Fred Fighter
 // Fred is a fighter. He's level 3. He's using the alternate, because he's in an Adventurer's League Game. He has a Con of 14, for +2.
@@ -601,12 +666,12 @@ healthPoints = event => {
               <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>ROLL THE DICE!</button>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Strength: {this.state.abilities.strength} ({this.state.diceAbilities.strength} + {this.state.raceAbilities.strength}) <button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseStrength">+</button></li>
-              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity} ({this.state.diceAbilities.dexterity} + {this.state.raceAbilities.dexterity})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseDexterity">+</button></li>
-              <li className="list-group-item">Constitution: {this.state.abilities.constitution} ({this.state.diceAbilities.constitution} + {this.state.raceAbilities.constitution})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseConstitution">+</button></li>
-              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence} ({this.state.diceAbilities.intelligence} + {this.state.raceAbilities.intelligence})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseIntelligence">+</button></li>
-              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom} ({this.state.diceAbilities.wisdom} + {this.state.raceAbilities.wisdom})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseWisdom">+</button></li>
-              <li className="list-group-item">Charisma: {this.state.abilities.charisma} ({this.state.diceAbilities.charisma} + {this.state.raceAbilities.charisma})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseCharisma">+</button></li>
+              <li className="list-group-item">Strength: {this.state.abilities.strength} ({this.state.diceAbilities.strength} + {this.state.raceAbilities.strength}) <button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseStrength">+</button><p>Modifier: {this.state.modifiers.strength}</p></li>
+              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity} ({this.state.diceAbilities.dexterity} + {this.state.raceAbilities.dexterity})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseDexterity">+</button><p>Modifier: {this.state.modifiers.dexterity}</p></li>
+              <li className="list-group-item">Constitution: {this.state.abilities.constitution} ({this.state.diceAbilities.constitution} + {this.state.raceAbilities.constitution})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseConstitution">+</button><p>Modifier: {this.state.modifiers.constitution}</p></li>
+              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence} ({this.state.diceAbilities.intelligence} + {this.state.raceAbilities.intelligence})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseIntelligence">+</button><p>Modifier: {this.state.modifiers.intelligence}</p></li>
+              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom} ({this.state.diceAbilities.wisdom} + {this.state.raceAbilities.wisdom})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseWisdom">+</button><p>Modifier: {this.state.modifiers.wisdom}</p></li>
+              <li className="list-group-item">Charisma: {this.state.abilities.charisma} ({this.state.diceAbilities.charisma} + {this.state.raceAbilities.charisma})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseCharisma">+</button><p>Modifier: {this.state.modifiers.charisma}</p></li>
             </ul>
           </div>
           <div className = "panel panel-default">
