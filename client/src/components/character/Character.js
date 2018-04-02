@@ -170,9 +170,8 @@ class Home extends React.Component {
           intelligence: this.getModifiers(abilities.intelligence),
           wisdom: this.getModifiers(abilities.wisdom),
           charisma: this.getModifiers(abilities.charisma)
-        }
-      }) 
-
+          }
+      });
     }
   }
 
@@ -329,14 +328,15 @@ class Home extends React.Component {
         charisma: diceAbilities.charisma + raceAbilities.charisma
       },
       modifiers:{
-        strength: this.getModifiers(diceAbilities.strength),
-        dexterity: this.getModifiers(diceAbilities.dexterity),
-        constitution: this.getModifiers(diceAbilities.constitution),
-        intelligence: this.getModifiers(diceAbilities.intelligence),
-        wisdom: this.getModifiers(diceAbilities.wisdom),
-        charisma: this.getModifiers(diceAbilities.charisma)
+        strength: this.getModifiers(diceAbilities.strength + raceAbilities.strength),
+        dexterity: this.getModifiers(diceAbilities.dexterity + raceAbilities.dexterity),
+        constitution: this.getModifiers(diceAbilities.constitution + raceAbilities.constitution),
+        intelligence: this.getModifiers(diceAbilities.intelligence + raceAbilities.intelligence),
+        wisdom: this.getModifiers(diceAbilities.wisdom + raceAbilities.wisdom),
+        charisma: this.getModifiers(diceAbilities.charisma + raceAbilities.charisma)
       }
     }) 
+    
   }
 
   getModifiers = event =>{
@@ -492,7 +492,7 @@ healthPoints = event => {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <label className="panel-title">Background</label>
+                    <label className="panel-title">Exp</label>
                   </div>
                   <div className="panel-body">
 
@@ -553,17 +553,6 @@ healthPoints = event => {
                   </div>
                   <div className="panel-body">
                     <input type="text" className="form-control" onChange={this.handleChange} name="Weight" value={this.state.Weight} placeholder="Weight" />
-                  </div>
-                </div>
-              </div>
-
-               <div className="col-md-2">
-                <div className="panel panel-default">
-                  <div className="panel-heading">
-                    <label className="panel-title">Exp</label>
-                  </div>
-                  <div className="panel-body">
-
                   </div>
                 </div>
               </div>

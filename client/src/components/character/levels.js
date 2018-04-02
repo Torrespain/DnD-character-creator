@@ -3,7 +3,7 @@ import React from "react"
 const levels = props => {
 
 	return(
-		<div className="col-md-2">
+		<div className="col-md-3">
         <div className="panel panel-default">
             <div className="panel-heading">
                 <label className="panel-title">Level</label>
