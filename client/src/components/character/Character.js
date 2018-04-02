@@ -34,8 +34,9 @@ class Home extends React.Component {
       Armour: "",
       hitDie: null,
       Hitpoints: "",
+      ConstitutionHP: "",
       Speed: null,
-      Level: "",
+      Level: 1,
       ImprovePoints: 0,
       Languages: "",
       Exotic: "",
@@ -312,7 +313,40 @@ class Home extends React.Component {
       charisma: diceAbilities.charisma + raceAbilities.charisma
     }});
 
-}     
+}
+
+// Fred Fighter
+// Fred is a fighter. He's level 3. He's using the alternate, because he's in an Adventurer's League Game. He has a Con of 14, for +2.
+
+// At Level 1: 10 (the sides of the die) + 2 (the con mod) = 12
+// At level 2: he adds 6 (the "hit die") +2 (the con mod) = 12+8 = 20
+// At level 3: he adds 6 + 2 (just like level 2) for 20 + 8 = 28 total.
+
+// Billy Barbarian
+// Billy's in a campaign using the standard rules. He's 6th level, and Con 16 (+3)
+
+// At first level, he gets maximum: 12 (Die sides) +3 (Con Mod) = 15 
+// Level 2: He rolls a 3 on the d12, and adds his con mod of +3. That's 6. 15+6=21 
+// Level 3: He Rolls a 9 on the d12. Con mod again +3. That's 12 this level. 21 + 12 = 33
+// Level 4: He rolls a 5. Con mod is a +3... he's adding 8. Total is 33+8 = 41 max HP
+// Level 5: He rolls a 12. Con again:+3. Total 15. 41 +15 = 56.   
+
+healthPoints = event => {
+  let level = this.state.Level;
+  console.log(level);
+  let health = this.state.hitDie;
+  let newThrow;
+  
+    if (level!=="1") {
+      for (var i = 2; i <= level; i++) {
+        newThrow = Math.floor(Math.random()*this.state.hitDie)+1;
+        health = health + newThrow
+      }
+    }
+
+    this.setState({Hitpoints:health});
+
+}
 
   render() {
     console.log(this.state)
@@ -628,10 +662,10 @@ class Home extends React.Component {
                 <div className="panel panel-default">
                   <div className="panel-heading">
                       <label className="panel-title">Hit Points</label>
-                      <button type="button" id="HitDice" className="btn btn-default">ROLL THE DICE!</button>
+                      <button type="button" id="HitDice" className="btn btn-default" onClick={this.healthPoints} value={this.state.Level}>Calculate</button>
                   </div>
                   <div className="panel-body">
-                  
+                    {this.state.Hitpoints}
                   </div>
                 </div>
 
