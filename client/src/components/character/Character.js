@@ -29,13 +29,18 @@ class Home extends React.Component {
       Abilities: null,
       Saves: "",
       Skills: [],
+<<<<<<< Updated upstream
       Armour: "",
+=======
+      Armour: [],
+      hitDie: null,
+>>>>>>> Stashed changes
       Hitpoints: "",
       Level: "",
       Languages: "",
       Exotic: "",
       Tools: "",
-      Weapons: "",
+      Weapons: [],
       Gaming: "",
       Instrument: "",
       Vehicles: "",
@@ -44,6 +49,7 @@ class Home extends React.Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.updateSkills = this.updateSkills.bind(this)
+    this.grabClass = this.grabClass.bind(this)
   }
 
   updateSkills (newSkills) {
@@ -58,6 +64,484 @@ class Home extends React.Component {
     // console.log(event.target.value);
   }
 
+<<<<<<< Updated upstream
+=======
+  getRaceData = (position) => {
+     API.getRaceAPI(window.event.target.value)
+       .then(data => {
+
+        let speed = (data.data[position].speed);
+        this.setState({Speed: speed})
+
+        let array = (data.data[position].ability_bonuses);
+        
+        
+        let raceAbilities= {strength: array[0], dexterity: array[1], constitution: array[2], intelligence: array[3], wisdom: array[4], charisma: array[5]};
+        console.log(data.data[position].name);
+        console.log(raceAbilities);
+        
+        this.setState({raceAbilities:raceAbilities, abilities:{
+          strength: raceAbilities.strength,
+          dexterity: raceAbilities.dexterity,
+          constitution: raceAbilities.constitution,
+          intelligence: raceAbilities.intelligence,
+          wisdom: raceAbilities.wisdom,
+          charisma: raceAbilities.charisma
+        }});
+      });
+   }
+
+   getClassData = (position) => {
+    API.getClassAPI(window.event.target.value)
+    .then(data => {
+
+      let hitDie = data.data[position].hit_die
+
+      this.setState({hitDie:hitDie});
+
+    });
+   }
+
+  levelChange = event =>{
+
+    let level=event.target.value;
+    console.log("level is: ",level);
+    this.setState({Level:level});
+
+    let points=null;
+    if (level>=4){
+      points=Math.floor(level/4);
+      this.setState({ImprovePoints:points});
+    }
+  }
+
+  increaseAbility = event =>{
+
+    if (this.state.ImprovePoints>0) {
+      const ability = event.target.value;
+      console.log("improoving ",ability);
+
+      const abilities = Object.assign({}, this.state.abilities);
+
+      switch(ability)
+      {
+        case "increaseStrength":
+          abilities.strength += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseDexterity":
+          abilities.dexterity += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseConstitution":
+          abilities.constitution += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseIntelligence":
+          abilities.intelligence += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseWisdom":
+          abilities.wisdom += 1
+          this.setState({abilities});
+        break;
+      
+        case "increaseCharisma":
+          abilities.charisma += 1
+          this.setState({abilities});
+        break;
+      }
+
+      this.setState({ImprovePoints:this.state.ImprovePoints-1});
+
+    }
+  }
+
+  grabClass = event =>{
+    let theClass=event.target.value;
+    console.log("hi", theClass);
+    this.setState({Class: theClass}, function(){
+      console.log("state updated", this.state.Class);
+    });
+
+    
+      switch(theClass)
+    {
+      case "Barbarian":
+        this.getClassData(0);
+        let Armour = [];
+        setTimeout(() => {
+          const barbarianArmour = document.querySelector('#barbarianArmour');
+            barbarianArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        let Weapons = [];
+        setTimeout(() => {
+          const barbarianWeapon = document.querySelector('#barbarianWeapon');
+            barbarianWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+
+      case "Bard":
+        this.getClassData(2);
+         Armour = [];
+        setTimeout(() => {
+          const bardArmour = document.querySelector('#bardArmour');
+            bardArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const bardWeapon = document.querySelector('#bardWeapon');
+            bardWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+      
+      case "Cleric":
+        this.getClassData(1);
+         Armour = [];
+        setTimeout(() => {
+          const clericArmour = document.querySelector('#clericArmour');
+            clericArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const clericWeapon = document.querySelector('#clericWeapon');
+            clericWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+
+      case "Druid":
+        this.getClassData(6);
+         Armour = [];
+        setTimeout(() => {
+          const druidArmour = document.querySelector('#druidArmour');
+            druidArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const druidWeapon = document.querySelector('#druidWeapon');
+            druidWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+
+      case "Fighter":
+        this.getClassData(9);
+         Armour = [];
+        setTimeout(() => {
+          const fighterArmour = document.querySelector('#fighterArmour');
+            fighterArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const fighterWeapon = document.querySelector('#fighterWeapon');
+            fighterWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+
+      case "Monk":
+        this.getClassData(11);
+         Armour = [];
+        setTimeout(() => {
+          const monkArmour = document.querySelector('#monkArmour');
+            monkArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const monkWeapon = document.querySelector('#monkWeapon');
+            monkWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+
+      case "Paladin":
+        this.getClassData(7);
+         Armour = [];
+        setTimeout(() => {
+          const paladinArmour = document.querySelector('#paladinArmour');
+            paladinArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const paladinWeapon = document.querySelector('#paladinWeapon');
+            paladinWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;     
+
+      case "Rogue":
+        this.getClassData(10);
+         Armour = [];
+        setTimeout(() => {
+          const rogueArmour = document.querySelector('#rogueArmour');
+            rogueArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const rogueWeapon = document.querySelector('#rogueWeapon');
+            rogueWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+
+      case "Sorcerer":
+        this.getClassData(3);
+         Armour = [];
+        setTimeout(() => {
+          const sorcererArmour = document.querySelector('#sorcererArmour');
+            sorcererArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const sorcererWeapon = document.querySelector('#sorcererWeapon');
+            sorcererWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+
+      case "Ranger":
+        this.getClassData(8);
+         Armour = [];
+        setTimeout(() => {
+          const rangerArmour = document.querySelector('#rangerArmour');
+            rangerArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const rangerWeapon = document.querySelector('#rangerWeapon');
+            rangerWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+
+      case "Warlock":
+        this.getClassData(4);
+         Armour = [];
+        setTimeout(() => {
+          const warlockArmour = document.querySelector('#warlockArmour');
+            warlockArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const warlockWeapon = document.querySelector('#warlockWeapon');
+            warlockWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+
+      case "Wizard":
+        this.getClassData(5);
+         Armour = [];
+        setTimeout(() => {
+          const wizardArmour = document.querySelector('#wizardArmour');
+            wizardArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const wizardWeapon = document.querySelector('#wizardWeapon');
+            wizardWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
+        break;
+        // default:
+        //     ...
+        //     break;
+    }
+
+  }
+
+  grabRace = event =>{
+    let race=event.target.value;
+    console.log("hi!", race);
+    this.setState({Race: race}, function(){
+      console.log("state updated", this.state.race);
+    });
+
+    switch(race)
+    {
+      case "Dwarf":
+        this.getRaceData(0);
+        break;
+
+      case "Tiefling":
+        this.getRaceData(1);
+        break;
+      
+      case "Elf":
+        this.getRaceData(2);
+        break;
+
+      case "Halfling":
+        this.getRaceData(3);
+        break;
+
+      case "Human":
+        this.getRaceData(4);
+        break;
+
+      case "Dragonborn":
+        this.getRaceData(5);
+        break;
+
+      case "Gnome":
+        this.getRaceData(6);
+        break;
+
+      case "Half-Elf":
+        this.getRaceData(7);
+        break;
+
+      case "Half-Orc":
+        this.getRaceData(8);
+        break;
+        // default:
+        //     ...
+        //     break;
+    }
+    const diceAbilities= {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0}
+    this.setState({diceAbilities: diceAbilities});
+  }
+
+>>>>>>> Stashed changes
  diceRoll = () => {
    var abilitiesObj = {strength: "", dexterity: "", constitution: "", intelligence: "", wisdom: "", charisma: ""}
     
@@ -288,7 +772,11 @@ class Home extends React.Component {
                     <div className="section-content">
                       <div className="fg-line">
                         <div className="select">
+<<<<<<< Updated upstream
                           <select className="form-control" readOnly onChange={this.handleChange} name="Class" value={this.state.Class} placeholder="Class">
+=======
+                          <select className="form-control" readOnly onChange={this.grabClass} name="Class" value={this.state.Class}  placeholder="Class">
+>>>>>>> Stashed changes
                             <option value="" defaultValue>Class</option>
                             <option value="Barbarian">Barbarian</option>
                             <option value="Bard">Bard</option>
