@@ -675,15 +675,15 @@ healthPoints = event => {
             <div className="panel-heading">
               <label>Abilities</label>
               <span> (IP {this.state.ImprovePoints})</span>
-              <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>ROLL THE DICE!</button>
+              <button type="button" id="abilitiesDice" className="btn btn-default diceBtn" onClick={this.diceRoll}>ROLL THE DICE!</button>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Strength: {this.state.abilities.strength} ({this.state.diceAbilities.strength} + {this.state.raceAbilities.strength}) <button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseStrength">+</button><p>Modifier: {this.state.modifiers.strength}</p></li>
-              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity} ({this.state.diceAbilities.dexterity} + {this.state.raceAbilities.dexterity})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseDexterity">+</button><p>Modifier: {this.state.modifiers.dexterity}</p></li>
-              <li className="list-group-item">Constitution: {this.state.abilities.constitution} ({this.state.diceAbilities.constitution} + {this.state.raceAbilities.constitution})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseConstitution">+</button><p>Modifier: {this.state.modifiers.constitution}</p></li>
-              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence} ({this.state.diceAbilities.intelligence} + {this.state.raceAbilities.intelligence})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseIntelligence">+</button><p>Modifier: {this.state.modifiers.intelligence}</p></li>
-              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom} ({this.state.diceAbilities.wisdom} + {this.state.raceAbilities.wisdom})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseWisdom">+</button><p>Modifier: {this.state.modifiers.wisdom}</p></li>
-              <li className="list-group-item">Charisma: {this.state.abilities.charisma} ({this.state.diceAbilities.charisma} + {this.state.raceAbilities.charisma})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseCharisma">+</button><p>Modifier: {this.state.modifiers.charisma}</p></li>
+              <li className="list-group-item">Strength: {this.state.abilities.strength} ({this.state.diceAbilities.strength} + {this.state.raceAbilities.strength}) <button type="button" className="btn btn-default pluses" onClick= {this.increaseAbility} value="increaseStrength">+</button><p>Modifier: {this.state.modifiers.strength}</p></li>
+              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity} ({this.state.diceAbilities.dexterity} + {this.state.raceAbilities.dexterity})<button type="button" className="btn btn-default pluses" onClick= {this.increaseAbility} value="increaseDexterity">+</button><p>Modifier: {this.state.modifiers.dexterity}</p></li>
+              <li className="list-group-item">Constitution: {this.state.abilities.constitution} ({this.state.diceAbilities.constitution} + {this.state.raceAbilities.constitution})<button type="button" className="btn btn-default pluses" onClick= {this.increaseAbility} value="increaseConstitution">+</button><p>Modifier: {this.state.modifiers.constitution}</p></li>
+              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence} ({this.state.diceAbilities.intelligence} + {this.state.raceAbilities.intelligence})<button type="button" className="btn btn-default pluses" onClick= {this.increaseAbility} value="increaseIntelligence">+</button><p>Modifier: {this.state.modifiers.intelligence}</p></li>
+              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom} ({this.state.diceAbilities.wisdom} + {this.state.raceAbilities.wisdom})<button type="button" className="btn btn-default pluses" onClick= {this.increaseAbility} value="increaseWisdom">+</button><p>Modifier: {this.state.modifiers.wisdom}</p></li>
+              <li className="list-group-item">Charisma: {this.state.abilities.charisma} ({this.state.diceAbilities.charisma} + {this.state.raceAbilities.charisma})<button type="button" className="btn btn-default pluses" onClick= {this.increaseAbility} value="increaseCharisma">+</button><p>Modifier: {this.state.modifiers.charisma}</p></li>
             </ul>
           </div>
           <div className = "panel panel-default">
@@ -884,11 +884,14 @@ healthPoints = event => {
                           </select>
                         </div>
 
+                        
                       </div>         
                   </div>
                 </div>
 
-
+                <div className="charButton">
+                                <button>Create a character</button>               
+                                </div>
           </div>
         </div>
       </div>
