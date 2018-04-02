@@ -29,12 +29,8 @@ class Home extends React.Component {
       Abilities: null,
       Saves: "",
       Skills: [],
-<<<<<<< Updated upstream
-      Armour: "",
-=======
       Armour: [],
       hitDie: null,
->>>>>>> Stashed changes
       Hitpoints: "",
       Level: "",
       Languages: "",
@@ -64,8 +60,6 @@ class Home extends React.Component {
     // console.log(event.target.value);
   }
 
-<<<<<<< Updated upstream
-=======
   getRaceData = (position) => {
      API.getRaceAPI(window.event.target.value)
        .then(data => {
@@ -541,7 +535,6 @@ class Home extends React.Component {
     this.setState({diceAbilities: diceAbilities});
   }
 
->>>>>>> Stashed changes
  diceRoll = () => {
    var abilitiesObj = {strength: "", dexterity: "", constitution: "", intelligence: "", wisdom: "", charisma: ""}
     
@@ -772,11 +765,7 @@ class Home extends React.Component {
                     <div className="section-content">
                       <div className="fg-line">
                         <div className="select">
-<<<<<<< Updated upstream
-                          <select className="form-control" readOnly onChange={this.handleChange} name="Class" value={this.state.Class} placeholder="Class">
-=======
                           <select className="form-control" readOnly onChange={this.grabClass} name="Class" value={this.state.Class}  placeholder="Class">
->>>>>>> Stashed changes
                             <option value="" defaultValue>Class</option>
                             <option value="Barbarian">Barbarian</option>
                             <option value="Bard">Bard</option>
