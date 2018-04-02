@@ -175,60 +175,324 @@ class Home extends React.Component {
     }
   }
 
-  grabClass = event =>{
+grabClass = event =>{
     let theClass=event.target.value;
     console.log("hi", theClass);
     this.setState({Class: theClass}, function(){
       console.log("state updated", this.state.Class);
     });
-      switch(theClass)
+    switch(theClass)
     {
       case "Barbarian":
         this.getClassData(0);
+        let Armour = [];
+        setTimeout(() => {
+          const barbarianArmour = document.querySelector('#barbarianArmour');
+            barbarianArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        let Weapons = [];
+        setTimeout(() => {
+          const barbarianWeapon = document.querySelector('#barbarianWeapon');
+            barbarianWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
 
       case "Bard":
         this.getClassData(2);
+         Armour = [];
+        setTimeout(() => {
+          const bardArmour = document.querySelector('#bardArmour');
+            bardArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const bardWeapon = document.querySelector('#bardWeapon');
+            bardWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
       
       case "Cleric":
         this.getClassData(1);
+         Armour = [];
+        setTimeout(() => {
+          const clericArmour = document.querySelector('#clericArmour');
+            clericArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const clericWeapon = document.querySelector('#clericWeapon');
+            clericWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
 
       case "Druid":
         this.getClassData(6);
+         Armour = [];
+        setTimeout(() => {
+          const druidArmour = document.querySelector('#druidArmour');
+            druidArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const druidWeapon = document.querySelector('#druidWeapon');
+            druidWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
 
       case "Fighter":
         this.getClassData(9);
+         Armour = [];
+        setTimeout(() => {
+          const fighterArmour = document.querySelector('#fighterArmour');
+            fighterArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const fighterWeapon = document.querySelector('#fighterWeapon');
+            fighterWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
 
       case "Monk":
         this.getClassData(11);
+         Armour = [];
+        setTimeout(() => {
+          const monkArmour = document.querySelector('#monkArmour');
+            monkArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const monkWeapon = document.querySelector('#monkWeapon');
+            monkWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
 
       case "Paladin":
         this.getClassData(7);
+         Armour = [];
+        setTimeout(() => {
+          const paladinArmour = document.querySelector('#paladinArmour');
+            paladinArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const paladinWeapon = document.querySelector('#paladinWeapon');
+            paladinWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;     
 
       case "Rogue":
         this.getClassData(10);
+         Armour = [];
+        setTimeout(() => {
+          const rogueArmour = document.querySelector('#rogueArmour');
+            rogueArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const rogueWeapon = document.querySelector('#rogueWeapon');
+            rogueWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
 
       case "Sorcerer":
         this.getClassData(3);
+         Armour = [];
+        setTimeout(() => {
+          const sorcererArmour = document.querySelector('#sorcererArmour');
+            sorcererArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const sorcererWeapon = document.querySelector('#sorcererWeapon');
+            sorcererWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
 
       case "Ranger":
         this.getClassData(8);
+         Armour = [];
+        setTimeout(() => {
+          const rangerArmour = document.querySelector('#rangerArmour');
+            rangerArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const rangerWeapon = document.querySelector('#rangerWeapon');
+            rangerWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
 
       case "Warlock":
         this.getClassData(4);
+         Armour = [];
+        setTimeout(() => {
+          const warlockArmour = document.querySelector('#warlockArmour');
+            warlockArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const warlockWeapon = document.querySelector('#warlockWeapon');
+            warlockWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
 
       case "Wizard":
         this.getClassData(5);
+         Armour = [];
+        setTimeout(() => {
+          const wizardArmour = document.querySelector('#wizardArmour');
+            wizardArmour.childNodes.forEach((element, index) => {
+              Armour.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Armour
+            });
+          })
+        }, 0);
+        Weapons = [];
+        setTimeout(() => {
+          const wizardWeapon = document.querySelector('#wizardWeapon');
+            wizardWeapon.childNodes.forEach((element, index) => {
+              Weapons.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Weapons
+            });
+          })
+        }, 0);
         break;
         // default:
         //     ...
