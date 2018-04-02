@@ -272,14 +272,15 @@ class Home extends React.Component {
         //     ...
         //     break;
     }
-
+    const diceAbilities= {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0}
+    this.setState({diceAbilities: diceAbilities});
   }
 
  diceRoll = () => {
   let { raceAbilities, diceAbilities } = this.state
      
     for (let key in diceAbilities) {
-            console.log("key: ", key);
+        console.log("key: ", key);
         let totalArray= [];
         let total=0;
         while (totalArray.length < 4) {
@@ -569,12 +570,12 @@ class Home extends React.Component {
               <button type="button" id="abilitiesDice" className="btn btn-default" onClick={this.diceRoll}>ROLL THE DICE!</button>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Strength: {this.state.abilities.strength}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseStrength">+</button></li>
-              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseDexterity">+</button></li>
-              <li className="list-group-item">Constitution: {this.state.abilities.constitution}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseConstitution">+</button></li>
-              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseIntelligence">+</button></li>
-              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseWisdom">+</button></li>
-              <li className="list-group-item">Charisma: {this.state.abilities.charisma}<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseCharisma">+</button></li>
+              <li className="list-group-item">Strength: {this.state.abilities.strength} ({this.state.diceAbilities.strength} + {this.state.raceAbilities.strength}) <button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseStrength">+</button></li>
+              <li className="list-group-item">Dexterity: {this.state.abilities.dexterity} ({this.state.diceAbilities.dexterity} + {this.state.raceAbilities.dexterity})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseDexterity">+</button></li>
+              <li className="list-group-item">Constitution: {this.state.abilities.constitution} ({this.state.diceAbilities.constitution} + {this.state.raceAbilities.constitution})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseConstitution">+</button></li>
+              <li className="list-group-item">Intelligence: {this.state.abilities.intelligence} ({this.state.diceAbilities.intelligence} + {this.state.raceAbilities.intelligence})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseIntelligence">+</button></li>
+              <li className="list-group-item">Wisdom: {this.state.abilities.wisdom} ({this.state.diceAbilities.wisdom} + {this.state.raceAbilities.wisdom})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseWisdom">+</button></li>
+              <li className="list-group-item">Charisma: {this.state.abilities.charisma} ({this.state.diceAbilities.charisma} + {this.state.raceAbilities.charisma})<button type="button" className="btn btn-default" onClick= {this.increaseAbility} value="increaseCharisma">+</button></li>
             </ul>
           </div>
           <div className = "panel panel-default">
