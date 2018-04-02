@@ -31,7 +31,7 @@ mongoose.connect("mongodb://localhost/dnd", {
 
 // app.use("/",routes);
 
-app.get("/server", function(req, res){
+app.get("/classes/:classess", function(req, res){
 	console.log("we hit the home route")
 	// console.log('db', db);
   // console.log('dnd', db.dnd)
@@ -49,14 +49,40 @@ app.get("/server", function(req, res){
 	});
 })
 
-app.post("/create", function(req, res){
-	console.log(req.body);
-	db.Classes.create(req.body).then(function(response){
-		console.log("created", response);
-	}).catch(function(err){
+app.get("/races/:race", function(req, res){
+	console.log("we hit the home route")
+	// console.log('db', db);
+  // console.log('dnd', db.dnd)
+	db.races.find({})
+	// res.send("working")
+	.then(function(race) {
+		// If any Books are found, send them to the client
+		console.log(race)
+		res.json(race);
+	  })
+	  .catch(function(err) {
+		// If an error occurs, send it back to the client
 		console.log("err", err);
-	})
-});
+		res.json(err);
+	});
+})
+// app.post("/create", function(req, res){
+// 	console.log(req.body);
+// 	db.classes.create(req.body).then(function(response){
+// 		console.log("created", response);
+// 	}).catch(function(err){
+// 		console.log("err", err);
+// 	})
+// });
+
+// app.post("/races", function(req, res){
+// 	console.log(req.body);
+// 	db.races.create(req.body).then(function(response){
+// 		console.log("created", response);
+// 	}).catch(function(err){
+// 		console.log("err", err);
+// 	})
+// });
 
 app.listen(port, function() {
   console.log("Listening on port:%s", port);
