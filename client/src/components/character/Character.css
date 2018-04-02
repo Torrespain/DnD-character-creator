@@ -2,6 +2,7 @@ body {
 	background: url("http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW");
 	background-repeat: no-repeat;
     background-size: cover;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 }
 .container {
 	background: rgba(255,255,255, 0.75);

@@ -3,7 +3,7 @@ import React from "react"
 const levels = props => {
 
 	return(
-		<div className="col-md-3">
+		<div className="col-md-2">
         <div className="panel panel-default">
             <div className="panel-heading">
                 <label className="panel-title">Level</label>
@@ -13,7 +13,7 @@ const levels = props => {
                   <div className="fg-line">
                     <div className="select">
                       <select className="form-control" name="levels" readOnly onChange={props.levelChange} >
-                        <option value="" defaultValue>Select the level</option>
+                        <option value="" defaultValue>Level</option>
                         <option value="1">Level 1</option>
                         <option value="2">Level 2</option>
                         <option value="3">Level 3</option>

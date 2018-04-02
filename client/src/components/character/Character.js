@@ -1,6 +1,7 @@
 import React from 'react';
 import './Character.css';
 import Skills from './skills';
+import './skills.css'
 import API from '../../api/API';
 import Armours from './armours';
 import SavingThrows from './throwing';
@@ -437,7 +438,7 @@ healthPoints = event => {
           <div className="col-md-10">
 
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
                     <label className="panel-title">Name</label>
@@ -453,10 +454,27 @@ healthPoints = event => {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <label className="panel-title">ImgURL</label>
+                    <label className="panel-title">Alignment</label>
                   </div>
                   <div className="panel-body">
-                    <input type="text" className="form-control" onChange={this.handleChange} name="Image" value={this.state.Image} placeholder="imageurl" />
+                    <div className="section-content">
+                      <div className="fg-line">
+                        <div className="select">
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Alignment" value={this.state.Alignment} placeholder="Alignment">
+                            <option value="" defaultValue>Alignment</option>
+                            <option value="LawfulGood">Lawful Good</option>
+                            <option value="LawfulNeutral">Lawful Neutral</option>
+                            <option value="LawfulEvil">Lawful Evil</option>
+                            <option value="NeutralGood">Neutral Good</option>
+                            <option value="NeutralNeutral">Neutral Neutral</option>
+                            <option value="NeutralEvil">Neutral Evil</option>
+                            <option value="ChaoticGood">Chaotic Good</option>
+                            <option value="ChaoticNeutral">Chaotic Neutral</option>
+                            <option value="ChaoticEvil">Chaotic Evil</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -471,10 +489,22 @@ healthPoints = event => {
                   </div>
                 </div>
               </div>
+
+              <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                    <label className="panel-title">Background</label>
+                  </div>
+                  <div className="panel-body">
+
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             <div className="row">
-              <div className="col-md-3">
+              <div className="col-md-2">
                 <div className="panel panel-default">
                   <div className="panel-heading">
                     <label className="panel-title">Sex</label>
@@ -495,7 +525,7 @@ healthPoints = event => {
                 </div>
               </div>
 
-              <div className="col-md-3">
+              <div className="col-md-2">
                 <div className="panel panel-default">
                   <div className="panel-heading">
                     <label className="panel-title">Age</label>
@@ -506,7 +536,7 @@ healthPoints = event => {
                 </div>
               </div>
 
-              <div className="col-md-3">
+              <div className="col-md-2">
                 <div className="panel panel-default">
                   <div className="panel-heading">
                     <label className="panel-title">Height</label>
@@ -517,7 +547,7 @@ healthPoints = event => {
                 </div>
               </div>
 
-              <div className="col-md-3">
+              <div className="col-md-2">
                 <div className="panel panel-default">
                   <div className="panel-heading">
                     <label className="panel-title">Weight</label>
@@ -527,6 +557,20 @@ healthPoints = event => {
                   </div>
                 </div>
               </div>
+
+               <div className="col-md-2">
+                <div className="panel panel-default">
+                  <div className="panel-heading">
+                    <label className="panel-title">Exp</label>
+                  </div>
+                  <div className="panel-body">
+
+                  </div>
+                </div>
+              </div>
+
+              <Levels levelChange={(event) => this.levelChange(event)} />
+
             </div>
 
             <div className="row">
@@ -574,47 +618,6 @@ healthPoints = event => {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <label className="panel-title">Alignment</label>
-                  </div>
-                  <div className="panel-body">
-                    <div className="section-content">
-                      <div className="fg-line">
-                        <div className="select">
-                          <select className="form-control" readOnly onChange={this.handleChange} name="Alignment" value={this.state.Alignment} placeholder="Alignment">
-                            <option value="" defaultValue>Alignment</option>
-                            <option value="LawfulGood">Lawful Good</option>
-                            <option value="LawfulNeutral">Lawful Neutral</option>
-                            <option value="LawfulEvil">Lawful Evil</option>
-                            <option value="NeutralGood">Neutral Good</option>
-                            <option value="NeutralNeutral">Neutral Neutral</option>
-                            <option value="NeutralEvil">Neutral Evil</option>
-                            <option value="ChaoticGood">Chaotic Good</option>
-                            <option value="ChaoticNeutral">Chaotic Neutral</option>
-                            <option value="ChaoticEvil">Chaotic Evil</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-md-3">
-                <div className="panel panel-default">
-                  <div className="panel-heading">
-                    <label className="panel-title">Exp/Level</label>
-                  </div>
-                  <div className="panel-body">
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-md-3">
-                <div className="panel panel-default">
-                  <div className="panel-heading">
                     <label className="panel-title">Class</label>
                   </div>
                   <div className="panel-body">
@@ -653,20 +656,9 @@ healthPoints = event => {
                   </div>
                 </div>
               </div>
-
-              <Levels levelChange={(event) => this.levelChange(event)} />
-
-              <div className="col-md-3">
-                <div className="panel panel-default">
-                  <div className="panel-heading">
-                    <label className="panel-title">Background</label>
-                  </div>
-                  <div className="panel-body">
-
-                  </div>
-                </div>
-              </div>
+              
             </div>
+
           </div>
         </div>
         <div className ="row">

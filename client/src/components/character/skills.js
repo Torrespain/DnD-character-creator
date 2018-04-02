@@ -33,8 +33,10 @@ class Skills extends React.Component {
         console.log("this is our current state", this.state)
 
     return (
-      <div> 
+      <div>
+        <div className="classChoice"> 
         {this.props.class.length > 0 ? "":(<h3> Pick A Class </h3>)}
+        </div>
         {this.props.class === "Barbarian" ? (
             <ul className="list-group list-group-flush" multiple>
               <li className="list-group-item"><input type="checkbox" disabled={this.state.disabled}  value={"Animal Handling"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Animal Handling</li>
