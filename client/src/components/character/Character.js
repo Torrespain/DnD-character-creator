@@ -67,7 +67,7 @@ class Home extends React.Component {
     // console.log(event.target.value);
   }
 
-  getData = (position) => {
+  getRaceData = (position) => {
      API.getRaceAPI(window.event.target.value)
        .then(data => {
 
@@ -89,7 +89,18 @@ class Home extends React.Component {
           wisdom: raceAbilities.wisdom,
           charisma: raceAbilities.charisma
         }});
-      })
+      });
+   }
+
+   getClassData = (position) => {
+    API.getClassAPI(window.event.target.value)
+    .then(data => {
+
+      let hitDie = data.data[position].hit_die
+
+      this.setState({hitDie:hitDie});
+
+    });
    }
 
   levelChange = event =>{
@@ -151,6 +162,68 @@ class Home extends React.Component {
     }
   }
 
+  grabClass = event =>{
+    let theClass=event.target.value;
+    console.log("hi", theClass);
+    this.setState({Class: theClass}, function(){
+      console.log("state updated", this.state.Class);
+    });
+      switch(theClass)
+    {
+      case "Barbarian":
+        this.getClassData(0);
+        break;
+
+      case "Bard":
+        this.getClassData(2);
+        break;
+      
+      case "Cleric":
+        this.getClassData(1);
+        break;
+
+      case "Druid":
+        this.getClassData(6);
+        break;
+
+      case "Fighter":
+        this.getClassData(9);
+        break;
+
+      case "Monk":
+        this.getClassData(11);
+        break;
+
+      case "Paladin":
+        this.getClassData(7);
+        break;     
+
+      case "Rogue":
+        this.getClassData(10);
+        break;
+
+      case "Sorcerer":
+        this.getClassData(3);
+        break;
+
+      case "Ranger":
+        this.getClassData(8);
+        break;
+
+      case "Warlock":
+        this.getClassData(4);
+        break;
+
+      case "Wizard":
+        this.getClassData(5);
+        break;
+        // default:
+        //     ...
+        //     break;
+    }
+
+  }
+
   grabRace = event =>{
     let race=event.target.value;
     console.log("hi!", race);
@@ -161,39 +234,39 @@ class Home extends React.Component {
     switch(race)
     {
       case "Dwarf":
-        this.getData(0);
+        this.getRaceData(0);
         break;
 
       case "Tiefling":
-        this.getData(1);
+        this.getRaceData(1);
         break;
       
       case "Elf":
-        this.getData(2);
+        this.getRaceData(2);
         break;
 
       case "Halfling":
-        this.getData(3);
+        this.getRaceData(3);
         break;
 
       case "Human":
-        this.getData(4);
+        this.getRaceData(4);
         break;
 
       case "Dragonborn":
-        this.getData(5);
+        this.getRaceData(5);
         break;
 
       case "Gnome":
-        this.getData(6);
+        this.getRaceData(6);
         break;
 
       case "Half-Elf":
-        this.getData(7);
+        this.getRaceData(7);
         break;
 
       case "Half-Orc":
-        this.getData(8);
+        this.getRaceData(8);
         break;
         // default:
         //     ...
@@ -439,7 +512,7 @@ class Home extends React.Component {
                     <div className="section-content">
                       <div className="fg-line">
                         <div className="select">
-                          <select className="form-control" readOnly onChange={this.handleChange} name="Class" value={this.state.Class} placeholder="Class">
+                          <select className="form-control" readOnly onChange={this.grabClass} name="Class" value={this.state.Class} placeholder="Class">
                             <option value="" defaultValue>Class</option>
                             <option value="Barbarian">Barbarian</option>
                             <option value="Bard">Bard</option>

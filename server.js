@@ -31,7 +31,7 @@ mongoose.connect("mongodb://localhost/dnd", {
 
 // app.use("/",routes);
 
-app.get("/classes", function(req, res){
+app.get("/classes/:classess", function(req, res){
 	console.log("we hit the home route")
 	// console.log('db', db);
   // console.log('dnd', db.dnd)
