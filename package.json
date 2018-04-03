@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "node server.js",
+    "client": "node scripts/start-client.js",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
@@ -18,5 +19,9 @@
     "express": "^4.16.3",
     "mongoose": "^5.0.12",
     "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.17.3"
   }
 }
