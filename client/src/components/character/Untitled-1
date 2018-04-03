@@ -1,0 +1,6 @@
+const wrap = document.querySelector(".traitsWrap")
+const wrapChildren = wrap.getElementsByTagName("li")
+const TraitsArray = []
+for(var i =0;i<wrapChildren.length;i++){
+    TraitsArray.push(wrapChildren[i].textContent)
+}

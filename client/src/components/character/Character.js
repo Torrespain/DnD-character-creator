@@ -7,6 +7,7 @@ import SavingThrows from './throwing';
 import SubRace from './subrace';
 import Weapons from './weapons';
 import Levels from './levels';
+import Traits from './traits';
 // import Health from './health';
 
 class Home extends React.Component {
@@ -46,16 +47,22 @@ class Home extends React.Component {
       Gaming: "",
       Instrument: "",
       Vehicles: "",
-      Other: ""
+      Other: "",
+      Traits: null
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.updateSkills = this.updateSkills.bind(this)
+    this.setRaceTraits = this.setRaceTraits.bind(this)
   }
 
+  componentDidMount(){
+    console.log("traits", Traits);
+  }
   updateSkills (newSkills) {
     this.setState ({Skills: newSkills})
   }
+
 
   updateHP (newHitDie){
     this.setState ({hitDie: newHitDie})
@@ -94,7 +101,7 @@ class Home extends React.Component {
       });
    }
 
-   getClassData = (position) => {
+  getClassData = (position) => {
     API.getClassAPI(window.event.target.value)
     .then(data => {
       console.log(data);
@@ -103,7 +110,7 @@ class Home extends React.Component {
       this.setState({hitDie:hitDie});
 
     });
-   }
+  }
 
   levelChange = event =>{
 
@@ -181,6 +188,7 @@ class Home extends React.Component {
     this.setState({Class: theClass}, function(){
       console.log("state updated", this.state.Class);
     });
+    this.setClassWeapons();
       switch(theClass)
     {
       case "Barbarian":
@@ -238,11 +246,13 @@ class Home extends React.Component {
   }
 
   grabRace = event =>{
-    let race=event.target.value;
+    let race = event.target.value;
     console.log("hi!", race);
     this.setState({Race: race}, function(){
       console.log("state updated", this.state.race);
     });
+    
+    this.setRaceTraits();
 
     switch(race)
     {
@@ -289,53 +299,53 @@ class Home extends React.Component {
     this.setState({diceAbilities: diceAbilities});
   }
 
- diceRoll = () => {
-  let { raceAbilities, diceAbilities } = this.state
-     
-    for (let key in diceAbilities) {
-        console.log("key: ", key);
-        let totalArray= [];
-        let total=0;
-        while (totalArray.length < 4) {
-            let roll = Math.floor(Math.random()*6)+1;
-            while (roll===1) {
-                roll = Math.floor(Math.random()*6)+1;
-            }
-            totalArray.push(roll);
-        }
-        console.log(totalArray);
-        totalArray.sort();
-        totalArray.shift();
-        console.log(totalArray)
+  diceRoll = () => {
+    let { raceAbilities, diceAbilities } = this.state
+      
+      for (let key in diceAbilities) {
+          console.log("key: ", key);
+          let totalArray= [];
+          let total=0;
+          while (totalArray.length < 4) {
+              let roll = Math.floor(Math.random()*6)+1;
+              while (roll===1) {
+                  roll = Math.floor(Math.random()*6)+1;
+              }
+              totalArray.push(roll);
+          }
+          console.log(totalArray);
+          totalArray.sort();
+          totalArray.shift();
+          console.log(totalArray)
 
-        for (let j = 0; j < totalArray.length; j++) {
-            total = total + totalArray[j];
-        }
-        console.log(total);
-        diceAbilities[key]=total;
+          for (let j = 0; j < totalArray.length; j++) {
+              total = total + totalArray[j];
+          }
+          console.log(total);
+          diceAbilities[key]=total;
 
-    }
-
-    console.log(raceAbilities);
-    this.setState({
-      diceAbilities:diceAbilities, 
-      abilities:{
-        strength: diceAbilities.strength + raceAbilities.strength,
-        dexterity: diceAbilities.dexterity + raceAbilities.dexterity,
-        constitution: diceAbilities.constitution + raceAbilities.constitution,
-        intelligence: diceAbilities.intelligence + raceAbilities.intelligence,
-        wisdom: diceAbilities.wisdom + raceAbilities.wisdom,
-        charisma: diceAbilities.charisma + raceAbilities.charisma
-      },
-      modifiers:{
-        strength: this.getModifiers(diceAbilities.strength),
-        dexterity: this.getModifiers(diceAbilities.dexterity),
-        constitution: this.getModifiers(diceAbilities.constitution),
-        intelligence: this.getModifiers(diceAbilities.intelligence),
-        wisdom: this.getModifiers(diceAbilities.wisdom),
-        charisma: this.getModifiers(diceAbilities.charisma)
       }
-    }) 
+
+      console.log(raceAbilities);
+      this.setState({
+        diceAbilities:diceAbilities, 
+        abilities:{
+          strength: diceAbilities.strength + raceAbilities.strength,
+          dexterity: diceAbilities.dexterity + raceAbilities.dexterity,
+          constitution: diceAbilities.constitution + raceAbilities.constitution,
+          intelligence: diceAbilities.intelligence + raceAbilities.intelligence,
+          wisdom: diceAbilities.wisdom + raceAbilities.wisdom,
+          charisma: diceAbilities.charisma + raceAbilities.charisma
+        },
+        modifiers:{
+          strength: this.getModifiers(diceAbilities.strength),
+          dexterity: this.getModifiers(diceAbilities.dexterity),
+          constitution: this.getModifiers(diceAbilities.constitution),
+          intelligence: this.getModifiers(diceAbilities.intelligence),
+          wisdom: this.getModifiers(diceAbilities.wisdom),
+          charisma: this.getModifiers(diceAbilities.charisma)
+        }
+      }) 
   }
 
   getModifiers = event =>{
@@ -390,28 +400,61 @@ class Home extends React.Component {
     }
   }
 
+  // set state for all the traits of a race
+  // gets called in grabRace
+  setRaceTraits = () =>{
+    const t = this
+    const wrap = document.querySelector(".traitsWrap");
+   
+    setTimeout(function(){
+      const elementsArray = wrap.getElementsByTagName("li");
+      const traitsArray = []
+      for(var i = 0;i < elementsArray.length; i++){
+        traitsArray.push(elementsArray[i].textContent)
+      }
+     t.setState({Traits:traitsArray});
+     console.log("state.traits:",t.state.Traits);
+     console.log("state:",t.state);
+     }, 300);
+  }
 
+  // set state for all the weapon of a class
+  // gets called in grabClass
+  setClassWeapons = () => {
+    const t = this
+    const wrap = document.querySelector(".weaponsWrap");
+    setTimeout(function(){
+      const elementsArray = wrap.getElementsByTagName("li");
+      const weaponsArray = []
+      for(var i = 0;i < elementsArray.length; i++){
+        weaponsArray.push(elementsArray[i].textContent)
+      }
+     t.setState({Weapons:weaponsArray});
+     console.log("state.weapons:",t.state.Weapons )
+     console.log("state:",t.state)
+     }, 300);
+  }
 
-// Fred Fighter
-// Fred is a fighter. He's level 3. He's using the alternate, because he's in an Adventurer's League Game. He has a Con of 14, for +2.
+  // Fred Fighter
+  // Fred is a fighter. He's level 3. He's using the alternate, because he's in an Adventurer's League Game. He has a Con of 14, for +2.
 
-// At Level 1: 10 (the sides of the die) + 2 (the con mod) = 12
-// At level 2: he adds 6 (the "hit die") +2 (the con mod) = 12+8 = 20
-// At level 3: he adds 6 + 2 (just like level 2) for 20 + 8 = 28 total.
+  // At Level 1: 10 (the sides of the die) + 2 (the con mod) = 12
+  // At level 2: he adds 6 (the "hit die") +2 (the con mod) = 12+8 = 20
+  // At level 3: he adds 6 + 2 (just like level 2) for 20 + 8 = 28 total.
 
-// Billy Barbarian
-// Billy's in a campaign using the standard rules. He's 6th level, and Con 16 (+3)
+  // Billy Barbarian
+  // Billy's in a campaign using the standard rules. He's 6th level, and Con 16 (+3)
 
-// At first level, he gets maximum: 12 (Die sides) +3 (Con Mod) = 15 
-// Level 2: He rolls a 3 on the d12, and adds his con mod of +3. That's 6. 15+6=21 
-// Level 3: He Rolls a 9 on the d12. Con mod again +3. That's 12 this level. 21 + 12 = 33
-// Level 4: He rolls a 5. Con mod is a +3... he's adding 8. Total is 33+8 = 41 max HP
-// Level 5: He rolls a 12. Con again:+3. Total 15. 41 +15 = 56.   
+  // At first level, he gets maximum: 12 (Die sides) +3 (Con Mod) = 15 
+  // Level 2: He rolls a 3 on the d12, and adds his con mod of +3. That's 6. 15+6=21 
+  // Level 3: He Rolls a 9 on the d12. Con mod again +3. That's 12 this level. 21 + 12 = 33
+  // Level 4: He rolls a 5. Con mod is a +3... he's adding 8. Total is 33+8 = 41 max HP
+  // Level 5: He rolls a 12. Con again:+3. Total 15. 41 +15 = 56.   
 
-healthPoints = event => {
-  let level = this.state.Level;
-  let health = this.state.hitDie;
-  let newThrow = null;
+  healthPoints = event => {
+    let level = this.state.Level;
+    let health = this.state.hitDie;
+    let newThrow = null;
   
     if (level!==1) {
       for (var i = 2; i <= level; i++) {
@@ -420,7 +463,7 @@ healthPoints = event => {
       }
     }
     this.setState({Hitpoints:health});
-}
+  }
 
   render() {
     console.log(this.state)
@@ -698,7 +741,7 @@ healthPoints = event => {
               <div className="panel-heading">
                 <label className="panel-title">Weapon Proficiencies</label>
               </div>
-              <div className="panel-body">
+              <div className="panel-body weaponsWrap">
                 <Weapons class={this.state.Class}/>
               </div>
           </div>
@@ -706,7 +749,7 @@ healthPoints = event => {
               <div className="panel-heading">
                 <label className="panel-title">Armour Proficiencies</label>
               </div>
-              <div className="panel-body">
+              <div className="panel-body" >
                 <Armours class={this.state.Class} />
               </div>
           </div>
@@ -726,8 +769,10 @@ healthPoints = event => {
                  <div className="panel-heading">
                      <label className="panel-title">Traits</label>
                  </div>
-                 <div className="panel-body">
-                 </div>
+                 
+                <div className="panel-body traitsWrap" >
+                  <Traits Race={this.state.Race} />
+                </div>
                </div>          
 
       </div>
