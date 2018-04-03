@@ -65,7 +65,25 @@ app.get("/races/:race", function(req, res){
 		console.log("err", err);
 		res.json(err);
 	});
-})
+});
+
+//conecting to Heroku
+var databaseUrl = 'mongodb://localhost/dnd';
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+}
+else {
+  mongoose.Promise = Promise;
+  mongoose.connect(databaseUrl);
+};
+
+mongoose.Promise = Promise;
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dnd";
+mongoose.connect(MONGODB_URI);
+var database = mongoose.connection;
+
+
 // app.post("/create", function(req, res){
 // 	console.log(req.body);
 // 	db.classes.create(req.body).then(function(response){
