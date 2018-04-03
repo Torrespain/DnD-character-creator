@@ -769,7 +769,7 @@ healthPoints = event => {
             </div>
 
             <div className="row">
-              <div className="col-md-2">
+              <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
                     <label className="panel-title">Sex</label>
@@ -863,7 +863,7 @@ healthPoints = event => {
                   </div>
                   <div className="panel-body">
                     <div className="panel-body">
-                      <SubRace className={this.state.Race} />
+                      <SubRace class={this.state.Race} />
                     </div>
                   </div>
                 </div>
@@ -937,7 +937,7 @@ healthPoints = event => {
             <label>Saving Throws</label>
           </div>
           <div className="panel-body">
-            <SavingThrows className={this.state.Class} />
+            <SavingThrows class={this.state.Class} />
           </div>
           </div>
           <div className="panel panel-default">
@@ -945,7 +945,7 @@ healthPoints = event => {
                 <label className="panel-title">Weapon Proficiencies</label>
               </div>
               <div className="panel-body">
-                <Weapons className={this.state.Class}/>
+                <Weapons class={this.state.Class}/>
               </div>
           </div>
           <div className="panel panel-default">
@@ -953,7 +953,7 @@ healthPoints = event => {
                 <label className="panel-title">Armour Proficiencies</label>
               </div>
               <div className="panel-body">
-                <Armours className={this.state.Class} />
+                <Armours class={this.state.Class} />
               </div>
           </div>
         </div>
@@ -965,7 +965,7 @@ healthPoints = event => {
               Skills
             </label>
             </div>
-            <Skills className={this.state.Class} Skills={this.state.Skills} updateSkills={this.updateSkills}/>
+            <Skills class={this.state.Class} Skills={this.state.Skills} updateSkills={this.updateSkills}/>
         </div>
 
           <div className="panel panel-default">

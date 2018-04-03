@@ -35,7 +35,7 @@ class Skills extends React.Component {
     return (
       <div>
         <div className="classChoice"> 
-        {this.props.className.length > 0 ? "":(<h3> Pick A Class </h3>)}
+        {this.props.class.length > 0 ? "":(<h3> Pick A Class </h3>)}
         </div>
         {this.props.class === "Barbarian" ? (
             <ul className="list-group list-group-flush" multiple>
