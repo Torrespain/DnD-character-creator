@@ -862,7 +862,7 @@ healthPoints = event => {
                     <label className="panel-title">Sub Race</label>
                   </div>
                   <div className="panel-body">
-                    <div className="panel-body">
+                    <div className="panel-body" id="subracePanel">
                       <SubRace class={this.state.Race} />
                     </div>
                   </div>
@@ -1123,7 +1123,7 @@ healthPoints = event => {
 
                          <label>Vehicles</label>
                         <div className="select">
-                          <select className="form-control" onChange={this.handleChange} name="Vehicles" value={this.state.Vehicles} placeholder="Vehicles">
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Vehicles" value={this.state.Vehicles} placeholder="Vehicles">
                             <option value="" disabled defaultValue>Vehicles</option>
                             <option value="Land">Land</option>
                             <option value="Water">Water</option>
@@ -1134,7 +1134,7 @@ healthPoints = event => {
 
                          <label>Other</label>
                         <div className="select">
-                          <select className="form-control" onChange={this.handleChange} name="Other" value={this.state.Other} placeholder="Other">
+                          <select className="form-control" readOnly onChange={this.handleChange} name="Other" value={this.state.Other} placeholder="Other">
                             <option value="" disabled defaultValue>Other</option>
                             <option value="Disguise-kit">Disguise kit</option>
                             <option value="Forgery-kit">Forgery kit</option>
