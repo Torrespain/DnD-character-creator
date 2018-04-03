@@ -903,7 +903,7 @@ healthPoints = event => {
               <div className="col-md-3">
                 <div className="panel panel-default">
                   <div className="panel-heading">
-                    <label className="panel-title">Archtype</label>
+                    <label className="panel-title">Archetype</label>
                   </div>
                   <div className="panel-body">
 
