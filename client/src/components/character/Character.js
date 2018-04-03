@@ -33,7 +33,7 @@ class Home extends React.Component {
       modifiers: "",
       Saves: "",
       Skills: [],
-      Armour: "",
+      Armour: [],
       hitDie: null,
       Hitpoints: null,
       ConstitutionHP: null,
@@ -48,12 +48,14 @@ class Home extends React.Component {
       Instrument: "",
       Vehicles: "",
       Other: "",
-      Traits: null
+      Traits: [],
+      SavingThrows: []
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.updateSkills = this.updateSkills.bind(this)
     this.setRaceTraits = this.setRaceTraits.bind(this)
+    this.setClassArmour = this.setClassArmour.bind(this)
   }
 
   componentDidMount(){
@@ -435,6 +437,36 @@ class Home extends React.Component {
      }, 300);
   }
 
+  setClassArmour = () => {
+    const t = this
+    const wrap = document.querySelector(".armourWrap");
+    setTimeout(function(){
+      const elementsArray = wrap.getElementsByTagName("li");
+      const armourArray = []
+      for(var i = 0;i < elementsArray.length; i++){
+        armourArray.push(elementsArray[i].textContent)
+      }
+     t.setState({Armour:armourArray});
+     console.log("state.armour:",t.state.Armour )
+     console.log("state:",t.state)
+     }, 300);
+  }
+
+  setClassSavingThrows = () => {
+    const t = this
+    const wrap = document.querySelector(".savingThrowsWrap");
+    setTimeout(function(){
+      const elementsArray = wrap.getElementsByTagName("li");
+      const savingThrowsArray = []
+      for(var i = 0;i < elementsArray.length; i++){
+        savingThrowsArray.push(elementsArray[i].textContent)
+      }
+     t.setState({SavingThrows:savingThrowsArray});
+     console.log("state.SavingThrows:",t.state.SavingThrows )
+     console.log("state:",t.state)
+     }, 300);
+  }
+
   // Fred Fighter
   // Fred is a fighter. He's level 3. He's using the alternate, because he's in an Adventurer's League Game. He has a Con of 14, for +2.
 
@@ -733,7 +765,7 @@ class Home extends React.Component {
           <div className = "panel-heading">
             <label>Saving Throws</label>
           </div>
-          <div className="panel-body">
+          <div className="panel-body savingThrowsWrap">
             <SavingThrows class={this.state.Class} />
           </div>
           </div>
@@ -749,7 +781,7 @@ class Home extends React.Component {
               <div className="panel-heading">
                 <label className="panel-title">Armour Proficiencies</label>
               </div>
-              <div className="panel-body" >
+              <div className="panel-body armourWrap" >
                 <Armours class={this.state.Class} />
               </div>
           </div>
