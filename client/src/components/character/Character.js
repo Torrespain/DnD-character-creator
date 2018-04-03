@@ -498,7 +498,6 @@ grabClass = event =>{
         //     ...
         //     break;
     }
-
   }
 
   grabRace = event =>{
@@ -600,11 +599,10 @@ grabClass = event =>{
         charisma: this.getModifiers(diceAbilities.charisma + raceAbilities.charisma)
       }
     }) 
-    
+
   }
 
   getModifiers = event =>{
-    console.log("event", event)
     if (event===1) {
       return (-5);
     }
@@ -684,6 +682,10 @@ healthPoints = event => {
   this.setState({HealthRace:healthRace});
   this.setState({TotalHP:totalHealth});
 }
+
+  // armorCalc = () => {
+  //   return (10+this.state.modifiers.dexterity);
+  // }
 
 
   render() {
@@ -861,7 +863,7 @@ healthPoints = event => {
                   </div>
                   <div className="panel-body">
                     <div className="panel-body">
-                      <SubRace class={this.state.Race} />
+                      <SubRace className={this.state.Race} />
                     </div>
                   </div>
                 </div>
@@ -935,7 +937,7 @@ healthPoints = event => {
             <label>Saving Throws</label>
           </div>
           <div className="panel-body">
-            <SavingThrows class={this.state.Class} />
+            <SavingThrows className={this.state.Class} />
           </div>
           </div>
           <div className="panel panel-default">
@@ -943,7 +945,7 @@ healthPoints = event => {
                 <label className="panel-title">Weapon Proficiencies</label>
               </div>
               <div className="panel-body">
-                <Weapons class={this.state.Class}/>
+                <Weapons className={this.state.Class}/>
               </div>
           </div>
           <div className="panel panel-default">
@@ -951,7 +953,7 @@ healthPoints = event => {
                 <label className="panel-title">Armour Proficiencies</label>
               </div>
               <div className="panel-body">
-                <Armours class={this.state.Class} />
+                <Armours className={this.state.Class} />
               </div>
           </div>
         </div>
@@ -963,7 +965,7 @@ healthPoints = event => {
               Skills
             </label>
             </div>
-            <Skills class={this.state.Class} Skills={this.state.Skills} updateSkills={this.updateSkills}/>
+            <Skills className={this.state.Class} Skills={this.state.Skills} updateSkills={this.updateSkills}/>
         </div>
 
           <div className="panel panel-default">
@@ -986,14 +988,29 @@ healthPoints = event => {
                     <span>Total HP: {this.state.TotalHP} (Health:{this.state.Hitpoints} + Const: {this.state.constitutionHP} + Race: {this.state.HealthRace})</span>
                   </div>
                 </div>
+                  <div className="row">
 
-                <div className="panel panel-default">
-                 <div className="panel-heading">
-                     <label className="panel-title">Speed</label>
+                  <div className="col-md-6">
+                  <div className="panel panel-default">
+                   <div className="panel-heading">
+                       <label className="panel-title">Speed</label>
+                   </div>
+                   <div className="panel-body">
+                      <span>{this.state.Speed}</span>
+                   </div>
                  </div>
-                 <div className="panel-body">
-                    <span>{this.state.Speed}</span>
                  </div>
+                 <div className="col-md-6">
+                  <div className="panel panel-default">
+                   <div className="panel-heading">
+                       <label className="panel-title">Armour Class</label>
+                   </div>
+                   <div className="panel-body">
+                      <span>10 + ({this.state.modifiers.dexterity})</span>
+                   </div>
+                 </div>
+                 </div>
+
                </div>
                 
                 <div className="panel panel-default">
