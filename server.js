@@ -79,7 +79,7 @@ else {
 };
 
 mongoose.Promise = Promise;
-var MONGODB_URI = process.env.MONGODB_URI || "https://cryptic-mesa-16953.herokuapp.com/heroku_kqkdbbb4";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dnd";
 mongoose.connect(MONGODB_URI);
 var database = mongoose.connection;
 console.log(database);
@@ -91,7 +91,6 @@ console.log(database);
 // 		console.log("created", response);
 // 	}).catch(function(err){
 // 		console.log("err", err);
-// console.log("heroku_kqkdbbb4")
 // 	})
 // });
 
