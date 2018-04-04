@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/heroku_kqkdbbb4", {
+mongoose.connect("mongodb://localhost/dnd", {
 //   useMongoClient: true
 });
 
@@ -68,7 +68,7 @@ app.get("/races/:race", function(req, res){
 });
 
 //conecting to Heroku
-var databaseUrl = 'mongodb://localhost/heroku_kqkdbbb4';
+var databaseUrl = 'mongodb://localhost/dnd';
 
 if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
@@ -79,9 +79,10 @@ else {
 };
 
 mongoose.Promise = Promise;
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/heroku_kqkdbbb4";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dnd";
 mongoose.connect(MONGODB_URI);
 var database = mongoose.connection;
+console.log(database);
 
 
 // app.post("/create", function(req, res){
