@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js", //it was index.js
+  "main": "server.js",
   "scripts": {
     "client": "node scripts/start-client.js",
     "server": "concurrently \"nodemon server.js\" \"npm run client\"",
