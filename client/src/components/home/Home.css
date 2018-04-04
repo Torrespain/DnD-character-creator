@@ -3,3 +3,9 @@ body {
 	background-repeat: no-repeat;
     background-size: cover;
 }
+
+.home-container {
+    text-align: center;
+    background:  #11ffee00;
+    color: white;
+}
