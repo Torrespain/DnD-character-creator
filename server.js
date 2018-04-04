@@ -82,7 +82,6 @@ mongoose.Promise = Promise;
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dnd";
 mongoose.connect(MONGODB_URI);
 var database = mongoose.connection;
-console.log(database);
 
 
 // app.post("/create", function(req, res){
