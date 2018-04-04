@@ -8,6 +8,7 @@ import SavingThrows from './throwing';
 import SubRace from './subrace';
 import Weapons from './weapons';
 import Levels from './levels';
+import Traits from './traits'
 // import Health from './health';
 
 class Home extends React.Component {
@@ -33,7 +34,7 @@ class Home extends React.Component {
       modifiers: "",
       Saves: "",
       Skills: [],
-      Armour: "",
+      Armour: [],
       hitDie: null,
       Hitpoints: null,
       ConstitutionHP: null,
@@ -43,10 +44,11 @@ class Home extends React.Component {
       Languages: "",
       Exotic: "",
       Tools: "",
-      Weapons: "",
+      Weapons: [],
       Gaming: "",
       Instrument: "",
       Vehicles: "",
+      Traits: [],
       Other: ""
     }
 
@@ -973,6 +975,7 @@ healthPoints = event => {
                      <label className="panel-title">Traits</label>
                  </div>
                  <div className="panel-body">
+                 <Traits Race={this.state.Race}/>
                  </div>
                </div>          
 
