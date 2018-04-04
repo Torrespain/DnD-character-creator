@@ -7,8 +7,11 @@ class home extends React.Component {
   render() {
     return (
         <div className="charButton">
-	    	 <button>Create a character</button>               
+        <a href="/character">
+	    	 <button>Create a character</button> 
+        </a>              
         </div>
+        
     );
   }
 }
