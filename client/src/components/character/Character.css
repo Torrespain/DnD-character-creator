@@ -1,5 +1,5 @@
 body {
-	background: url("http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW");
+	background: url("https://image.ibb.co/eOEfFS/background2.jpg");
 	background-repeat: no-repeat;
     background-size: cover;
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
@@ -23,9 +23,21 @@ body {
 #abilitiesDice {
 	margin-left: 10px;
 }
-button{
-	
-}
+
 #subracePanel{
 	padding: 0px;
 }
+
+.list-group-item {
+    height: 70px !important;
+}
+
+.pluses {
+    float:right !important;
+}
+
+button {
+    border-radius: 100px !important;
+    background-color: #E7E7E7;
+}
+

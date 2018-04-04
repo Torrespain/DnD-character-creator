@@ -8,4 +8,15 @@ body {
     text-align: center;
     background:  #11ffee00;
     color: white;
+    float: left;
+    margin-left: 10%;
+    bottom: 10%;
+    position: fixed;
+}
+
+.text-container{
+	text-align: center;
+    background:  #11ffee00;
+    color: white;
+
 }
