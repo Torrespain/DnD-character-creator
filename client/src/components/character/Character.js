@@ -98,7 +98,7 @@ class Home extends React.Component {
    getClassData = (position) => {
     API.getClassAPI(window.event.target.value)
     .then(data => {
-      console.log(data);
+      console.log("this is the data", data);
       let hitDie = data.data[position].hit_die;
 
       this.setState({hitDie:hitDie});
