@@ -209,6 +209,17 @@ grabClass = event =>{
             });
           })
         }, 0);
+        let SavingThrows = [];
+        setTimeout(() => {
+          const barbarianThrowing = document.querySelector('#barbarianThrowing');
+            barbarianThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
+            });
+          })
+        }, 0);
         break;
 
       case "Bard":
@@ -232,6 +243,17 @@ grabClass = event =>{
             this.setState({
               ...this.state,
               Weapons
+            });
+          })
+        }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const bardThrowing = document.querySelector('#bardThrowing');
+            bardThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
             });
           })
         }, 0);
@@ -261,6 +283,17 @@ grabClass = event =>{
             });
           })
         }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const clericThrowing = document.querySelector('#clericThrowing');
+            clericThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
+            });
+          })
+        }, 0);
         break;
 
       case "Druid":
@@ -284,6 +317,17 @@ grabClass = event =>{
             this.setState({
               ...this.state,
               Weapons
+            });
+          })
+        }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const druidThrowing = document.querySelector('#druidThrowing');
+            druidThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
             });
           })
         }, 0);
@@ -313,6 +357,17 @@ grabClass = event =>{
             });
           })
         }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const fighterThrowing = document.querySelector('#fighterThrowing');
+            fighterThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
+            });
+          })
+        }, 0);
         break;
 
       case "Monk":
@@ -336,6 +391,17 @@ grabClass = event =>{
             this.setState({
               ...this.state,
               Weapons
+            });
+          })
+        }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const monkThrowing = document.querySelector('#monkThrowing');
+            monkThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
             });
           })
         }, 0);
@@ -365,6 +431,17 @@ grabClass = event =>{
             });
           })
         }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const paladinThrowing = document.querySelector('#paladinThrowing');
+            paladinThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
+            });
+          })
+        }, 0);
         break;     
 
       case "Rogue":
@@ -388,6 +465,17 @@ grabClass = event =>{
             this.setState({
               ...this.state,
               Weapons
+            });
+          })
+        }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const rogueThrowing = document.querySelector('#rogueThrowing');
+            rogueThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
             });
           })
         }, 0);
@@ -417,6 +505,17 @@ grabClass = event =>{
             });
           })
         }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const sorcererThrowing = document.querySelector('#sorcererThrowing');
+            sorcererThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
+            });
+          })
+        }, 0);
         break;
 
       case "Ranger":
@@ -440,6 +539,17 @@ grabClass = event =>{
             this.setState({
               ...this.state,
               Weapons
+            });
+          })
+        }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const rangerThrowing = document.querySelector('#rangerThrowing');
+            rangerThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
             });
           })
         }, 0);
@@ -469,6 +579,17 @@ grabClass = event =>{
             });
           })
         }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const warlockThrowing = document.querySelector('#warlockThrowing');
+            warlockThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
+            });
+          })
+        }, 0);
         break;
 
       case "Wizard":
@@ -495,6 +616,17 @@ grabClass = event =>{
             });
           })
         }, 0);
+        SavingThrows = [];
+        setTimeout(() => {
+          const wizardThrowing = document.querySelector('#wizardThrowing');
+            wizardThrowing.childNodes.forEach((element, index) => {
+              SavingThrows.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              SavingThrows
+            });
+          })
+        }, 0);
         break;
         // default:
         //     ...
@@ -513,38 +645,136 @@ grabClass = event =>{
     {
       case "Dwarf":
         this.getRaceData(0);
+        let Traits = [];
+        setTimeout(() => {
+          const dwarfTrait = document.querySelector('#dwarfTrait');
+            dwarfTrait.childNodes.forEach((element, index) => {
+              Traits.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Traits
+            });
+          })
+        }, 0);
         break;
-
       case "Tiefling":
         this.getRaceData(1);
+        Traits = [];
+        setTimeout(() => {
+          const tieflingTrait = document.querySelector('#tieflingTrait');
+            tieflingTrait.childNodes.forEach((element, index) => {
+              Traits.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Traits
+            });
+          })
+        }, 0);
         break;
       
       case "Elf":
         this.getRaceData(2);
+        Traits = [];
+        setTimeout(() => {
+          const elfTrait = document.querySelector('#elfTrait');
+            elfTrait.childNodes.forEach((element, index) => {
+              Traits.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Traits
+            });
+          })
+        }, 0);
         break;
 
       case "Halfling":
         this.getRaceData(3);
+        Traits = [];
+        setTimeout(() => {
+          const halflingTrait = document.querySelector('#halflingTrait');
+            halflingTrait.childNodes.forEach((element, index) => {
+              Traits.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Traits
+            });
+          })
+        }, 0);
         break;
 
       case "Human":
         this.getRaceData(4);
+        Traits = [];
+        setTimeout(() => {
+          const humanTrait = document.querySelector('#humanTrait');
+            humanTrait.childNodes.forEach((element, index) => {
+              Traits.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Traits
+            });
+          })
+        }, 0);
         break;
 
       case "Dragonborn":
         this.getRaceData(5);
+        Traits = [];
+        setTimeout(() => {
+          const dragonbornTrait = document.querySelector('#dragonbornTrait');
+            dragonbornTrait.childNodes.forEach((element, index) => {
+              Traits.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Traits
+            });
+          })
+        }, 0);
         break;
 
       case "Gnome":
         this.getRaceData(6);
+        Traits = [];
+        setTimeout(() => {
+          const gnomeTrait = document.querySelector('#gnomeTrait');
+            gnomeTrait.childNodes.forEach((element, index) => {
+              Traits.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Traits
+            });
+          })
+        }, 0);
         break;
 
       case "Half-Elf":
         this.getRaceData(7);
+        Traits = [];
+        setTimeout(() => {
+          const halfelfTrait = document.querySelector('#halfelfTrait');
+            halfelfTrait.childNodes.forEach((element, index) => {
+              Traits.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Traits
+            });
+          })
+        }, 0);
         break;
 
       case "Half-Orc":
         this.getRaceData(8);
+        Traits = [];
+        setTimeout(() => {
+          const halforcTrait = document.querySelector('#halforcTrait');
+            halforcTrait.childNodes.forEach((element, index) => {
+              Traits.push(element.innerHTML)
+            this.setState({
+              ...this.state,
+              Traits
+            });
+          })
+        }, 0);
         break;
         // default:
         //     ...
@@ -978,7 +1208,6 @@ healthPoints = event => {
                  <Traits Race={this.state.Race}/>
                  </div>
                </div>          
-
       </div>
    
        <div className="col-md-4">
