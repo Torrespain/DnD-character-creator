@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "client": "node scripts/start-client.js",
-    "server": "concurrently \"nodemon server.js\" \"npm run client\"",
+    // "server": "concurrently \"nodemon server.js\" \"npm run client\"",
     "start": "node server.js",
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
