@@ -4,6 +4,13 @@ body {
     background-size: cover;
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 }
+
+@media screen and (max-width: 800px){
+    body {
+		background: url("https://image.ibb.co/jAKDhH/background3.jpg");
+	}
+}
+
 .container {
 	background: rgba(255,255,255, 0.75);
   	padding: 25px;

@@ -1,8 +1,4 @@
-body {
-	
-	background-repeat: no-repeat;
-    background-size: cover;
-}
+
 
 .home-container {
     text-align: center;
@@ -26,10 +22,10 @@ body {
 	    text-align: center;
 	    background:  #11ffee00;
 	    color: white;
-	    top: 10%;
+	    top: 25%;
 	    position: fixed;
-
-	    }
+		background-size: cover;
+	}
 	.text-container{
 		text-align: center;
 	    background:  #11ffee00;
