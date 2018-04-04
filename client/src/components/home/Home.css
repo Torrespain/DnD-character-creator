@@ -20,3 +20,25 @@ body {
     color: white;
 
 }
+
+@media screen and (max-width: 640px){
+    .home-container {
+	    text-align: center;
+	    background:  #11ffee00;
+	    color: white;
+	    top: 10%;
+	    position: fixed;
+
+	    }
+	.text-container{
+		text-align: center;
+	    background:  #11ffee00;
+	    color: white;
+
+	}
+}
+
+
+
+
+
