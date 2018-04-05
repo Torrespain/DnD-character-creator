@@ -122,6 +122,48 @@
     font-size: 50px;
     width: 115px;
 }
+.strength-1b-print {
+    position: fixed;
+    top: 410px;
+    left: 63px;
+    font-size: 30px;
+    width: 115px;
+}
+.dexterity-1b-print {
+    position: fixed;
+    top: 561px;
+    left: 63px;
+    font-size: 30px;
+    width: 115px;
+}
+.constitution-1b-print {
+    position: fixed;
+    top: 712px;
+    left: 63px;
+    font-size: 30px;
+    width: 115px;
+}
+.intelligence-1b-print {
+    position: fixed;
+    top: 862px;
+    left: 63px;
+    font-size: 30px;
+    width: 115px;
+}
+.wisdom-1b-print {
+    position: fixed;
+    top: 1017px;
+    left: 63px;
+    font-size: 30px;
+    width: 115px;
+}
+.charisma-1b-print {
+    position: fixed;
+    top: 1168px;
+    left: 63px;
+    font-size: 30px;
+    width: 115px;
+}
 .passive-wisdom-print {
     position: fixed;
     top: 1260px;
@@ -346,7 +388,7 @@
 .armor-class-print {
     position: fixed;
     top: 301px;
-    left: 512px;
+    left: 490px;
     font-size: 60px;
 }
 .initiative-print {
@@ -382,6 +424,14 @@
     font-size: x-large;
     width: 115px;
 }
+.hit-dice-print {
+    position: fixed;
+    top: 689px;
+    left: 515px;
+    font-size: x-large;
+    width: 115px;
+}
+
 .attack-name-print {
     position: fixed;
     top: 710px;
@@ -538,13 +588,7 @@
     font-size: small;
     width: 115px;
 }
-.hit-dice-print {
-    position: relative;
-    top: 390px;
-    left: 552px;
-    font-size: large;
-    width: 115px;
-}
+
 .success-1-print {
     position: relative;
     top: 378px;

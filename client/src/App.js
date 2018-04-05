@@ -32,7 +32,7 @@ class App extends Component {
           <Route exact path="/" component={Home}/>                           
           <Route exact path="/character" component={CharPage}/>
 
-          <Route exact path="/print" component={Print}/>
+          {/*<Route exact path="/print" component={Print}/>*/}
         </div>
       </Router>
       </div>

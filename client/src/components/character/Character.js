@@ -12,7 +12,9 @@ import Traits from './traits';
 import PrintSheet from './printSheet'
 
 class Home extends Component {
-   state = {
+ constructor(props) {
+   super(props);
+   this.state = {
       Name: "",
       Player: "",
       Sex: "",
@@ -44,6 +46,9 @@ class Home extends Component {
       Other: "",
       readyToPrint: false
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.updateSkills = this.updateSkills.bind(this)
+  }
 
   updateSkills (newSkills) {
     this.setState ({Skills: newSkills})
@@ -879,7 +884,7 @@ healthPoints = event => {
   let healthRace = null;
   let totalHealth = null;
 
-  if (this.state.Race=="Dwarf") {
+  if (this.state.Race==="Dwarf") {
     healthRace+=1;
   }
 
@@ -888,7 +893,7 @@ healthPoints = event => {
       newThrow = Math.floor(Math.random()*this.state.hitDie)+1;
       health = health + newThrow;
       constitutionHP += conModifier;
-      if (this.state.Race=="Dwarf") {
+      if (this.state.Race==="Dwarf") {
         healthRace+=1;
       }
     }
@@ -901,13 +906,20 @@ healthPoints = event => {
 }
 
 printSheet = () =>{
-  this.setState({readyToPrint:false});
+  this.setState({readyToPrint:true});
+   
+
+  setTimeout(function(){ window.print() }, 500);
+  this.setState.readyToPrint=false;
 }
 
   render() {
     console.log(this.state)
-    // console.log(this.state.name)
-    return this.state.readyToPrint ? <PrintSheet character={this.state.Level} testing="testing"/> : (
+    if(this.state.readyToPrint) {
+      return (<PrintSheet character={this.state} />);
+    }
+
+    return (
 
       <div className="container">
 
@@ -1342,7 +1354,7 @@ printSheet = () =>{
            </div>
           </div>
         </div>
-        <a class="btn btn-primary btn-lg" href="/print" role="button" onClick={this.printSheet}>Print Sheet</a>
+        <a className="btn btn-primary btn-lg" role="button" onClick={this.printSheet}>Print Sheet</a>
       </div>
     );
   }
