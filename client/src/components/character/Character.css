@@ -1,5 +1,5 @@
 body {
-	background: url("https://image.ibb.co/eOEfFS/background2.jpg");
+	background: url("/../images/background2.jpg");
 	background-repeat: no-repeat;
     background-size: cover;
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
@@ -7,7 +7,7 @@ body {
 
 @media screen and (max-width: 800px){
     body {
-		background: url("http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/images/large-background/03_HubHeroR_StarterArt_140722_Optimised_0.png?itok=igt3AwtW");
+		background: url("/../images/smallBackground.png");
 		background-repeat: no-repeat;
     	background-size: cover;
     	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
@@ -21,7 +21,7 @@ body {
 }
 
 .dragonSide{
-	background: url("http://pbblogassets.s3.amazonaws.com/uploads/2014/11/Vector-Fire.gif");
+	background: url("/../images/smallBackground.png");
 	width: 100%;
 	
 }

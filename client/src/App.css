@@ -32,11 +32,11 @@
 }
 
 .characterPage {
-  background: url("https://image.ibb.co/eOEfFS/background2.jpg");
+
   background-repeat: no-repeat;
-    background-size: cover;
+  background-size: cover;
 }
 
 .list-group-item{
-  padding-top: 15px
+  padding-top: 15px;
 }

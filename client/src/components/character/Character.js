@@ -913,7 +913,7 @@ healthPoints = event => {
 
         <div className="row">
           <div className="col-md-2" >
-            <img className="dragonSide" src="https://image.ibb.co/gDLFFS/db4c8feee54b432773d15cd2e2ccd026_d9574e0.jpg"></img>
+            <img className="dragonSide" src="/../images/knight.jpg"></img>
           </div>
 
           <div className="col-md-10">
