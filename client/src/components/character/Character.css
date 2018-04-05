@@ -39,12 +39,13 @@ body {
 }
 
 .list-group-item {
-    height: 70px !important;
+   
 }
 
 .pluses {
-    float:right !important;
+    float: right;
 }
+
 
 button {
     border-radius: 100px !important;
