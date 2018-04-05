@@ -4,10 +4,8 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var axios = require("axios");
 
-
 // Require all models
 var db = require("./backend/models");
-
 
 // console.log(db)
 var port = process.env.PORT || 3005;
@@ -82,25 +80,6 @@ mongoose.Promise = Promise;
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dnd";
 mongoose.connect(MONGODB_URI);
 var database = mongoose.connection;
-
-
-// app.post("/create", function(req, res){
-// 	console.log(req.body);
-// 	db.classes.create(req.body).then(function(response){
-// 		console.log("created", response);
-// 	}).catch(function(err){
-// 		console.log("err", err);
-// 	})
-// });
-
-// app.post("/races", function(req, res){
-// 	console.log(req.body);
-// 	db.races.create(req.body).then(function(response){
-// 		console.log("created", response);
-// 	}).catch(function(err){
-// 		console.log("err", err);
-// 	})
-// });
 
 app.listen(port, function() {
   console.log("Listening on port:%s", port);

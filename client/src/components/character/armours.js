@@ -37,7 +37,7 @@ class Armours extends React.Component {
           ):""} 
           {this.props.class === "Monk" ? (
               <ul className="list-group list-group-flush" id="monkArmour">
-                <h1> No Proficiencies in Armor </h1>
+                <h4>No Armour Proficiencies</h4>
               </ul>
           ):""} 
           {this.props.class === "Paladin" ? (
@@ -55,7 +55,7 @@ class Armours extends React.Component {
           ):""}
           {this.props.class === "Sorcerer" ? (
               <ul className="list-group list-group-flush" id="sorcererArmour">
-                <h1> No Proficiencies in Armour </h1>
+                <h4>No Armour Proficiencies</h4>
               </ul>
           ):""}
           {this.props.class === "Warlock" ? (
@@ -65,7 +65,7 @@ class Armours extends React.Component {
           ):""}
           {this.props.class === "Wizard" ? (
               <ul className="list-group list-group-flush" id="wizardArmour">
-                <h1> No Proficiencies in Armour </h1>
+                <h4>No Armour Proficiencies</h4>
               </ul>
           ):""}
           {this.props.class === "Rogue" ? (

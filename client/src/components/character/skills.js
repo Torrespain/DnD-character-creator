@@ -30,8 +30,6 @@ class Skills extends React.Component {
   }
 
   render() {
-        console.log("this is our current state", this.state)
-
     return (
       <div>
         <div className="classChoice"> 

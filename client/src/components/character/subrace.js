@@ -27,7 +27,7 @@ class SubRace extends React.Component {
         ):""}
         {this.props.class === "Human" ? (
             <ul className="list-group list-group-flush">
-                <li className="list-group-item"> No SubRace Please Speak With your GM</li>
+                <li className="list-group-item"> No SubRace</li>
             </ul>
         ):""}
         {this.props.class === "Dwarf" ? (
@@ -38,17 +38,17 @@ class SubRace extends React.Component {
         ):""}
         {this.props.class === "Half-Orc" ? (
             <ul className="list-group list-group-flush">
-                <li className="list-group-item"> No SubRace Please Speak With your GM</li>
+                <li className="list-group-item"> No SubRace</li>
             </ul>
         ):""}
         {this.props.class === "Dragonborn" ? (
             <ul className="list-group list-group-flush">
-                <li className="list-group-item"> No SubRace Please Speak With your GM</li>
+                <li className="list-group-item"> No SubRace</li>
             </ul>
         ):""}
         {this.props.class === "Tiefling" ? (
             <ul className="list-group list-group-flush">
-                <li className="list-group-item"> No SubRace Please Speak With your GM</li>
+                <li className="list-group-item"> No SubRace</li>
             </ul>
         ):""}
        </div>
