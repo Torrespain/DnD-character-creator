@@ -1,0 +1,626 @@
+.container-print {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    text-align: center;
+    color: red;
+    width: 1300px;
+    height: 1530px;
+    /* border: solid yellow 2px; */
+    /* width: 115px; */
+    
+}
+#dragonSheetImage {
+    width: 1100px;
+}
+
+/*top of the form*/
+.character-name-print {
+    color: red;
+    position: fixed;
+    top: 192px;
+    left: 140px;
+    font-size: 30px;
+    width: 255px;
+}
+.class-level-print {
+    position: fixed;
+    top: 136px;
+    left: 425px;
+    font-size: 20px;
+    width: 150px;
+}
+.background-print {
+    position: fixed;
+    top: 136px;
+    left: 601px;
+    font-size: 20px;
+    width: 150px;
+}
+.player-name-print {
+    position: fixed;
+    top: 136px;
+    left: 762px;
+    font-size: 20px;
+    width: 270px;
+}
+.faction-print {
+    position: fixed;
+    top: 136px;
+    left: 1040px;
+    font-size: 20px;
+    width: 165px;
+}
+.race-print {
+    position: fixed;
+    top: 194px;
+    left: 415px;
+    font-size: 20px;
+    width: 170px;
+}
+.alignment-print {
+    position: fixed;
+    top: 194px;
+    left: 591px;
+    font-size: 20px;
+    width: 160px;
+}
+.experience-points-print {
+    position: fixed;
+    top: 194px;
+    left: 836px;
+    font-size: 20px;
+    width: 145px;
+}
+.dci-number-print {
+    position: fixed;
+    top: 194px;
+    left: 1051px;
+    font-size: 20px;
+    width: 145px;
+}
+
+/*left part(colum) of the form*/
+.strength-1-print {
+    position: fixed;
+    top: 343px;
+    left: 63px;
+    font-size: 50px;
+    width: 115px;
+}
+.dexterity-1-print {
+    position: fixed;
+    top: 494px;
+    left: 63px;
+    font-size: 50px;
+    width: 115px;
+}
+.constitution-1-print {
+    position: fixed;
+    top: 645px;
+    left: 63px;
+    font-size: 50px;
+    width: 115px;
+}
+.intelligence-1-print {
+    position: fixed;
+    top: 796px;
+    left: 63px;
+    font-size: 50px;
+    width: 115px;
+}
+.wisdom-1-print {
+    position: fixed;
+    top: 947px;
+    left: 63px;
+    font-size: 50px;
+    width: 115px;
+}
+.charisma-1-print {
+    position: fixed;
+    top: 1098px;
+    left: 63px;
+    font-size: 50px;
+    width: 115px;
+}
+.passive-wisdom-print {
+    position: fixed;
+    top: 1260px;
+    left: 35px;
+    font-size: 40px;
+    width: 115px;
+}
+/*second colum*/
+.inspiration-print {
+    position: fixed;
+    top: 288px;
+    left: 172px;
+    font-size: 40px;
+    width: 115px;
+}
+.proficiency-bonus-print {
+    position: fixed;
+    top: 370px;
+    left: 174px;
+    font-size: 40px;
+    width: 115px;
+}
+.strength-2-print {
+    position: fixed;
+    top: 456px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.dexterity-2-print {
+    position: fixed;
+    top: 485px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.constitution-2-print {
+    position: fixed;
+    top: 514px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.intelligence-2-print {
+    position: fixed;
+    top: 543px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.wisdom-2-print {
+    position: fixed;
+    top: 572px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.charisma-2-print {
+    position: fixed;
+    top: 601px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.acrobatics-print {
+    position: fixed;
+    top: 699px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.animal-handling-print {
+    position: fixed;
+    top: 728px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.arcana-print{
+    position: fixed;
+    top: 757px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.athletics-print {
+    position: fixed;
+    top: 786px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.deception-print {
+    position: fixed;
+    top: 815px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.history-print {
+    position: fixed;
+    top: 844px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.insight-print {
+    position: fixed;
+    top: 873px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.intimidation-print {
+    position: fixed;
+    top: 902px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.investigation-print {
+    position: fixed;
+    top: 931px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.medicine-print {
+    position: fixed;
+    top: 960px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.nature-print {
+    position: fixed;
+    top: 989px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.perception-print {
+    position: fixed;
+    top: 1018px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.performance-print {
+    position: fixed;
+    top: 1047px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.persuasion-print {
+    position: fixed;
+    top: 1074px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.religion-print {
+    position: fixed;
+    top: 1103px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.sleight-of-hand-print {
+    position: fixed;
+    top: 1132px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.stealth-print {
+    position: fixed;
+    top: 1161px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+.survival-print {
+    position: fixed;
+    top: 1190px;
+    left: 200px;
+    font-size: large;
+    font-weight: bolder;
+    width: 115px;
+}
+
+/*third column of the form*/
+.crazy-stuff-print {
+    position: fixed;
+    top: 290px;
+    left: 523px;
+}
+.armor-class-print {
+    position: fixed;
+    top: 301px;
+    left: 512px;
+    font-size: 60px;
+}
+.initiative-print {
+    position: fixed;
+    top: 313px;
+    left: 610px;
+    font-size: 60px;
+}
+.speed-print {
+    position: fixed;
+    top: 313px;
+    left: 734px;
+    font-size: 60px;
+}
+.hit-point-max-print {
+    position: fixed;
+    top: 432px;
+    left: 626px;
+    font-size: x-large;
+    width: 115px;
+}
+.current-hit-point-print {
+    position: fixed;
+    top: 502px;
+    left: 591px;
+    font-size: x-large;
+    width: 115px;
+}
+.temporary-hit-point-print {
+    position: fixed;
+    top: 614px;
+    left: 591px;
+    font-size: x-large;
+    width: 115px;
+}
+.attack-name-print {
+    position: fixed;
+    top: 710px;
+    left: 403px;
+}
+.name-1-print {
+    position: fixed;
+    top: 865px;
+    left: 487px;
+    width: 115px;
+}
+.name-2-print {
+    position: fixed;
+    top: 907px;
+    left: 487px;
+    width: 115px;
+}
+.name-3-print {
+    position: fixed;
+    top: 948px;
+    left: 487px;
+    width: 115px;
+}
+.attack-bonus-print {
+    position: fixed;
+    top: 709px;
+    left: 540px;
+}
+.atk-bonus-1-print {
+    position: fixed;
+    top: 865px;
+    left: 641px;
+}
+.atk-bonus-2-print {
+    position: fixed;
+    top: 907px;
+    left: 641px;
+}
+.atk-bonus-3-print {
+    position: fixed;
+    top: 948px;
+    left: 641px;
+}
+.damage-print {
+    position: fixed;
+    top: 709px;
+    left: 606px;
+    width: 80px;
+}
+.damage-type-1-print {
+    position: fixed;
+    top: 865px;
+    left: 728px;
+}
+.damage-type-2-print {
+    position: fixed;
+    top: 907px;
+    left: 728px;
+}
+.damage-type-3-print {
+    position: fixed;
+    top: 948px;
+    left: 728px;
+}
+.proficiencies-print {
+    position: fixed;
+    top: 1124px;
+    left: 143px;
+    width: 150px;
+}
+.proficiency-1-print {
+    position: fixed;
+    top: 1278px;
+    left: 685px;
+}
+.proficiency-2-print {
+    position: fixed;
+    top: 1301px;
+    left: 685px;
+}
+.proficiency-3-print {
+    position: fixed;
+    top: 1325px;
+    left: 685px;
+}
+.proficiency-4-print {
+    position: fixed;
+    top: 1349px;
+    left: 685px;
+}
+.proficiency-5-print {
+    position: fixed;
+    top: 1372px;
+    left: 685px;
+}
+.proficiency-6-print {
+    position: fixed;
+    top: 1396px;
+    left: 685px;
+}
+.proficiency-7-print {
+    position: fixed;
+    top: 1417px;
+    left: 685px;
+}
+.equiments-print {
+    position: fixed;
+    top: 1064px;
+    left: 511px;
+    width: 150px;
+}
+.equipment-1-print {
+    position: fixed;
+    top: 1348px;
+    left: 240px;
+}
+.equipment-2-print {
+    position: fixed;
+    top: 1371px;
+    left: 240px;
+}
+.equipment-3-print {
+    position: fixed;
+    top: 1392px;
+    left: 240px;
+}
+.equipment-4-print {
+    position: fixed;
+    top: 1414px;
+    left: 240px;
+}
+.equipment-5-print {
+    position: fixed;
+    top: 1437px;
+    left: 240px;
+}
+.equipment-6-print {
+    position: fixed;
+    top: 1463px;
+    left: 240px;
+}
+.equipment-7-print {
+    position: fixed;
+    top: 1485px;
+    left: 240px;
+}
+
+
+
+/*.total-print {
+    position: relative;
+    top: 372px;
+    left: 555px;
+    font-size: small;
+    width: 115px;
+}
+.hit-dice-print {
+    position: relative;
+    top: 390px;
+    left: 552px;
+    font-size: large;
+    width: 115px;
+}
+.success-1-print {
+    position: relative;
+    top: 378px;
+    left: 663px;
+    font-size: medium;
+    font-weight: bolder;
+}
+.success-2-print {
+    position: relative;
+    top: 378px;
+    left: 678px;
+    font-size: medium;
+    font-weight: bolder;
+}
+.success-3-print {
+    position: relative;
+    top: 378px;
+    left: 693px;
+    font-size: medium;
+    font-weight: bolder;
+}
+.failures-1-print {
+    position: relative;
+    top: 395px;
+    left: 663px;
+    font-size: medium;
+    font-weight: bolder;
+}
+.failures-2-print {
+    position: relative;
+    top: 395px;
+    left: 678px;
+    font-size: medium;
+    font-weight: bolder;
+}
+.failures-3-print {
+    position: relative;
+    top: 395px;
+    left: 693px;
+    font-size: medium;
+    font-weight: bolder;
+}*/
+
+
+
+
+
+
+/*.bottom-left-print {
+    position: relative;
+    bottom: 8px;
+    left: 16px;
+}
+
+.top-left-print {
+    position: relative;
+    top: 8px;
+    left: 16px;
+}*/
+/*.top-right-print {
+    position: relative;
+    top: 8px;
+    right: 16px;
+}
+
+.bottom-right-print {
+    position: relative;
+    bottom: 8px;
+    right: 16px;
+}
+
+.centered-print {
+	font-size: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}*/
+

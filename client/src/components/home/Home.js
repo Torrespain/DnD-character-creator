@@ -7,11 +7,11 @@ class home extends React.Component {
   render() {
     return (
     	<div>
-    	<div class="text-container">
+    	<div className="text-container">
     			<div>
 	                 <h1>Dungeons & Dragons</h1>
 	                 <p>Create Your Character</p>
-	                 <a class="btn btn-primary btn-lg" href="/character" role="button">Create</a>
+	                 <a className="btn btn-primary btn-lg" href="/character" role="button">Create</a>
 	            </div>
     	</div>
 

@@ -18,7 +18,8 @@
     "axios": "^0.18.0",
     "express": "^4.16.3",
     "mongoose": "^5.0.12",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "react-to-print": "^1.0.14"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",

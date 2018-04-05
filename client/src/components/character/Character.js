@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from "react";
 import './Character.css';
 import Skills from './skills';
 import './skills.css'
@@ -8,12 +8,11 @@ import SavingThrows from './throwing';
 import SubRace from './subrace';
 import Weapons from './weapons';
 import Levels from './levels';
-import Traits from './traits'
+import Traits from './traits';
+import PrintSheet from './printSheet'
 
-class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+class Home extends Component {
+   state = {
       Name: "",
       Player: "",
       Sex: "",
@@ -42,12 +41,9 @@ class Home extends React.Component {
       Instrument: "",
       Vehicles: "",
       Traits: [],
-      Other: ""
+      Other: "",
+      readyToPrint: false
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.updateSkills = this.updateSkills.bind(this)
-  }
 
   updateSkills (newSkills) {
     this.setState ({Skills: newSkills})
@@ -904,10 +900,14 @@ healthPoints = event => {
   this.setState({TotalHP:totalHealth});
 }
 
+printSheet = () =>{
+  this.setState({readyToPrint:false});
+}
+
   render() {
     console.log(this.state)
     // console.log(this.state.name)
-    return (
+    return this.state.readyToPrint ? <PrintSheet character={this.state.Level} testing="testing"/> : (
 
       <div className="container">
 
@@ -1342,8 +1342,8 @@ healthPoints = event => {
            </div>
           </div>
         </div>
+        <a class="btn btn-primary btn-lg" href="/print" role="button" onClick={this.printSheet}>Print Sheet</a>
       </div>
-
     );
   }
 }
