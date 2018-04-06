@@ -500,42 +500,42 @@
     position: fixed;
     top: 1124px;
     left: 143px;
-    width: 150px;
+    width: 200px;
 }
-.proficiency-1-print {
+.equipment-1-print {
     position: fixed;
     top: 1278px;
-    left: 685px;
+    left: 600px;
 }
-.proficiency-2-print {
+.equipment-2-print {
     position: fixed;
     top: 1301px;
-    left: 685px;
+    left: 600px;
 }
-.proficiency-3-print {
+.equipment-3-print {
     position: fixed;
     top: 1325px;
-    left: 685px;
+    left: 600px;
 }
-.proficiency-4-print {
+.equipment-4-print {
     position: fixed;
     top: 1349px;
-    left: 685px;
+    left: 600px;
 }
-.proficiency-5-print {
+.equipment-5-print {
     position: fixed;
     top: 1372px;
-    left: 685px;
+    left: 600px;
 }
-.proficiency-6-print {
+.equipment-6-print {
     position: fixed;
     top: 1396px;
-    left: 685px;
+    left: 600px;
 }
-.proficiency-7-print {
+.equipment-7-print {
     position: fixed;
     top: 1417px;
-    left: 685px;
+    left: 600px;
 }
 .equiments-print {
     position: fixed;
@@ -543,41 +543,77 @@
     left: 511px;
     width: 150px;
 }
-.equipment-1-print {
+.proficiency-1-print {
     position: fixed;
     top: 1348px;
-    left: 240px;
+    left: 200px;
 }
-.equipment-2-print {
+.proficiency-2-print {
     position: fixed;
     top: 1371px;
-    left: 240px;
+    left: 200px;
 }
-.equipment-3-print {
+.proficiency-3-print {
     position: fixed;
     top: 1392px;
-    left: 240px;
+    left: 200px;
 }
-.equipment-4-print {
+.proficiency-4-print {
     position: fixed;
     top: 1414px;
-    left: 240px;
+    left: 200px;
 }
-.equipment-5-print {
+.proficiency-5-print {
     position: fixed;
     top: 1437px;
-    left: 240px;
+    left: 200px;
 }
-.equipment-6-print {
+.proficiency-6-print {
     position: fixed;
     top: 1463px;
-    left: 240px;
+    left: 200px;
 }
-.equipment-7-print {
+.proficiency-7-print {
     position: fixed;
     top: 1485px;
-    left: 240px;
+    left: 200px;
 }
+.proficiency-8-print {
+    position: fixed;
+    top: 1509px;
+    left: 200px;
+}
+.proficiency-9-print {
+    position: fixed;
+    top: 1533px;
+    left: 200px;
+}
+.proficiency-10-print {
+    position: fixed;
+    top: 1557px;
+    left: 200px;
+}
+.proficiency-11-print {
+    position: fixed;
+    top: 1581px;
+    left: 200px;
+}
+.traits-1-print {
+    position: fixed;
+    top: 315px;
+    left: 990px;
+}
+.traits-2-print {
+    position: fixed;
+    top: 343px;
+    left: 990px;
+}
+.traits-3-print {
+    position: fixed;
+    top: 370px;
+    left: 990px;
+}
+
 
 
 
@@ -668,3 +704,12 @@
     transform: translate(-50%, -50%);
 }*/
 
+@media print {
+    .container-print {
+        color: red;
+    }
+    .character-name-print {
+    color: red;
+    
+}
+}

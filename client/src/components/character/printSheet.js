@@ -105,23 +105,30 @@ class ComponentToPrint extends Component {
         <div className="damage-type-3-print"></div>
       </div>
       <div className="proficiencies-print">
-        <div className="proficiency-1-print">{this.props.character.Languages}</div>
-        <div className="proficiency-2-print">{this.props.character.Exotic}</div>
-        <div className="proficiency-3-print"></div>
-        <div className="proficiency-4-print"></div>
-        <div className="proficiency-5-print"></div>
-        <div className="proficiency-6-print"></div>
-        <div className="proficiency-7-print"></div>
+        <div className="proficiency-1-print">{this.props.character.Weapons[0]}  {this.props.character.Weapons[5]} {this.props.character.Weapons[10]}</div>
+        <div className="proficiency-2-print">{this.props.character.Weapons[1]} {this.props.character.Weapons[6]}</div>
+        <div className="proficiency-3-print">{this.props.character.Weapons[2]} {this.props.character.Weapons[7]}</div>
+        <div className="proficiency-4-print">{this.props.character.Weapons[3]} {this.props.character.Weapons[8]}</div>
+        <div className="proficiency-5-print">{this.props.character.Weapons[4]} {this.props.character.Weapons[9]}</div>
+        <div className="proficiency-6-print">{this.props.character.Armour[0]}</div>
+        <div className="proficiency-7-print">{this.props.character.Armour[1]}</div>
+        <div className="proficiency-8-print">{this.props.character.Armour[2]}</div>
+        <div className="proficiency-9-print">{this.props.character.Armour[3]}</div>
+        <div className="proficiency-10-print">Leng 1: {this.props.character.Languages}</div>
+        <div className="proficiency-11-print">Leng 2: {this.props.character.Exotic}</div>
       </div>
       <div className="equiments-print">
-        <div className="equipment-1-print"></div>
-        <div className="equipment-2-print"></div>
-        <div className="equipment-3-print"></div>
-        <div className="equipment-4-print"></div>
-        <div className="equipment-5-print"></div>
+        <div className="equipment-1-print">Artisan tools: {this.props.character.Tools}</div>
+        <div className="equipment-2-print">Gaming set: {this.props.character.Gaming}</div>
+        <div className="equipment-3-print">Instrument: {this.props.character.Instrument}</div>
+        <div className="equipment-4-print">Vehicle: {this.props.character.Vehicle}</div>
+        <div className="equipment-5-print">Other: {this.props.character.Other}</div>
         <div className="equipment-6-print"></div>
         <div className="equipment-7-print"></div>
       </div>
+        <div className="traits-1-print">{this.props.character.Traits[0]}</div>
+        <div className="traits-2-print">{this.props.character.Traits[1]}</div>
+        <div className="traits-3-print">{this.props.character.Traits[2]}</div>
     </div>
     );
   }
@@ -134,7 +141,7 @@ class printSheet extends React.Component {
     return (
       <div>
         <ReactToPrint
-          trigger={() => <a href="/character">Dont Click Me!</a>}
+          trigger={() => <a>Elena, Jose, Ricky, Jack & Javier (UC Berkeley Bootcamp)</a>}
           content={() => this.componentRef}
         />
         <ComponentToPrint character={this.props.character} ref={el => (this.componentRef = el)} />

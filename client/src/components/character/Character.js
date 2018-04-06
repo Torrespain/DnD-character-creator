@@ -29,6 +29,7 @@ class Home extends Component {
       raceAbilities: {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0},
       modifiers: "",
       Skills: [],
+      SkillsPrint: [],
       Armour: [],
       hitDie: null,
       Hitpoints: null,
@@ -48,6 +49,15 @@ class Home extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.updateSkills = this.updateSkills.bind(this)
+    this.resetSkills = this.resetSkills.bind(this)
+    this.displaySkillsFalse = this.displaySkillsFalse.bind(this)
+  }
+  resetSkills(){
+    this.setState({Skills: [] })
+  }
+  displaySkillsFalse(){
+    this.setState({Skills: [] })
+    this.resetSkills()
   }
 
   updateSkills (newSkills) {
@@ -1162,7 +1172,7 @@ printSheet = () =>{
               Skills
             </label>
             </div>
-            <Skills class={this.state.Class} Skills={this.state.Skills} updateSkills={this.updateSkills}/>
+{this.state.Class.length > 0 ? (<Skills class={this.state.Class} resetSkills={this.resetSkills} Skills={this.state.Skills} updateSkills={this.updateSkills}/>):""} 
           </div>
 
           <div className="panel panel-default">

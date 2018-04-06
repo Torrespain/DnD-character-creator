@@ -4,23 +4,32 @@ class Skills extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        disabled: false
+      disabled: false,
+      currentClass: this.props.class,
+      lastClass: this.props.class,
+      skills: this.props.skills,
+      skillsCounter: 0
     }
     this.onChange = this.onChange.bind(this)
+    this.resetSkills = this.resetSkills.bind(this)
+    this.updateLastClass = this.updateCurrentClass.bind(this)
+    this.updateCurrentClass = this.updateCurrentClass.bind(this)
   }
   onChange(e){
-    //   console.log(this.props.Skills)
+      console.log("props.skills in here", this.props.Skills)
       console.log(e.target.value)
       let skills = this.props.Skills
+      let skillsCounter = this.state.skillsCounter += 1
+      console.log("hello skills counter", skillsCounter)
     // console.log("we hit the change", e.target.checked)
     if(e.target.checked){
-        if(skills.length <= 1){
+        if(skillsCounter <= 2){
             skills.push(e.target.value)
             this.props.updateSkills(skills)
             console.log("we checked it")
-            this.setState({disabled:false})
+            this.setState({disabled: false, skillsCounter:this.state.skillsCounter})
         } else{
-            this.setState({disabled:true})
+            this.setState({disabled: true})
         }
     } else{
         console.log("we unchecked")
@@ -28,14 +37,29 @@ class Skills extends React.Component {
         this.props.updateSkills(skills)
     }
   }
-
+  resetSkills(){
+    this.props.resetSkills()
+    this.setState({currentClass: "", skillsCounter:0, disabled:false})
+  }
+  updateLastClass(){
+    this.setState({lastClass: this.state.currentClass})
+    this.resetSkills()
+  }
+  updateCurrentClass(){
+    this.setState({currentClass: this.state.lastClass})
+  }
   render() {
+    console.log("heeeellloooo", this.state)
+    if(this.state.currentClass.length === 0){
+      console.log("trying to update class")
+      this.updateCurrentClass()
+    }
     return (
       <div>
         <div className="classChoice"> 
         {this.props.class.length > 0 ? "":(<h4> Pick A Class </h4>)}
         </div>
-        {this.props.class === "Barbarian" ? (
+        {this.state.currentClass === "Barbarian" ? (
             <ul className="list-group list-group-flush" multiple>
               <li className="list-group-item"><input type="checkbox" disabled={this.state.disabled}  value={"Animal Handling"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Animal Handling</li>
               <li className="list-group-item"><input type="checkbox" disabled={this.state.disabled}  value={"Athletics"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Athletics</li>
@@ -45,7 +69,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox" disabled={this.state.disabled}  value={"Survival"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Survival</li>
             </ul>
         ):""}
-        {this.props.class === "Cleric" ? (
+        {this.state.currentClass === "Cleric" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"History"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> History</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Insight"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Insight</li>
@@ -54,7 +78,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Religion"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Religion</li>
             </ul>
         ):""}
-        {this.props.class === "Bard" ? (
+        {this.state.currentClass === "Bard" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Arcobatics"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Arcobatics</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Animal Handling"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Animal Handling</li>
@@ -76,7 +100,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Survival"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Survival</li>
             </ul>
         ):""}
-        {this.props.class === "Druid" ? (
+        {this.state.currentClass === "Druid" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Animal Handling"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Animal Handling</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Arcana"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Arcana</li>
@@ -88,7 +112,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Survival"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Survival</li>
             </ul>
         ):""}
-        {this.props.class === "Fighter" ? (
+        {this.state.currentClass === "Fighter" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Arcobatics"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Arcobatics</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Animal Handling"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Animal Handling</li>
@@ -100,7 +124,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Survival"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Survival</li>
             </ul>
         ):""}
-        {this.props.class === "Monk" ? (
+        {this.state.currentClass === "Monk" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Arcobatics"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Arcobatics</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Athletics"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Athletics</li>
@@ -112,7 +136,7 @@ class Skills extends React.Component {
         ):""}
 
         
-        {this.props.class === "Paladin" ? (
+        {this.state.currentClass === "Paladin" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox" disabled={this.state.disabled}  value={"Athletics"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Athletics</li>
               <li className="list-group-item"><input type="checkbox" disabled={this.state.disabled}  value={"Insight"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Insight</li>
@@ -121,7 +145,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox" disabled={this.state.disabled}  value={"Religion"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Religion</li>
             </ul>
         ):""}
-        {this.props.class === "Ranger" ? (
+        {this.state.currentClass === "Ranger" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Animal Handling"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Animal Handling</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Athletics"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Athletics</li>
@@ -133,7 +157,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Survival"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Survival</li>
             </ul>
         ):""}
-        {this.props.class === "Sorcerer" ? (
+        {this.state.currentClass === "Sorcerer" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Arcana"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Arcana</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Deception"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Deception</li>
@@ -143,7 +167,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Religion"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Religion</li>
             </ul>
         ):""}
-        {this.props.class === "Warlock" ? (
+        {this.state.currentClass === "Warlock" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Arcana"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Arcana</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Deception"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Deception</li>
@@ -154,7 +178,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Religion"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Religion</li>
             </ul>
         ):""}  
-        {this.props.class === "Wizard" ? (
+        {this.state.currentClass === "Wizard" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Arcana"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Arcana</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"History"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> History</li>
@@ -164,7 +188,7 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Religion"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Religion</li>
             </ul>
         ):""}
-        {this.props.class === "Rogue" ? (
+        {this.state.currentClass === "Rogue" ? (
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Arcobatics"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Arcobatics</li>
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Athletics"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Athletics</li>
@@ -179,13 +203,11 @@ class Skills extends React.Component {
               <li className="list-group-item"><input type="checkbox"  disabled={this.state.disabled}  value={"Stealth"} onChange={this.onChange} aria-label="Checkbox for following text input"></input> Stealth</li>
             </ul>
         ):""}
-         { /* {if(props.class === "barbarian"){
-          return (
-              <h1>We are barbarian</h1>
-          )
-      }} */
-      
-      }
+        <div className="skillsBtn">
+        
+        <button type="button" className="btn btn-default diceBtn" onClick={this.resetSkills}>Reset</button>
+
+        </div>
       
       </div>
     );

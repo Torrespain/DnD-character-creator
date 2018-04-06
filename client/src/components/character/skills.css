@@ -1,3 +1,8 @@
 .classChoice {
-	text-align: center
+    text-align: center
+}
+.skillsBtn {
+    margin-bottom: 10px;
+    margin-top: -10px;
+    margin-left:10px;
 }
