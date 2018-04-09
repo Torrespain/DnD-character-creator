@@ -924,6 +924,7 @@ printSheet = () =>{
 }
 
   render() {
+    document.body.style.backgroundImage = `url("/../images/background2.jpg")`;
     console.log(this.state)
     if(this.state.readyToPrint) {
       return (<PrintSheet character={this.state} />);
