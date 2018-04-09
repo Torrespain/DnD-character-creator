@@ -7,7 +7,7 @@ body {
 
 @media screen and (max-width: 800px){
     body {
-		background: url("/../images/smallBackground.png");
+		background: url("/../images/smallBackground.jpg");
 		background-repeat: no-repeat;
     	background-size: cover;
     	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
@@ -21,9 +21,7 @@ body {
 }
 
 .dragonSide{
-	background: url("/../images/smallBackground.png");
 	width: 100%;
-	
 }
 
 #HitDice {

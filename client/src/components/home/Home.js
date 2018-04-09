@@ -19,7 +19,7 @@ class home extends React.Component {
 	       <div className="main">
 	           
 	             <div>
-	                 <img src='https://i.imgur.com/JFWynYP.gif' />
+	                 <img src="/../images/gif.gif" />
 	             </div>
 	             
 	         </div>

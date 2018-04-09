@@ -1,4 +1,4 @@
-##Dungeons & Dragons Character Sheet
+# Dungeons & Dragons Character Sheet
 
 ## To run the program locally
 
@@ -35,12 +35,27 @@ Once the user is finished filling the form, the information can be printed on th
 
 ## Authors
 
-1. Javier Latorre Ibanez 
-2. Jose Perez
-3. Elena Doncheva
-4. Jack Fang
-5. Ricky Feng
+1. Javier Latorre Ibanez (https://github.com/Torrespain)
+2. Jose Perez (https://github.com/jperez650)
+3. Elena Doncheva (https://github.com/Leyni30)
+4. Jack Fang (https://github.com/jackfang415)
+5. Ricky Feng (https://github.com/Rickyfeng7)
 
 ## Deployed App
 
 https://cryptic-mesa-16953.herokuapp.com/
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
+## Acknowledgments
+
+* Jerome Chennette (https://github.com/jeromechenette)
+* Dani Roxberry (https://github.com/droxey) 
+* Amber Burroughs (https://www.linkedin.com/in/amber-burroughs-29a69467)
+* Abraham Ferguson (https://github.com/abrahamfergie)
+
+Thank you for all of your help with debugging and directing our thought process!
