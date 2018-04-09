@@ -1,27 +1,24 @@
-#Dungeons & Dragons Character Sheet
+##Dungeons & Dragons Character Sheet
 
-## Before Running The Program
+## To run the program locally
 
-1. Type yarn install in the terminal
+Type yarn install from the root folder in the terminal.
 
-## The App
-
-1. Type yarn start to start the app.
-2. The user will be greeted with a welcome page.
+From the client, type yarn start to start the app.
+The program will start from the welcome page.
     
 <img src = "/assets/images/welcome.PNG">
 
-3. By clicking on the 'create' button you will be taken to the 'main' page where you will be asked for your input needed for creating your character.
+By clicking on the 'create' button the user will be taken to the 'main' page where the player character can be created.
 
 <img src = "/assets/images/characterForm.PNG">
 
-4. As said above, the page where you are actually creating your character is a form page you will be filling in - creating your character.
-
-5. The user is to make a choice on race and class which defines the further on characteristics of the character.
+By selecting the different inputs and dropdowns, the app accesses the database to retrieve the specific modifiers for every race or class.
+When pressing the buttons to roll the dices, our algorithms will calculate abilities and health points following the official D&D rules.
 
 <img src = "/assets/images/points.PNG">
 
-6. Like clicking the 'create' button on the first page, the user will have to click the 'print' button upon finishing filling out the for that creates the chatacter. This takes them to the third page which is to be printed by..clicking the 'print' button.
+Once the user is finished filling the form, the information can be printed on the official D&D template by pressing the print button!
 
 <img src = "/assets/images/Print.PNG">
 <img src = "/assets/images/FinalPrint.PNG">
@@ -38,8 +35,12 @@
 
 ## Authors
 
-1. Javier Latoore Ibanez 
+1. Javier Latorre Ibanez 
 2. Jose Perez
 3. Elena Doncheva
 4. Jack Fang
 5. Ricky Feng
+
+## Deployed App
+
+https://cryptic-mesa-16953.herokuapp.com/
