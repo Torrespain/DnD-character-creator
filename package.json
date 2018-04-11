@@ -6,7 +6,6 @@
   "scripts": {
     "client": "node scripts/start-client.js",
     "server": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\"",
     "start": "node server.js",
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
