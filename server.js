@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var axios = require("axios");
-
+var path = require("path")
 // Require all models
 var db = require("./backend/models");
 
@@ -28,7 +28,6 @@ mongoose.connect("mongodb://localhost/dnd", {
 });
 
 // app.use("/",routes);
-
 app.get("/classes/:classes", function(req, res){
 	console.log("we hit the home route")
 	// console.log('db', db);
@@ -64,6 +63,11 @@ app.get("/races/:race", function(req, res){
 		res.json(err);
 	});
 });
+
+app.get("*", function(req, res){
+	console.log("hello we are in the server")
+	res.sendFile(path.join(__dirname, "../client/build/index.html"))
+})
 
 //conecting to Heroku
 var databaseUrl = 'mongodb://localhost/dnd';

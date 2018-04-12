@@ -924,7 +924,7 @@ printSheet = () =>{
 }
 
   render() {
-    console.log(this.state)
+    console.log("this is the state ========================================", this.state)
     if(this.state.readyToPrint) {
       return (<PrintSheet character={this.state} />);
     }
