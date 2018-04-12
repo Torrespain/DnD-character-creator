@@ -17,23 +17,18 @@ class Skills extends React.Component {
     this.updateNewClass = this.updateNewClass.bind(this)
   }
   onChange(e){
-      console.log("props.skills in here", this.props.Skills)
-      console.log(e.target.value)
       let skills = this.props.Skills
       let skillsCounter = this.state.skillsCounter += 1
-      console.log("hello skills counter", skillsCounter)
     // console.log("we hit the change", e.target.checked)
     if(e.target.checked){
         if(skillsCounter <= 2){
             skills.push(e.target.value)
             this.props.updateSkills(skills)
-            console.log("we checked it")
             this.setState({disabled: false, skillsCounter:this.state.skillsCounter})
         } else{
             this.setState({disabled: true})
         }
     } else{
-        console.log("we unchecked")
         skills = skills.filter(singleDude => singleDude !== e.target.value);
         this.props.updateSkills(skills)
     }

@@ -114,14 +114,14 @@ class ComponentToPrint extends Component {
         <div className="proficiency-7-print">{this.props.character.Armour[1]}</div>
         <div className="proficiency-8-print">{this.props.character.Armour[2]}</div>
         <div className="proficiency-9-print">{this.props.character.Armour[3]}</div>
-        <div className="proficiency-10-print">Leng 1: {this.props.character.Languages}</div>
-        <div className="proficiency-11-print">Leng 2: {this.props.character.Exotic}</div>
+        <div className="proficiency-10-print">Lang 1: {this.props.character.Languages}</div>
+        <div className="proficiency-11-print">Lang 2: {this.props.character.Exotic}</div>
       </div>
       <div className="equiments-print">
         <div className="equipment-1-print">Artisan tools: {this.props.character.Tools}</div>
         <div className="equipment-2-print">Gaming set: {this.props.character.Gaming}</div>
         <div className="equipment-3-print">Instrument: {this.props.character.Instrument}</div>
-        <div className="equipment-4-print">Vehicle: {this.props.character.Vehicle}</div>
+        <div className="equipment-4-print">Vehicle: {this.props.character.Vehicles}</div>
         <div className="equipment-5-print">Other: {this.props.character.Other}</div>
         <div className="equipment-6-print"></div>
         <div className="equipment-7-print"></div>
