@@ -12,9 +12,8 @@ import Traits from './traits';
 import PrintSheet from './printSheet'
 
 class Home extends Component {
- constructor(props) {
-   super(props);
-   this.state = {
+
+   state = {
       Name: "",
       Player: "",
       Sex: "",
@@ -47,12 +46,9 @@ class Home extends Component {
       Other: "",
       readyToPrint: false
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.updateSkills = this.updateSkills.bind(this)
-    this.resetSkills = this.resetSkills.bind(this)
-    this.displaySkillsFalse = this.displaySkillsFalse.bind(this)
-  }
-  resetSkills(){
+
+  
+  resetSkills = () => {
     this.setState({Skills: [] })
   }
   displaySkillsFalse(){
@@ -60,7 +56,7 @@ class Home extends Component {
     this.resetSkills()
   }
 
-  updateSkills (newSkills) {
+  updateSkills = (newSkills) => {
     this.setState ({Skills: newSkills})
   }
 
@@ -129,7 +125,7 @@ class Home extends Component {
 
     if (this.state.ImprovePoints>0) {
       const ability = event.target.value;
-      console.log("improoving ",ability);
+      console.log("improving ",ability);
 
       const abilities = Object.assign({}, this.state.abilities);
 
@@ -184,6 +180,7 @@ class Home extends Component {
   }
 
 grabClass = event =>{
+    this.resetSkills()
     let theClass=event.target.value;
     console.log("hi", theClass);
     this.setState({Class: theClass}, function(){

@@ -5,13 +5,9 @@ import './printSheet.css';
 import dragonSheet from "./dragonSheet-1.jpg";
 /* {<img id="dragonSheetImage" src={require('./dragonSheet-1.jpg')} /> }*/
 class ComponentToPrint extends Component {
-   constructor(props) {
-    super(props);
-      this.state={
+      state={
         abilities:"strength"
       }
-
-    }
 
   render() {
     console.log("hello", this.props)

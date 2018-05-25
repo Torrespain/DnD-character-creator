@@ -1,22 +1,15 @@
 import React from 'react';
 
 class Skills extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       disabled: false,
       currentClass: this.props.class,
       lastClass: this.props.class,
       skills: this.props.skills,
       skillsCounter: 0
-    }
-    this.onChange = this.onChange.bind(this)
-    this.resetSkills = this.resetSkills.bind(this)
-    this.updateLastClass = this.updateCurrentClass.bind(this)
-    this.updateCurrentClass = this.updateCurrentClass.bind(this)
-    this.updateNewClass = this.updateNewClass.bind(this)
+
   }
-  onChange(e){
+  onChange = (e) => {
       let skills = this.props.Skills
       let skillsCounter = [...this.state.skillsCounter];
       skillsCounter = skillsCounter += 1
@@ -35,29 +28,26 @@ class Skills extends React.Component {
         this.props.updateSkills(skills)
     }
   }
-  resetSkills(){
+  resetSkills = () => {
     this.props.resetSkills()
     this.setState({currentClass: "", skillsCounter:0, disabled:false})
   }
-  updateLastClass(){
+  updateLastClass = () => {
     this.setState({lastClass: this.state.currentClass})
     this.resetSkills()
   }
-  updateNewClass(newClass){
+  updateNewClass = (newClass) => {
     this.setState({currentClass: newClass})
   }
-  updateCurrentClass(){
-    this.setState({currentClass: this.props.class})
+  updateCurrentClass= () => {
+    this.setState({currentClass: this.props.class});
   }
   render() {
-    console.log("props in the skills components ********************", this.props)
-    console.log("this is the state for the skills components %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", this.state)
     if(this.state.currentClass !== this.props.class){
-      console.log("trying to update class")
-      this.updateCurrentClass()
+      setTimeout(() => {this.updateCurrentClass()}, 0)
     }
     else if(this.state.currentClass === 0){
-      this.updateCurrentClass()
+      setTimeout(() => {this.updateCurrentClass()}, 0)
     }
     return (
       <div>
