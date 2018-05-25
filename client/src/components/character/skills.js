@@ -14,6 +14,7 @@ class Skills extends React.Component {
     this.resetSkills = this.resetSkills.bind(this)
     this.updateLastClass = this.updateCurrentClass.bind(this)
     this.updateCurrentClass = this.updateCurrentClass.bind(this)
+    this.updateNewClass = this.updateNewClass.bind(this)
   }
   onChange(e){
       let skills = this.props.Skills
@@ -42,11 +43,20 @@ class Skills extends React.Component {
     this.setState({lastClass: this.state.currentClass})
     this.resetSkills()
   }
+  updateNewClass(newClass){
+    this.setState({currentClass: newClass})
+  }
   updateCurrentClass(){
-    this.setState({currentClass: this.state.lastClass})
+    this.setState({currentClass: this.props.class})
   }
   render() {
-    if(this.state.currentClass.length === 0){
+    console.log("props in the skills components ********************", this.props)
+    console.log("this is the state for the skills components %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", this.state)
+    if(this.state.currentClass !== this.props.class){
+      console.log("trying to update class")
+      this.updateCurrentClass()
+    }
+    else if(this.state.currentClass === 0){
       this.updateCurrentClass()
     }
     return (
