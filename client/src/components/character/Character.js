@@ -104,7 +104,6 @@ class Home extends Component {
    getClassData = (position) => {
     API.getClassAPI(window.event.target.value)
     .then(data => {
-      console.log("this is the data", data);
       let hitDie = data.data[position].hit_die;
 
       this.setState({hitDie:hitDie});
@@ -164,6 +163,9 @@ class Home extends Component {
         case "increaseCharisma":
           abilities.charisma += 1
           this.setState({abilities});
+        break;
+        default:
+
         break;
       }
 
@@ -632,9 +634,9 @@ grabClass = event =>{
           })
         }, 0);
         break;
-        // default:
-        //     ...
-        //     break;
+        default:
+
+        break;
     }
   }
 
@@ -778,9 +780,10 @@ grabClass = event =>{
           })
         }, 0);
         break;
-        // default:
-        //     ...
-        //     break;
+
+        default:
+
+        break;
     }
     const diceAbilities= {strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0}
     this.setState({diceAbilities: diceAbilities});
@@ -936,7 +939,7 @@ printSheet = () =>{
 
         <div className="row">
           <div className="col-md-2" >
-            <img className="dragonSide" src="/../images/knight.jpg"></img>
+            <img className="dragonSide" src="/../images/knight.jpg" alt="knight"></img>
           </div>
 
           <div className="col-md-10">

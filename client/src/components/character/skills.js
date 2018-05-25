@@ -17,7 +17,9 @@ class Skills extends React.Component {
   }
   onChange(e){
       let skills = this.props.Skills
-      let skillsCounter = this.state.skillsCounter += 1
+      let skillsCounter = [...this.state.skillsCounter];
+      skillsCounter = skillsCounter += 1
+      this.setState({skillsCounter:skillsCounter});
     // console.log("we hit the change", e.target.checked)
     if(e.target.checked){
         if(skillsCounter <= 2){

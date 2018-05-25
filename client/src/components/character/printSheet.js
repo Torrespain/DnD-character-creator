@@ -3,7 +3,7 @@ import ReactToPrint from "react-to-print";
 import './printSheet.css';
 
 import dragonSheet from "./dragonSheet-1.jpg";
-{/* <img id="dragonSheetImage" src={require('./dragonSheet-1.jpg')} /> */}
+/* {<img id="dragonSheetImage" src={require('./dragonSheet-1.jpg')} /> }*/
 class ComponentToPrint extends Component {
    constructor(props) {
     super(props);
@@ -18,7 +18,7 @@ class ComponentToPrint extends Component {
     console.log("jose", this.props.name)
     return (
       <div className="container-print">
-      <img id="dragonSheetImage" src={dragonSheet} style={{ width: '1300px' }} />
+      <img id="dragonSheetImage" src={dragonSheet} alt="dragon" style={{ width: '1300px' }} />
       {/* <p>{this.props.Name}</p> */}
       {/* <div className="class-level-print">{this.state.abilities.strength}</div> */}
       <div className="class-level-print">{this.props.character.Class} ({this.props.character.Level})</div>

@@ -20,7 +20,7 @@ class home extends React.Component {
 	       <div className="main">
 	           
 	             <div>
-	                 <img src="/../images/gif.gif" />
+	                 <img src="/../images/gif.gif" alt="drunk knight"/>
 	             </div>
 	             
 	         </div>

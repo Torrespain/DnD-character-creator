@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import CharPage from './components/character/Character';
 import Home from './components/home/Home';
 import "./App.css";
-import Print from './components/character/printSheet';
+// import Print from './components/character/printSheet';
 // import AboutPage from './pages/about';
 
 class App extends Component {
