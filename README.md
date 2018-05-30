@@ -7,21 +7,19 @@ Type yarn install from the root folder in the terminal.
 From the client, type yarn start to start the app.
 The program will start from the welcome page.
     
-<img src = "/assets/images/welcome.PNG">
+<img src = "/assets/images/welcome.jpg">
 
 By clicking on the 'create' button the user will be taken to the 'main' page where the player character can be created.
 
-<img src = "/assets/images/characterForm.PNG">
+<img src = "/assets/images/characterForm.jpg">
 
 By selecting the different inputs and dropdowns, the app accesses the database to retrieve the specific modifiers for every race or class.
 When pressing the buttons to roll the dices, our algorithms will calculate abilities and health points following the official D&D rules.
 
-<img src = "/assets/images/points.PNG">
+<img src = "/assets/images/FinalPrint.jpg">
 
 Once the user is finished filling the form, the information can be printed on the official D&D template by pressing the print button!
 
-<img src = "/assets/images/Print.PNG">
-<img src = "/assets/images/FinalPrint.PNG">
 
 
 ## Built With
